@@ -1,0 +1,500 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>GZW Craft Overview</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@500;600;700&family=Barlow:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap">
+<style>
+/* Layout: sticky tab bar over three views. Want list = chip picker + gather grid; Full list = recipe cards by workshop; Backend = sortable item table. Tone: field-manual utilitarian, olive on grey-green neutrals. */
+:root {
+  --bg: #e9ece5;
+  --surface: #f6f7f3;
+  --surface-2: #dde1d6;
+  --border: #bfc5b6;
+  --fg: #1c2219;
+  --muted: #566052;
+  --accent: #4b6a22;
+  --accent-fg: #f6f7f3;
+  --accent-soft: #d3dfbb;
+  --warn: #8a5a0b;
+  --warn-soft: #f0dfb8;
+  --tile: #1b1e18;
+  --tile-border: #353a30;
+  --font-display: "Barlow Condensed", "Arial Narrow", sans-serif;
+  --font-body: "Barlow", system-ui, sans-serif;
+  --font-mono: "IBM Plex Mono", ui-monospace, monospace;
+}
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --bg: #12150f;
+    --surface: #1a1e16;
+    --surface-2: #242a1f;
+    --border: #353c2c;
+    --fg: #e5e9dc;
+    --muted: #96a08a;
+    --accent: #a7c764;
+    --accent-fg: #12150f;
+    --accent-soft: #2c3820;
+    --warn: #e0b157;
+    --warn-soft: #3a2f14;
+    color-scheme: dark;
+  }
+}
+:root[data-theme="dark"] {
+  --bg: #12150f;
+  --surface: #1a1e16;
+  --surface-2: #242a1f;
+  --border: #353c2c;
+  --fg: #e5e9dc;
+  --muted: #96a08a;
+  --accent: #a7c764;
+  --accent-fg: #12150f;
+  --accent-soft: #2c3820;
+  --warn: #e0b157;
+  --warn-soft: #3a2f14;
+  color-scheme: dark;
+}
+* { box-sizing: border-box; }
+body {
+  background: var(--bg);
+  color: var(--fg);
+  font-family: var(--font-body);
+  font-size: 15px;
+  line-height: 1.45;
+  padding-left: max(16px, env(safe-area-inset-left, 0px));
+  padding-right: max(16px, env(safe-area-inset-right, 0px));
+  padding-block: 0 48px;
+}
+.wrap { max-width: 1180px; margin: 0 auto; }
+header.top { padding-block: 22px 14px; display: flex; align-items: baseline; justify-content: space-between; gap: 8px 24px; flex-wrap: wrap; }
+h1 { font-family: var(--font-display); font-weight: 700; font-size: 2rem; letter-spacing: 0.02em; text-transform: uppercase; margin: 0; text-wrap: balance; }
+.sub { color: var(--muted); margin: 0; font-size: 0.9rem; }
+nav.tabs {
+  position: sticky; top: env(safe-area-inset-top, 0px); z-index: 5;
+  background: var(--bg);
+  display: flex; gap: 4px; border-bottom: 2px solid var(--border);
+  overflow-x: auto; overflow-y: hidden; scrollbar-width: none;
+}
+nav.tabs::-webkit-scrollbar { display: none; }
+body::before { content: ""; position: fixed; inset: 0 0 auto; height: env(safe-area-inset-top, 0px); z-index: 10; background: var(--bg); }
+.tab {
+  font-family: var(--font-display); font-weight: 600; font-size: 1.15rem; letter-spacing: 0.06em; text-transform: uppercase;
+  background: none; border: 0; color: var(--muted); padding: 10px 18px 9px; cursor: pointer; white-space: nowrap;
+  border-bottom: 3px solid transparent; margin-bottom: -2px;
+}
+.tab:hover { color: var(--fg); }
+.tab[aria-selected="true"] { color: var(--fg); border-bottom-color: var(--accent); }
+:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
+section.view { padding-top: 22px; }
+h2 { font-family: var(--font-display); font-weight: 600; font-size: 1.35rem; letter-spacing: 0.04em; text-transform: uppercase; margin: 0 0 4px; }
+.hint { color: var(--muted); margin: 0 0 14px; font-size: 0.9rem; }
+.mono { font-family: var(--font-mono); font-size: 0.82em; }
+
+/* picker */
+.picker-head { display: flex; align-items: center; justify-content: space-between; gap: 12px; flex-wrap: wrap; margin-bottom: 10px; }
+.group { margin-bottom: 12px; }
+.group-label { font-family: var(--font-display); font-weight: 500; text-transform: uppercase; letter-spacing: 0.1em; color: var(--muted); font-size: 0.85rem; margin-bottom: 6px; }
+.chips { display: flex; flex-wrap: wrap; gap: 6px; }
+.chip {
+  font: 500 0.92rem var(--font-body); color: var(--fg); background: var(--surface); border: 1px solid var(--border);
+  border-radius: 4px; padding: 6px 11px; cursor: pointer;
+}
+.chip:hover { border-color: var(--accent); }
+.chip[aria-pressed="true"] { background: var(--accent); color: var(--accent-fg); border-color: var(--accent); }
+.btn { font: 500 0.85rem var(--font-body); color: var(--fg); background: transparent; border: 1px solid var(--border); border-radius: 4px; padding: 5px 12px; cursor: pointer; }
+.btn:hover { border-color: var(--accent); }
+.btn[disabled] { opacity: 0.4; cursor: default; }
+.count { color: var(--muted); font-size: 0.9rem; }
+
+/* gather grid */
+.result { margin-top: 20px; border-top: 1px solid var(--border); padding-top: 16px; }
+.empty { color: var(--muted); padding: 22px; border: 1px dashed var(--border); border-radius: 6px; text-align: center; }
+.grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(230px, 1fr)); gap: 10px; }
+.card { display: flex; gap: 12px; align-items: center; background: var(--surface); border: 1px solid var(--border); border-radius: 6px; padding: 10px; min-width: 0; }
+.ico { flex: none; width: 72px; height: 60px; background: var(--tile); border: 1px solid var(--tile-border); border-radius: 4px; display: grid; place-items: center; overflow: hidden; }
+.ico img { max-width: 100%; max-height: 100%; object-fit: contain; display: block; }
+.ico.sm { width: 34px; height: 28px; }
+.card .body { min-width: 0; }
+.card .nm { font-weight: 600; }
+.card .for { color: var(--muted); font-size: 0.82rem; }
+.crafted { margin-top: 14px; display: flex; flex-wrap: wrap; gap: 6px 10px; align-items: center; color: var(--muted); font-size: 0.9rem; }
+.tag { display: inline-flex; align-items: center; gap: 6px; background: var(--warn-soft); color: var(--warn); border-radius: 4px; padding: 2px 8px 2px 3px; font-size: 0.85rem; font-weight: 500; }
+.tag .ico { width: 28px; height: 22px; border-radius: 3px; }
+
+/* full list */
+.station { margin-bottom: 26px; }
+.recipes { display: grid; grid-template-columns: repeat(auto-fill, minmax(330px, 1fr)); gap: 10px; }
+.recipe { background: var(--surface); border: 1px solid var(--border); border-radius: 6px; padding: 10px; min-width: 0; }
+.recipe-top { display: flex; gap: 12px; align-items: center; margin-bottom: 10px; }
+.recipe-top .ttl { flex: 1; min-width: 0; font-family: var(--font-display); font-size: 1.2rem; font-weight: 600; letter-spacing: 0.02em; line-height: 1.15; }
+.time { font-family: var(--font-mono); font-size: 0.8rem; background: var(--surface-2); border-radius: 4px; padding: 2px 7px; white-space: nowrap; }
+.ings { display: flex; flex-wrap: wrap; gap: 6px; }
+.ing { display: inline-flex; align-items: center; gap: 7px; background: var(--surface-2); border-radius: 4px; padding: 3px 9px 3px 3px; font-size: 0.88rem; }
+.ing.made { background: var(--warn-soft); }
+.ing small { color: var(--warn); font-weight: 600; font-size: 0.72rem; text-transform: uppercase; letter-spacing: 0.05em; }
+.stats { display: flex; flex-wrap: wrap; gap: 4px 24px; margin-top: 10px; padding-top: 9px; border-top: 1px solid var(--border); }
+.stat .l { display: block; font-family: var(--font-display); font-weight: 500; text-transform: uppercase; letter-spacing: 0.08em; font-size: 0.78rem; color: var(--muted); }
+.stat .v { font-family: var(--font-mono); font-size: 1rem; font-variant-numeric: tabular-nums; }
+.stat .v.none { color: var(--muted); }
+.stat-note { flex-basis: 100%; color: var(--muted); font-size: 0.8rem; }
+
+/* backend */
+.tools { display: flex; gap: 8px; flex-wrap: wrap; margin-bottom: 10px; }
+input[type="search"], select { font: 400 0.9rem var(--font-body); color: var(--fg); background: var(--surface); border: 1px solid var(--border); border-radius: 4px; padding: 6px 10px; }
+input[type="search"] { flex: 1 1 220px; min-width: 0; }
+.tablewrap { overflow-x: auto; border: 1px solid var(--border); border-radius: 6px; background: var(--surface); }
+table { border-collapse: collapse; width: 100%; min-width: 1060px; font-size: 0.88rem; }
+th, td { text-align: left; padding: 7px 10px; border-bottom: 1px solid var(--border); vertical-align: top; }
+th { position: sticky; top: 0; background: var(--surface-2); font-family: var(--font-display); font-weight: 600; text-transform: uppercase; letter-spacing: 0.07em; font-size: 0.85rem; white-space: nowrap; cursor: pointer; user-select: none; }
+th[aria-sort="ascending"]::after { content: " \25B2"; font-size: 0.65em; }
+th[aria-sort="descending"]::after { content: " \25BC"; font-size: 0.65em; }
+th.nosort { cursor: default; }
+tr:last-child td { border-bottom: 0; }
+td.item { font-weight: 600; min-width: 200px; }
+td.item .in { display: flex; align-items: center; gap: 9px; }
+td.num { font-variant-numeric: tabular-nums; white-space: nowrap; }
+td.dim { color: var(--muted); }
+.list { color: var(--fg); }
+.list span { display: inline-block; margin: 0 4px 2px 0; padding: 0 6px; background: var(--surface-2); border-radius: 3px; white-space: nowrap; }
+details { margin-top: 14px; color: var(--muted); font-size: 0.88rem; }
+summary { cursor: pointer; font-weight: 500; }
+.note { color: var(--muted); font-size: 0.82rem; margin-top: 10px; }
+
+@media (max-width: 520px) {
+  h1 { font-size: 1.6rem; }
+  .tab { padding-inline: 12px; font-size: 1.05rem; }
+  .recipes { grid-template-columns: 1fr; }
+}
+@media (prefers-reduced-motion: reduce) { * { scroll-behavior: auto !important; transition: none !important; } }
+</style>
+<style>body{margin:0}[hidden]{display:none!important}img{max-width:100%}</style>
+</head>
+<body>
+<div class="wrap">
+  <header class="top">
+    <h1>GZW Craft Overview</h1>
+    <p class="sub">Laboratory and Electronics Workshop recipes, items and vendor prices</p>
+  </header>
+  <nav class="tabs" role="tablist" aria-label="Views">
+    <button class="tab" role="tab" id="t-want" aria-controls="v-want" data-tab="want">Want list</button>
+    <button class="tab" role="tab" id="t-full" aria-controls="v-full" data-tab="full">Full list</button>
+    <button class="tab" role="tab" id="t-backend" aria-controls="v-backend" data-tab="backend">Backend data</button>
+  </nav>
+
+  <section class="view" id="v-want" role="tabpanel" aria-labelledby="t-want">
+    <div class="picker-head">
+      <div>
+        <h2>What do you want to make?</h2>
+        <p class="hint" style="margin:0">Select one or more. The items to gather appear below.</p>
+      </div>
+      <div style="display:flex; gap:12px; align-items:center">
+        <span class="count" id="want-count">None selected</span>
+        <button class="btn" id="want-clear" disabled>Clear</button>
+      </div>
+    </div>
+    <div id="want-picker"></div>
+    <div class="result" id="want-result" aria-live="polite"></div>
+  </section>
+
+  <section class="view" id="v-full" role="tabpanel" aria-labelledby="t-full" hidden>
+    <h2>All productions and crafts</h2>
+    <p class="hint">Every recipe with the items it needs. Each recipe takes one of every ingredient. Amber items are crafted first. Crafting cost adds up the ingredient sell prices, and a crafted ingredient counts at its own sell value. Crafted value is the product's vendor sell price.</p>
+    <div id="full-list"></div>
+  </section>
+
+  <section class="view" id="v-backend" role="tabpanel" aria-labelledby="t-backend" hidden>
+    <h2>Item data</h2>
+    <p class="hint">Every product and ingredient with what has been collected so far. Click a column heading to sort.</p>
+    <div class="tools">
+      <input type="search" id="be-search" placeholder="Filter by name or short name" aria-label="Filter items">
+      <select id="be-type" aria-label="Item type">
+        <option value="all">All items</option>
+        <option value="product">Products</option>
+        <option value="ingredient">Ingredients</option>
+      </select>
+    </div>
+    <div class="tablewrap"><table id="be-table"></table></div>
+    <p class="note">Sell prices are per single item, no matter the stack size. A dash means the value has not been seen yet. * Time provided by you, since that production was in progress in the screenshots.</p>
+    <details>
+      <summary>Inventory short names without a matching recipe item</summary>
+      <p id="unmatched"></p>
+    </details>
+  </section>
+</div>
+
+<script>
+const IMG = {"opium_gum": "images/opium_gum.jpg", "garden_lime": "images/garden_lime.jpg", "ammonium_chloride": "images/ammonium_chloride.jpg", "purified_water": "images/purified_water.jpg", "citric_acid": "images/citric_acid.jpg", "sulfuric_acid": "images/sulfuric_acid.jpg", "methylparaben": "images/methylparaben.jpg", "saline": "images/saline.jpg", "glucose": "images/glucose.jpg", "theophylline": "images/theophylline.jpg", "bromopyridine": "images/bromopyridine.jpg", "empty_autoinjector": "images/empty_autoinjector.jpg", "vitamin_b12": "images/vitamin_b12.jpg", "iron_sucrose": "images/iron_sucrose.jpg", "bone_density_stimulant": "images/bone_density_stimulant.jpg", "methylene_blue": "images/methylene_blue.jpg", "human_growth_hormone": "images/human_growth_hormone.jpg", "aniline": "images/aniline.jpg", "methanol": "images/methanol.jpg", "electrical_parts": "images/electrical_parts.jpg", "civilian_software": "images/civilian_software.jpg", "multi_bus_converter": "images/multi_bus_converter.jpg", "cpu_card": "images/cpu_card.jpg", "spoofing_asic_module": "images/spoofing_asic_module.jpg", "circuit_board": "images/circuit_board.jpg", "lq_base": "images/lq_base.jpg", "morphine_10": "images/morphine_10.jpg", "mq_base": "images/mq_base.jpg", "hq_base": "images/hq_base.jpg", "stabilized_msl": "images/stabilized_msl.jpg", "fenethylline": "images/fenethylline.jpg", "methylphenidate": "images/methylphenidate.jpg", "epo": "images/epo.jpg", "ori_12": "images/ori_12.jpg", "dt_0x": "images/dt_0x.jpg", "hpr_3s": "images/hpr_3s.jpg", "morphine": "images/morphine.jpg", "strychnine": "images/strychnine.jpg", "basic_tracking_tag": "images/basic_tracking_tag.jpg", "basic_hacking_tool": "images/basic_hacking_tool.jpg", "tracking_tag": "images/tracking_tag.jpg"};
+
+const STATIONS = {
+  lab_prod: 'Laboratory · Production',
+  lab_craft: 'Laboratory · Crafting',
+  elec: 'Electronics Workshop · Crafting'
+};
+
+const SHORT = {lab_prod:'Lab production', lab_craft:'Lab crafting', elec:'Electronics crafting'};
+
+// Every singular item. n = long name, s = short (inventory) name, cat/w = game category and weight, p = sell price, v = vendor seen
+const ITEMS = {
+  opium_gum: {n:'Opium Gum', s:'OGum', p:150, v:'Lab Rat'},
+  garden_lime: {n:'Garden Lime', s:'Lime', p:15, v:'Lab Rat'},
+  ammonium_chloride: {n:'Ammonium Chloride', s:'AmChl', p:45, v:'Lab Rat'},
+  purified_water: {n:'Purified Water', s:'PWat', p:30, v:'Lab Rat'},
+  citric_acid: {n:'Citric Acid', s:'CAcid', p:15, v:'Lab Rat'},
+  sulfuric_acid: {n:'Sulfuric Acid', s:'Acid', p:39, v:'Lab Rat'},
+  methylparaben: {n:'Methylparaben', s:'MePa', p:90, v:'Lab Rat'},
+  saline: {n:'Saline', s:'Saline', p:15, v:'Lab Rat'},
+  glucose: {n:'Glucose', s:'Gluc', p:15, v:'Lab Rat'},
+  theophylline: {n:'Theophylline', s:'Theoph', p:30, v:'Lab Rat'},
+  bromopyridine: {n:'Bromopyridine', s:'Brompyr', p:30, v:'Lab Rat'},
+  empty_autoinjector: {n:'Empty Autoinjector', s:'EAInj', p:15, v:'Lab Rat'},
+  vitamin_b12: {n:'Vitamin B12', s:'B12', p:30, v:'Lab Rat'},
+  iron_sucrose: {n:'Iron Sucrose', s:'IronSuc', p:30, v:'Lab Rat'},
+  bone_density_stimulant: {n:'Bone Density Stimulant', s:'BoneDS', p:30, v:'Lab Rat'},
+  methylene_blue: {n:'Methylene Blue', s:'Metblue', p:30, v:'Lab Rat'},
+  human_growth_hormone: {n:'Human Growth Hormone', s:'HGH', p:30, v:'Lab Rat'},
+  aniline: {n:'Aniline', s:'Anil', p:30, v:'Lab Rat'},
+  methanol: {n:'Methanol', s:'Methol', p:30, v:'Lab Rat'},
+  civilian_software: {n:'Civilian Software', s:'CivSoft', p:75, v:'Artisan'},
+  circuit_board: {n:'Circuit Board', s:'PCB', p:45, v:'Artisan'},
+  electrical_parts: {n:'Electrical Parts'},
+  multi_bus_converter: {n:'Multi-Bus Converter'},
+  cpu_card: {n:'CPU Card'},
+  spoofing_asic_module: {n:'Spoofing ASIC Module'},
+
+  lq_base: {n:'Low-Quality Morphine Base', cat:'Production Material', w:1.000},
+  mq_base: {n:'Medium-Quality Morphine Base', cat:'Production Material', w:1.000},
+  hq_base: {n:'High-Quality Morphine Base', cat:'Production Material', w:1.000},
+  morphine_10: {n:'10% Morphine Solution', s:'10MS', cat:'Laboratory Supplies', w:5.000, p:4000, v:'Lab Rat'},
+  stabilized_msl: {n:'Stabilized Morphine Sulfate Liquid', s:'StMSL', cat:'Laboratory Supplies', w:5.000, p:6000, v:'Lab Rat'},
+  morphine: {n:'Morphine', cat:'Stimulant', w:0.100},
+  fenethylline: {n:'Fenethylline', s:'Fenethyl', cat:'Stimulant', w:0.150, p:29, v:'Lab Rat'},
+  methylphenidate: {n:'Methylphenidate', s:'Methyl', cat:'Stimulant', w:0.050, p:63, v:'Lab Rat'},
+  epo: {n:'EPO', s:'EPO', cat:'Stimulant', w:0.100, p:219, v:'Lab Rat'},
+  ori_12: {n:'ORI-12', s:'ORI-12', cat:'Stimulant', w:0.100, p:255, v:'Lab Rat'},
+  dt_0x: {n:'DT-0X', s:'DT-0X', cat:'Stimulant', w:0.100, p:180, v:'Lab Rat'},
+  hpr_3s: {n:'HPR 3-S', s:'HpR 3-S', cat:'Stimulant', w:0.100, p:285, v:'Lab Rat'},
+  strychnine: {n:'Strychnine', s:'Strych', cat:'Stimulant', w:0.100, p:180, v:'Lab Rat'},
+  basic_tracking_tag: {n:'Basic Tracking Tag', cat:'Tracking Tag', w:0.007},
+  tracking_tag: {n:'Tracking Tag', cat:'Tracking Tag', w:0.015},
+  basic_hacking_tool: {n:'Basic Hacking Tool', s:'B Hack', cat:'Hacking Tool', w:1.000}
+};
+
+// secs = craft time in seconds; star marks a time provided by the user
+const RECIPES = [
+  {id:'lq_base', st:'lab_prod', t:'2h', secs:7200, ing:['opium_gum','garden_lime','ammonium_chloride','purified_water']},
+  {id:'mq_base', st:'lab_prod', t:'2h', secs:7200, ing:['opium_gum','garden_lime','ammonium_chloride','purified_water']},
+  {id:'hq_base', st:'lab_prod', t:'2h', secs:7200, ing:['opium_gum','garden_lime','ammonium_chloride','purified_water']},
+  {id:'morphine_10', st:'lab_prod', t:'5h 30m*', secs:19800, ing:['lq_base','citric_acid','purified_water']},
+  {id:'stabilized_msl', st:'lab_prod', t:'5h 30m', secs:19800, ing:['mq_base','sulfuric_acid','methylparaben','saline']},
+  {id:'fenethylline', st:'lab_craft', t:'1s', secs:1, ing:['glucose','theophylline']},
+  {id:'methylphenidate', st:'lab_craft', t:'1s', secs:1, ing:['glucose','bromopyridine']},
+  {id:'epo', st:'lab_craft', t:'1s', secs:1, ing:['empty_autoinjector','vitamin_b12','iron_sucrose']},
+  {id:'ori_12', st:'lab_craft', t:'1s', secs:1, ing:['empty_autoinjector','bone_density_stimulant']},
+  {id:'dt_0x', st:'lab_craft', t:'1s', secs:1, ing:['empty_autoinjector','methylene_blue']},
+  {id:'hpr_3s', st:'lab_craft', t:'1s', secs:1, ing:['empty_autoinjector','human_growth_hormone']},
+  {id:'morphine', st:'lab_craft', t:'1s', secs:1, ing:['empty_autoinjector','hq_base','saline']},
+  {id:'strychnine', st:'lab_craft', t:'1s', secs:1, ing:['empty_autoinjector','aniline','methanol']},
+  {id:'basic_tracking_tag', st:'elec', t:'1s', secs:1, ing:['electrical_parts','civilian_software']},
+  {id:'tracking_tag', st:'elec', t:'1s', secs:1, ing:['electrical_parts','civilian_software','circuit_board']},
+  {id:'basic_hacking_tool', st:'elec', t:'1s', secs:1, ing:['multi_bus_converter','cpu_card','spoofing_asic_module']}
+];
+
+const UNMATCHED = 'LHem ($63), SurKit ($195), Splint ($17), Ibalin ($7), Moxiflox ($37), KI ($18), Gauze ($2), Bandage ($9), SBand ($16), LBlood ($294), MBlood ($225), SBlood ($84), Ether ($90), Ethanol ($90), Chlor ($45), SodCar ($36), SodCit ($45), EDTA ($75), HAcid ($150), AcAnh ($75), SSteel ($45), PSU ($75), RAM ($90), EKLog ($9K), EWLog ($12K), MilSoft ($75), Pipette ($150), FPGA, DSE. Chlor = Chloroform, SodCar = Sodium Carbonate, SodCit = Sodium Citrate, EDTA = Edetate Disodium, HAcid = Hydrochloric Acid, AcAnh = Acetic Anhydride, Ethanol = Ethyl Alcohol. None of these is used in a recipe seen so far.';
+
+const byId = {};
+RECIPES.forEach(r => byId[r.id] = r);
+const esc = s => String(s).replace(/[&<>"]/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));
+const name = id => ITEMS[id].n;
+const ico = (id, cls) => `<span class="ico ${cls||''}">${IMG[id] ? `<img src="${IMG[id]}" alt="" loading="lazy">` : ''}</span>`;
+const price = id => ITEMS[id].p != null ? (ITEMS[id].r ? '~' : '') + '$' + ITEMS[id].p.toLocaleString('en-US') : null;
+
+/* used-in map */
+const usedIn = {};
+RECIPES.forEach(r => r.ing.forEach(i => (usedIn[i] = usedIn[i] || []).push(r.id)));
+
+/* ---------- tabs ---------- */
+const TABS = ['want','full','backend'];
+function showTab(t) {
+  if (!TABS.includes(t)) t = 'want';
+  TABS.forEach(k => {
+    const sel = k === t;
+    document.getElementById('t-' + k).setAttribute('aria-selected', sel);
+    document.getElementById('t-' + k).tabIndex = sel ? 0 : -1;
+    document.getElementById('v-' + k).hidden = !sel;
+  });
+}
+document.querySelectorAll('.tab').forEach(b => b.addEventListener('click', () => {
+  location.hash = b.dataset.tab; showTab(b.dataset.tab);
+}));
+document.querySelector('.tabs').addEventListener('keydown', e => {
+  const i = TABS.findIndex(k => document.getElementById('t-' + k).getAttribute('aria-selected') === 'true');
+  let n = null;
+  if (e.key === 'ArrowRight') n = (i + 1) % TABS.length;
+  if (e.key === 'ArrowLeft') n = (i + TABS.length - 1) % TABS.length;
+  if (n !== null) { location.hash = TABS[n]; showTab(TABS[n]); document.getElementById('t-' + TABS[n]).focus(); }
+});
+window.addEventListener('hashchange', () => showTab(location.hash.slice(1)));
+
+/* ---------- want list ---------- */
+const selected = new Set();
+const KEY = 'gzw-craft-overview:want';
+function saveSelection() {
+  try { localStorage.setItem(KEY, JSON.stringify([...selected])); } catch (e) {}
+}
+function buildPicker() {
+  const host = document.getElementById('want-picker');
+  host.innerHTML = Object.keys(STATIONS).map(st => `
+    <div class="group"><div class="group-label">${esc(STATIONS[st])}</div>
+    <div class="chips">${RECIPES.filter(r => r.st === st).map(r =>
+      `<button class="chip" aria-pressed="false" data-id="${r.id}">${esc(name(r.id))}</button>`).join('')}</div></div>`).join('');
+  try {
+    JSON.parse(localStorage.getItem(KEY) || '[]').forEach(id => { if (byId[id]) selected.add(id); });
+  } catch (e) {}
+  host.querySelectorAll('.chip').forEach(c => c.setAttribute('aria-pressed', selected.has(c.dataset.id)));
+  host.addEventListener('click', e => {
+    const b = e.target.closest('.chip'); if (!b) return;
+    const id = b.dataset.id;
+    selected.has(id) ? selected.delete(id) : selected.add(id);
+    b.setAttribute('aria-pressed', selected.has(id));
+    saveSelection();
+    renderWant();
+  });
+  document.getElementById('want-clear').addEventListener('click', () => {
+    selected.clear();
+    host.querySelectorAll('.chip').forEach(c => c.setAttribute('aria-pressed', 'false'));
+    saveSelection();
+    renderWant();
+  });
+}
+function expand(id, root, raw, made) {
+  byId[id].ing.forEach(i => {
+    if (byId[i]) {
+      (made[i] = made[i] || new Set()).add(root);
+      expand(i, root, raw, made);
+    } else {
+      (raw[i] = raw[i] || new Set()).add(root);
+    }
+  });
+}
+function renderWant() {
+  const n = selected.size;
+  document.getElementById('want-count').textContent = n ? n + ' selected' : 'None selected';
+  document.getElementById('want-clear').disabled = !n;
+  const host = document.getElementById('want-result');
+  if (!n) { host.innerHTML = '<div class="empty">Nothing selected yet. Pick what you want to make above to see the items to gather and stock.</div>'; return; }
+  const raw = {}, made = {};
+  selected.forEach(id => expand(id, id, raw, made));
+  const order = Object.keys(ITEMS);
+  const rawIds = Object.keys(raw).sort((a, b) => order.indexOf(a) - order.indexOf(b));
+  const madeIds = Object.keys(made).sort((a, b) => order.indexOf(a) - order.indexOf(b));
+  let html = `<h2>${rawIds.length} item${rawIds.length === 1 ? '' : 's'} to gather</h2><div class="grid">` +
+    rawIds.map(i => `<div class="card">${ico(i)}<div class="body"><div class="nm">${esc(name(i))}</div>` +
+      `<div class="for">for ${[...raw[i]].map(r => esc(name(r))).join(', ')}</div></div></div>`).join('') + '</div>';
+  if (madeIds.length) {
+    html += '<div class="crafted"><span>Crafted along the way:</span>' +
+      madeIds.map(i => `<span class="tag">${ico(i)}${esc(name(i))}</span>`).join('') + '</div>';
+  }
+  host.innerHTML = html;
+}
+
+/* ---------- full list ---------- */
+/* crafting cost = sum of ingredient sell prices; a crafted ingredient counts at its own sell value (listed as missing while that is unknown) */
+function craftCost(id) {
+  let sum = 0, priced = 0; const missing = [];
+  byId[id].ing.forEach(i => {
+    if (ITEMS[i].p != null) { sum += ITEMS[i].p; priced++; }
+    else missing.push(name(i));
+  });
+  return {sum, priced, missing};
+}
+const money = n => '$' + n.toLocaleString('en-US');
+function statsHtml(id) {
+  const c = craftCost(id);
+  const cost = c.priced ? money(c.sum) + (c.missing.length ? ' +' : '') : '–';
+  const val = ITEMS[id].p != null ? price(id) : '–';
+  const note = c.missing.length ? `<span class="stat-note">${c.priced ? 'Plus' : 'No price yet for'} ${c.missing.map(esc).join(', ')}</span>` : '';
+  return `<div class="stats">
+    <div class="stat"><span class="l">Crafting cost</span><span class="v ${c.priced ? '' : 'none'}">${cost}</span></div>
+    <div class="stat"><span class="l">Crafted value</span><span class="v ${ITEMS[id].p != null ? '' : 'none'}">${val}</span></div>${note}</div>`;
+}
+function renderFull() {
+  document.getElementById('full-list').innerHTML = Object.keys(STATIONS).map(st => `
+    <div class="station"><div class="group-label">${esc(STATIONS[st])}</div><div class="recipes">` +
+    RECIPES.filter(r => r.st === st).map(r => `
+      <div class="recipe"><div class="recipe-top">${ico(r.id)}<div class="ttl">${esc(name(r.id))}</div><span class="time">${esc(r.t)}</span></div>
+      <div class="ings">${r.ing.map(i => `<span class="ing ${byId[i] ? 'made' : ''}">${ico(i, 'sm')}${esc(name(i))}${byId[i] ? ' <small>crafted</small>' : ''}</span>`).join('')}</div>${statsHtml(r.id)}</div>`).join('')
+    + '</div></div>').join('');
+}
+
+/* ---------- backend ---------- */
+const COLS = [
+  {k:'n', h:'Item', get: id => name(id).toLowerCase()},
+  {k:'s', h:'Short name', get: id => (ITEMS[id].s || '').toLowerCase()},
+  {k:'type', h:'Type', get: id => typeOf(id)},
+  {k:'cat', h:'Category', get: id => ITEMS[id].cat || ''},
+  {k:'w', h:'Weight', get: id => ITEMS[id].w ?? -1},
+  {k:'made', h:'Made at', get: id => byId[id] ? SHORT[byId[id].st] : ''},
+  {k:'time', h:'Craft time', get: id => byId[id] ? byId[id].secs : -1},
+  {k:'p', h:'Sell price', get: id => ITEMS[id].p ?? -1},
+  {k:'rec', h:'Recipe', get: id => byId[id] ? byId[id].ing.length : -1, nosort: true},
+  {k:'used', h:'Used in', get: id => (usedIn[id] || []).length}
+];
+function typeOf(id) {
+  const prod = !!byId[id], ing = !!usedIn[id];
+  return prod && ing ? 'Product + ingredient' : prod ? 'Product' : 'Ingredient';
+}
+let sortKey = 'type', sortDir = 1;
+function renderBackend() {
+  const q = document.getElementById('be-search').value.trim().toLowerCase();
+  const tf = document.getElementById('be-type').value;
+  let ids = Object.keys(ITEMS).filter(id => {
+    const t = typeOf(id);
+    if (tf === 'product' && !byId[id]) return false;
+    if (tf === 'ingredient' && !usedIn[id]) return false;
+    if (q && !(name(id).toLowerCase().includes(q) || (ITEMS[id].s || '').toLowerCase().includes(q))) return false;
+    return true;
+  });
+  const col = COLS.find(c => c.k === sortKey);
+  const order = Object.keys(ITEMS);
+  ids.sort((a, b) => {
+    let x = col.get(a), y = col.get(b);
+    if (x < y) return -1 * sortDir; if (x > y) return 1 * sortDir;
+    return order.indexOf(a) - order.indexOf(b);
+  });
+  const th = COLS.map(c => `<th data-k="${c.k}" class="${c.nosort ? 'nosort' : ''}" ${c.k === sortKey ? `aria-sort="${sortDir > 0 ? 'ascending' : 'descending'}"` : ''}>${c.h}</th>`).join('');
+  const dash = '<span class="dim">–</span>';
+  const rows = ids.map(id => {
+    const it = ITEMS[id], r = byId[id];
+    const list = arr => arr && arr.length ? `<div class="list">${arr.map(x => `<span>${esc(name(x))}</span>`).join('')}</div>` : dash;
+    return `<tr>
+      <td class="item"><div class="in">${ico(id, 'sm')}<span>${esc(it.n)}</span></div></td>
+      <td class="mono">${it.s ? esc(it.s) : dash}</td>
+      <td>${typeOf(id)}</td>
+      <td>${it.cat ? esc(it.cat) : dash}</td>
+      <td class="num">${it.w != null ? it.w.toFixed(3) + ' kg' : dash}</td>
+      <td>${r ? esc(SHORT[r.st]) : 'Raw item'}</td>
+      <td class="num">${r ? esc(r.t) : dash}</td>
+      <td class="num">${it.p != null ? price(id) + ' <span class="dim" style="font-size:.8em">' + esc(it.v) + '</span>' : dash}</td>
+      <td>${r ? list(r.ing) : dash}</td>
+      <td>${list(usedIn[id])}</td></tr>`;
+  }).join('');
+  document.getElementById('be-table').innerHTML = `<thead><tr>${th}</tr></thead><tbody>${rows || '<tr><td colspan="10" class="dim">No items match.</td></tr>'}</tbody>`;
+}
+document.getElementById('be-table').addEventListener('click', e => {
+  const h = e.target.closest('th'); if (!h || h.classList.contains('nosort')) return;
+  if (sortKey === h.dataset.k) sortDir = -sortDir; else { sortKey = h.dataset.k; sortDir = 1; }
+  renderBackend();
+});
+document.getElementById('be-search').addEventListener('input', renderBackend);
+document.getElementById('be-type').addEventListener('change', renderBackend);
+
+/* ---------- start ---------- */
+document.getElementById('unmatched').textContent = UNMATCHED;
+buildPicker(); renderWant(); renderFull(); renderBackend();
+showTab(location.hash.slice(1));
+</script>
+</body>
+</html>
