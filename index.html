@@ -433,10 +433,10 @@ function renderFull() {
 const COLS = [
   {k:'n', h:'Item', get: id => name(id).toLowerCase()},
   {k:'s', h:'Short name', get: id => (ITEMS[id].s || '').toLowerCase()},
-  {k:'type', h:'Type', get: id => typeOf(id)},
-  {k:'cat', h:'Category', get: id => ITEMS[id].cat || ''},
+  {k:'type', h:'Type', hide:true, get: id => typeOf(id)},
+  {k:'cat', h:'Category', hide:true, get: id => ITEMS[id].cat || ''},
   {k:'w', h:'Weight', get: id => ITEMS[id].w ?? -1},
-  {k:'made', h:'Made at', get: id => byId[id] ? SHORT[byId[id].st] : ''},
+  {k:'made', h:'Made at', hide:true, get: id => byId[id] ? SHORT[byId[id].st] : ''},
   {k:'time', h:'Craft time', get: id => byId[id] ? byId[id].secs : -1},
   {k:'p', h:'Sell price', get: id => ITEMS[id].p ?? -1},
   {k:'rec', h:'Recipe', get: id => byId[id] ? byId[id].ing.length : -1, nosort: true},
@@ -464,7 +464,7 @@ function renderBackend() {
     if (x < y) return -1 * sortDir; if (x > y) return 1 * sortDir;
     return order.indexOf(a) - order.indexOf(b);
   });
-  const th = COLS.map(c => `<th data-k="${c.k}" class="${c.nosort ? 'nosort' : ''}" ${c.k === sortKey ? `aria-sort="${sortDir > 0 ? 'ascending' : 'descending'}"` : ''}>${c.h}</th>`).join('');
+  const th = COLS.filter(c => !c.hide).map(c => `<th data-k="${c.k}" class="${c.nosort ? 'nosort' : ''}" ${c.k === sortKey ? `aria-sort="${sortDir > 0 ? 'ascending' : 'descending'}"` : ''}>${c.h}</th>`).join('');
   const dash = '<span class="dim">–</span>';
   const rows = ids.map(id => {
     const it = ITEMS[id], r = byId[id];
@@ -472,16 +472,13 @@ function renderBackend() {
     return `<tr>
       <td class="item"><div class="in">${ico(id, 'sm')}<span>${esc(it.n)}</span></div></td>
       <td class="mono">${it.s ? esc(it.s) : dash}</td>
-      <td>${typeOf(id)}</td>
-      <td>${it.cat ? esc(it.cat) : dash}</td>
       <td class="num">${it.w != null ? it.w.toFixed(3) + ' kg' : dash}</td>
-      <td>${r ? esc(SHORT[r.st]) : 'Raw item'}</td>
       <td class="num">${r ? esc(r.t) : dash}</td>
       <td class="num">${it.p != null ? price(id) + ' <span class="dim" style="font-size:.8em">' + esc(it.v) + '</span>' : dash}</td>
       <td>${r ? list(r.ing) : dash}</td>
       <td>${list(usedIn[id])}</td></tr>`;
   }).join('');
-  document.getElementById('be-table').innerHTML = `<thead><tr>${th}</tr></thead><tbody>${rows || '<tr><td colspan="10" class="dim">No items match.</td></tr>'}</tbody>`;
+  document.getElementById('be-table').innerHTML = `<thead><tr>${th}</tr></thead><tbody>${rows || '<tr><td colspan="7" class="dim">No items match.</td></tr>'}</tbody>`;
 }
 document.getElementById('be-table').addEventListener('click', e => {
   const h = e.target.closest('th'); if (!h || h.classList.contains('nosort')) return;
