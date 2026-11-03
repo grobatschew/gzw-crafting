@@ -79,6 +79,10 @@
     "125718",
     "125720",
     "125723 (vendor views with the disassembly components in a Rush 72 2.0 backpack)"
+   ],
+   "2026-11-03 18:48 and 20:07 batches (locker views at all 7 vendors)": [
+    "20261103184818 (laboratory locker), 184820, 184821_1, 184821_2, 184823, 184824, 184825, 184826 (weapons/ammo locker, HQMB)",
+    "20261103200749 (names), 200755, 200757, 200759, 200802, 200805, 200808, 200811"
    ]
   },
   "note_truncated_names": "FAST\u2026, BCM M\u2026, AK CR\u2026, AK GA\u2026, G36 12\u2026 are truncated by the game UI; full names unknown"
@@ -126,7 +130,8 @@
   "PCB": "Circuit Board",
   "EKLog": "Encryption Key Drive",
   "FPGA": "FPGA Module",
-  "IncrDD": "Incriminating Data Drive"
+  "IncrDD": "Incriminating Data Drive",
+  "HQMB": "High-Quality Morphine Base"
  },
  "checked_items": [
   "B12",
@@ -206,7 +211,12 @@
   "EWLog",
   "DSE",
   "FPGA",
-  "PCB"
+  "PCB",
+  "HQMB",
+  "GRing",
+  "GCCard",
+  "LPhone",
+  "DriBit"
  ],
  "prices": [
   {
@@ -1632,6 +1642,174 @@
    "shown": "$900",
    "value": 900,
    "src": "20261103125705-125723"
+  },
+  {
+   "vendor": "Lab Rat",
+   "item": "HQMB",
+   "shown": "$3K",
+   "value": 3000,
+   "src": "20261103184818-200811"
+  },
+  {
+   "vendor": "Vulture",
+   "item": "HQMB",
+   "shown": "$3K",
+   "value": 3000,
+   "src": "20261103184818-200811"
+  },
+  {
+   "vendor": "Handshake",
+   "item": "GRing",
+   "shown": "$615",
+   "value": 615,
+   "src": "20261103184818-200811"
+  },
+  {
+   "vendor": "Gunny",
+   "item": "GRing",
+   "shown": "$615",
+   "value": 615,
+   "src": "20261103184818-200811"
+  },
+  {
+   "vendor": "Lab Rat",
+   "item": "GRing",
+   "shown": "$615",
+   "value": 615,
+   "src": "20261103184818-200811"
+  },
+  {
+   "vendor": "Artisan",
+   "item": "GRing",
+   "shown": "$615",
+   "value": 615,
+   "src": "20261103184818-200811"
+  },
+  {
+   "vendor": "Turncoat",
+   "item": "GRing",
+   "shown": "$820",
+   "value": 820,
+   "src": "20261103184818-200811"
+  },
+  {
+   "vendor": "Banshee",
+   "item": "GRing",
+   "shown": "$615",
+   "value": 615,
+   "src": "20261103184818-200811"
+  },
+  {
+   "vendor": "Vulture",
+   "item": "GRing",
+   "shown": "$656",
+   "value": 656,
+   "src": "20261103184818-200811"
+  },
+  {
+   "vendor": "Handshake",
+   "item": "GCCard",
+   "shown": "$1.6K",
+   "value": 1600,
+   "src": "20261103184818-200811"
+  },
+  {
+   "vendor": "Gunny",
+   "item": "GCCard",
+   "shown": "$1.6K",
+   "value": 1600,
+   "src": "20261103184818-200811"
+  },
+  {
+   "vendor": "Lab Rat",
+   "item": "GCCard",
+   "shown": "$1.6K",
+   "value": 1600,
+   "src": "20261103184818-200811"
+  },
+  {
+   "vendor": "Artisan",
+   "item": "GCCard",
+   "shown": "$2.2K",
+   "value": 2200,
+   "src": "20261103184818-200811"
+  },
+  {
+   "vendor": "Turncoat",
+   "item": "GCCard",
+   "shown": "$1.6K",
+   "value": 1600,
+   "src": "20261103184818-200811"
+  },
+  {
+   "vendor": "Banshee",
+   "item": "GCCard",
+   "shown": "$1.6K",
+   "value": 1600,
+   "src": "20261103184818-200811"
+  },
+  {
+   "vendor": "Vulture",
+   "item": "GCCard",
+   "shown": "$1.8K",
+   "value": 1800,
+   "src": "20261103184818-200811"
+  },
+  {
+   "vendor": "Handshake",
+   "item": "LPhone",
+   "shown": "$750",
+   "value": 750,
+   "src": "20261103184818-200811"
+  },
+  {
+   "vendor": "Gunny",
+   "item": "LPhone",
+   "shown": "$750",
+   "value": 750,
+   "src": "20261103184818-200811"
+  },
+  {
+   "vendor": "Lab Rat",
+   "item": "LPhone",
+   "shown": "$1K",
+   "value": 1000,
+   "src": "20261103184818-200811"
+  },
+  {
+   "vendor": "Artisan",
+   "item": "LPhone",
+   "shown": "$750",
+   "value": 750,
+   "src": "20261103184818-200811"
+  },
+  {
+   "vendor": "Turncoat",
+   "item": "LPhone",
+   "shown": "$750",
+   "value": 750,
+   "src": "20261103184818-200811"
+  },
+  {
+   "vendor": "Banshee",
+   "item": "LPhone",
+   "shown": "$750",
+   "value": 750,
+   "src": "20261103184818-200811"
+  },
+  {
+   "vendor": "Vulture",
+   "item": "LPhone",
+   "shown": "$800",
+   "value": 800,
+   "src": "20261103184818-200811"
+  },
+  {
+   "vendor": "Artisan",
+   "item": "DriBit",
+   "shown": "$60",
+   "value": 60,
+   "src": "20261103184818-200811"
   }
  ],
  "disassembly": [
