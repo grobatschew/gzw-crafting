@@ -54,8 +54,19 @@
     "20261103093205_1",
     "20261103093212_1",
     "20261103093226_1"
+   ],
+   "2026-11-03 12:16 batch (all vendors, locker view)": [
+    "20261103121614_1",
+    "20261103121616_1",
+    "20261103121617_1",
+    "20261103121619_1",
+    "20261103121620_1",
+    "20261103121621_1",
+    "20261103121622_1",
+    "20261103121624_1 (names)"
    ]
-  }
+  },
+  "note_truncated_names": "FAST\u2026, BCM M\u2026, AK CR\u2026, AK GA\u2026, G36 12\u2026 are truncated by the game UI; full names unknown"
  },
  "long_names": {
   "StMSL": "Stabilized Morphine Sulfate Liquid",
@@ -97,7 +108,8 @@
   "EDTA": "Edetate Disodium",
   "HAcid": "Hydrochloric Acid",
   "AcAnh": "Acetic Anhydride",
-  "PCB": "Circuit Board"
+  "PCB": "Circuit Board",
+  "Crusher 2": "Crusher (second variant)"
  },
  "checked_items": [
   "B12",
@@ -160,7 +172,20 @@
   "SurKit",
   "SutKit",
   "TacRad",
-  "Wallet"
+  "Wallet",
+  "M-Lok 3",
+  "FAST\u2026",
+  "BCM M\u2026",
+  "G36 Stock",
+  "AK CR\u2026",
+  "AK GA\u2026",
+  "G36 HG",
+  "G36 12\u2026",
+  "Crusher 2",
+  "HF2 Hut",
+  "Ring",
+  "BLPhone",
+  "DriverLic"
  ],
  "prices": [
   {
@@ -1072,6 +1097,398 @@
    "shown": "$150",
    "value": 150,
    "src": "earlier screenshots (2026-11-02); other vendors not checked for this item"
+  },
+  {
+   "vendor": "Gunny",
+   "item": "M-Lok 3",
+   "shown": "$8",
+   "value": 8,
+   "src": "20261103121614-121624"
+  },
+  {
+   "vendor": "Artisan",
+   "item": "M-Lok 3",
+   "shown": "$8",
+   "value": 8,
+   "src": "20261103121614-121624"
+  },
+  {
+   "vendor": "Turncoat",
+   "item": "M-Lok 3",
+   "shown": "$8",
+   "value": 8,
+   "src": "20261103121614-121624"
+  },
+  {
+   "vendor": "Banshee",
+   "item": "M-Lok 3",
+   "shown": "$8",
+   "value": 8,
+   "src": "20261103121614-121624"
+  },
+  {
+   "vendor": "Gunny",
+   "item": "FAST\u2026",
+   "shown": "$354",
+   "value": 354,
+   "src": "20261103121614-121624"
+  },
+  {
+   "vendor": "Artisan",
+   "item": "FAST\u2026",
+   "shown": "$354",
+   "value": 354,
+   "src": "20261103121614-121624"
+  },
+  {
+   "vendor": "Turncoat",
+   "item": "FAST\u2026",
+   "shown": "$354",
+   "value": 354,
+   "src": "20261103121614-121624"
+  },
+  {
+   "vendor": "Banshee",
+   "item": "FAST\u2026",
+   "shown": "$354",
+   "value": 354,
+   "src": "20261103121614-121624"
+  },
+  {
+   "vendor": "Gunny",
+   "item": "BCM M\u2026",
+   "shown": "$174",
+   "value": 174,
+   "src": "20261103121614-121624"
+  },
+  {
+   "vendor": "Artisan",
+   "item": "BCM M\u2026",
+   "shown": "$174",
+   "value": 174,
+   "src": "20261103121614-121624"
+  },
+  {
+   "vendor": "Turncoat",
+   "item": "BCM M\u2026",
+   "shown": "$174",
+   "value": 174,
+   "src": "20261103121614-121624"
+  },
+  {
+   "vendor": "Banshee",
+   "item": "BCM M\u2026",
+   "shown": "$174",
+   "value": 174,
+   "src": "20261103121614-121624"
+  },
+  {
+   "vendor": "Gunny",
+   "item": "G36 Stock",
+   "shown": "$95",
+   "value": 95,
+   "src": "20261103121614-121624"
+  },
+  {
+   "vendor": "Artisan",
+   "item": "G36 Stock",
+   "shown": "$95",
+   "value": 95,
+   "src": "20261103121614-121624"
+  },
+  {
+   "vendor": "Turncoat",
+   "item": "G36 Stock",
+   "shown": "$95",
+   "value": 95,
+   "src": "20261103121614-121624"
+  },
+  {
+   "vendor": "Banshee",
+   "item": "G36 Stock",
+   "shown": "$95",
+   "value": 95,
+   "src": "20261103121614-121624"
+  },
+  {
+   "vendor": "Gunny",
+   "item": "AK CR\u2026",
+   "shown": "$121",
+   "value": 121,
+   "src": "20261103121614-121624"
+  },
+  {
+   "vendor": "Artisan",
+   "item": "AK CR\u2026",
+   "shown": "$121",
+   "value": 121,
+   "src": "20261103121614-121624"
+  },
+  {
+   "vendor": "Turncoat",
+   "item": "AK CR\u2026",
+   "shown": "$121",
+   "value": 121,
+   "src": "20261103121614-121624"
+  },
+  {
+   "vendor": "Banshee",
+   "item": "AK CR\u2026",
+   "shown": "$121",
+   "value": 121,
+   "src": "20261103121614-121624"
+  },
+  {
+   "vendor": "Gunny",
+   "item": "AK GA\u2026",
+   "shown": "$102",
+   "value": 102,
+   "src": "20261103121614-121624"
+  },
+  {
+   "vendor": "Artisan",
+   "item": "AK GA\u2026",
+   "shown": "$102",
+   "value": 102,
+   "src": "20261103121614-121624"
+  },
+  {
+   "vendor": "Turncoat",
+   "item": "AK GA\u2026",
+   "shown": "$102",
+   "value": 102,
+   "src": "20261103121614-121624"
+  },
+  {
+   "vendor": "Banshee",
+   "item": "AK GA\u2026",
+   "shown": "$102",
+   "value": 102,
+   "src": "20261103121614-121624"
+  },
+  {
+   "vendor": "Gunny",
+   "item": "G36 HG",
+   "shown": "$142",
+   "value": 142,
+   "src": "20261103121614-121624"
+  },
+  {
+   "vendor": "Artisan",
+   "item": "G36 HG",
+   "shown": "$142",
+   "value": 142,
+   "src": "20261103121614-121624"
+  },
+  {
+   "vendor": "Turncoat",
+   "item": "G36 HG",
+   "shown": "$142",
+   "value": 142,
+   "src": "20261103121614-121624"
+  },
+  {
+   "vendor": "Banshee",
+   "item": "G36 HG",
+   "shown": "$142",
+   "value": 142,
+   "src": "20261103121614-121624"
+  },
+  {
+   "vendor": "Gunny",
+   "item": "G36 12\u2026",
+   "shown": "$138",
+   "value": 138,
+   "src": "20261103121614-121624"
+  },
+  {
+   "vendor": "Artisan",
+   "item": "G36 12\u2026",
+   "shown": "$138",
+   "value": 138,
+   "src": "20261103121614-121624"
+  },
+  {
+   "vendor": "Turncoat",
+   "item": "G36 12\u2026",
+   "shown": "$138",
+   "value": 138,
+   "src": "20261103121614-121624"
+  },
+  {
+   "vendor": "Banshee",
+   "item": "G36 12\u2026",
+   "shown": "$138",
+   "value": 138,
+   "src": "20261103121614-121624"
+  },
+  {
+   "vendor": "Handshake",
+   "item": "Crusher 2",
+   "shown": "$2.8K",
+   "value": 2800,
+   "src": "20261103121614-121624"
+  },
+  {
+   "vendor": "Turncoat",
+   "item": "Crusher 2",
+   "shown": "$2.8K",
+   "value": 2800,
+   "src": "20261103121614-121624"
+  },
+  {
+   "vendor": "Artisan",
+   "item": "HF2 Hut",
+   "shown": "$60",
+   "value": 60,
+   "src": "20261103121614-121624"
+  },
+  {
+   "vendor": "Handshake",
+   "item": "Ring",
+   "shown": "$112",
+   "value": 112,
+   "src": "20261103121614-121624"
+  },
+  {
+   "vendor": "Gunny",
+   "item": "Ring",
+   "shown": "$112",
+   "value": 112,
+   "src": "20261103121614-121624"
+  },
+  {
+   "vendor": "Lab Rat",
+   "item": "Ring",
+   "shown": "$112",
+   "value": 112,
+   "src": "20261103121614-121624"
+  },
+  {
+   "vendor": "Artisan",
+   "item": "Ring",
+   "shown": "$112",
+   "value": 112,
+   "src": "20261103121614-121624"
+  },
+  {
+   "vendor": "Turncoat",
+   "item": "Ring",
+   "shown": "$150",
+   "value": 150,
+   "src": "20261103121614-121624"
+  },
+  {
+   "vendor": "Banshee",
+   "item": "Ring",
+   "shown": "$112",
+   "value": 112,
+   "src": "20261103121614-121624"
+  },
+  {
+   "vendor": "Vulture",
+   "item": "Ring",
+   "shown": "$120",
+   "value": 120,
+   "src": "20261103121614-121624"
+  },
+  {
+   "vendor": "Handshake",
+   "item": "BLPhone",
+   "shown": "$1.1K",
+   "value": 1100,
+   "src": "20261103121614-121624"
+  },
+  {
+   "vendor": "Gunny",
+   "item": "BLPhone",
+   "shown": "$1.1K",
+   "value": 1100,
+   "src": "20261103121614-121624"
+  },
+  {
+   "vendor": "Lab Rat",
+   "item": "BLPhone",
+   "shown": "$1.5K",
+   "value": 1500,
+   "src": "20261103121614-121624"
+  },
+  {
+   "vendor": "Artisan",
+   "item": "BLPhone",
+   "shown": "$1.1K",
+   "value": 1100,
+   "src": "20261103121614-121624"
+  },
+  {
+   "vendor": "Turncoat",
+   "item": "BLPhone",
+   "shown": "$1.1K",
+   "value": 1100,
+   "src": "20261103121614-121624"
+  },
+  {
+   "vendor": "Banshee",
+   "item": "BLPhone",
+   "shown": "$1.1K",
+   "value": 1100,
+   "src": "20261103121614-121624"
+  },
+  {
+   "vendor": "Vulture",
+   "item": "BLPhone",
+   "shown": "$1.2K",
+   "value": 1200,
+   "src": "20261103121614-121624"
+  },
+  {
+   "vendor": "Handshake",
+   "item": "DriverLic",
+   "shown": "$350",
+   "value": 350,
+   "src": "20261103121614-121624"
+  },
+  {
+   "vendor": "Gunny",
+   "item": "DriverLic",
+   "shown": "$262",
+   "value": 262,
+   "src": "20261103121614-121624"
+  },
+  {
+   "vendor": "Lab Rat",
+   "item": "DriverLic",
+   "shown": "$262",
+   "value": 262,
+   "src": "20261103121614-121624"
+  },
+  {
+   "vendor": "Artisan",
+   "item": "DriverLic",
+   "shown": "$262",
+   "value": 262,
+   "src": "20261103121614-121624"
+  },
+  {
+   "vendor": "Turncoat",
+   "item": "DriverLic",
+   "shown": "$262",
+   "value": 262,
+   "src": "20261103121614-121624"
+  },
+  {
+   "vendor": "Banshee",
+   "item": "DriverLic",
+   "shown": "$350",
+   "value": 350,
+   "src": "20261103121614-121624"
+  },
+  {
+   "vendor": "Vulture",
+   "item": "DriverLic",
+   "shown": "$280",
+   "value": 280,
+   "src": "20261103121614-121624"
   }
  ]
 }
