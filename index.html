@@ -583,7 +583,7 @@ function vsmRows() {
     const id = shortToId[k];
     const long = id ? ITEMS[id].n : (VP.long_names[k] || null);
     return {k, id, long, cells, best, bestVendors, unsure, craft: !!id};
-  });
+  }).sort((a, b) => (b.best ?? -1) - (a.best ?? -1));
 }
 const VSM = vsmRows();
 const vpSlug = k => k.toLowerCase().replace(/[^a-z0-9]+/g, '_').replace(/^_|_$/g, '');
