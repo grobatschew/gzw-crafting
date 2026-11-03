@@ -114,15 +114,18 @@ h2 { font-family: var(--font-display); font-weight: 600; font-size: 1.35rem; let
 .empty { color: var(--muted); padding: 22px; border: 1px dashed var(--border); border-radius: 6px; text-align: center; }
 .grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(230px, 1fr)); gap: 10px; }
 .card { display: flex; gap: 12px; align-items: center; background: var(--surface); border: 1px solid var(--border); border-radius: 6px; padding: 10px; min-width: 0; }
-.ico { flex: none; width: 72px; height: 60px; background: var(--tile); border: 1px solid var(--tile-border); border-radius: 4px; display: grid; place-items: center; overflow: hidden; }
+.ico { position: relative; flex: none; width: 72px; height: 60px; background: var(--tile); border: 1px solid var(--tile-border); border-radius: 4px; display: grid; place-items: center; overflow: hidden; }
+.ico .sn { position: absolute; left: 0; right: 0; bottom: 0; padding: 1px 3px; background: rgba(0,0,0,0.68); color: #fff; font: 500 0.66rem/1.25 var(--font-mono); text-align: center; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+.ico.sm .sn, .tag .ico .sn { font-size: 0.58rem; padding: 0 2px; }
 .ico img { max-width: 100%; max-height: 100%; object-fit: contain; display: block; }
-.ico.sm { width: 34px; height: 28px; }
+.ico:has(.sn) img { max-height: calc(100% - 12px); margin-bottom: 12px; }
+.ico.sm { width: 54px; height: 44px; }
 .card .body { min-width: 0; }
 .card .nm { font-weight: 600; }
 .card .for { color: var(--muted); font-size: 0.82rem; }
 .crafted { margin-top: 14px; display: flex; flex-wrap: wrap; gap: 6px 10px; align-items: center; color: var(--muted); font-size: 0.9rem; }
 .tag { display: inline-flex; align-items: center; gap: 6px; background: var(--warn-soft); color: var(--warn); border-radius: 4px; padding: 2px 8px 2px 3px; font-size: 0.85rem; font-weight: 500; }
-.tag .ico { width: 28px; height: 22px; border-radius: 3px; }
+.tag .ico { width: 54px; height: 44px; border-radius: 3px; }
 
 /* full list */
 .station { margin-bottom: 26px; }
@@ -264,8 +267,8 @@ const ITEMS = {
   cpu_card: {n:'CPU Card'},
   spoofing_asic_module: {n:'Spoofing ASIC Module'},
 
-  lq_base: {n:'Low-Quality Morphine Base', cat:'Production Material', w:1.000},
-  mq_base: {n:'Medium-Quality Morphine Base', cat:'Production Material', w:1.000},
+  lq_base: {n:'Low-Quality Morphine Base', cat:'Production Material', w:1.000, p:2000, v:'Lab Rat'},
+  mq_base: {n:'Medium-Quality Morphine Base', cat:'Production Material', w:1.000, p:2500, v:'Vulture'},
   hq_base: {n:'High-Quality Morphine Base', cat:'Production Material', w:1.000},
   morphine_10: {n:'10% Morphine Solution', s:'10MS', cat:'Laboratory Supplies', w:5.000, p:4000, v:'Lab Rat'},
   stabilized_msl: {n:'Stabilized Morphine Sulfate Liquid', s:'StMSL', cat:'Laboratory Supplies', w:5.000, p:6000, v:'Lab Rat'},
@@ -306,9 +309,13 @@ const UNMATCHED = 'LHem ($63), SurKit ($195), Splint ($17), Ibalin ($7), Moxiflo
 
 const byId = {};
 RECIPES.forEach(r => byId[r.id] = r);
+/* one-off hand-ins: n crafts of a recipe for a fixed payout */
+const QUESTS = [
+  {of:'morphine_10', n:5, st:'lab_prod', label:'Lab Rat quest', payout:30000}
+];
 const esc = s => String(s).replace(/[&<>"]/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));
 const name = id => ITEMS[id].n;
-const ico = (id, cls) => `<span class="ico ${cls||''}">${IMG[id] ? `<img src="${IMG[id]}" alt="" loading="lazy">` : ''}</span>`;
+const ico = (id, cls) => `<span class="ico ${cls||''}">${IMG[id] ? `<img src="${IMG[id]}" alt="" loading="lazy">` : ''}${ITEMS[id].s ? `<span class="sn">${esc(ITEMS[id].s)}</span>` : ''}</span>`;
 const price = id => ITEMS[id].p != null ? (ITEMS[id].r ? '~' : '') + '$' + ITEMS[id].p.toLocaleString('en-US') : null;
 
 /* used-in map */
@@ -420,12 +427,29 @@ function statsHtml(id) {
     <div class="stat"><span class="l">Crafting cost</span><span class="v ${c.priced ? '' : 'none'}">${cost}</span></div>
     <div class="stat"><span class="l">Crafted value</span><span class="v ${ITEMS[id].p != null ? '' : 'none'}">${val}</span></div>${note}</div>`;
 }
+const money2 = n => (n < 0 ? '−' : '+') + '$' + Math.abs(n).toLocaleString('en-US');
+function fmtSecs(s) { const h = Math.floor(s / 3600), m = Math.floor(s % 3600 / 60); return h + 'h' + (m ? ' ' + m + 'm' : ''); }
+function questHtml(q) {
+  const r = byId[q.of], c = craftCost(q.of);
+  const cost = c.sum * q.n, secs = r.secs * q.n, profit = q.payout - cost;
+  const perH = Math.round(profit / (secs / 3600));
+  const star = r.t.includes('*') ? '*' : '';
+  return `<div class="recipe quest"><div class="recipe-top">${ico(q.of)}<div class="ttl">${esc(name(q.of))} ×${q.n}<br><small class="dim">${esc(q.label)} hand-in</small></div><span class="time">${fmtSecs(secs)}${star}</span></div>
+    <div class="ings">${r.ing.map(i => `<span class="ing ${byId[i] ? 'made' : ''}">${ico(i, 'sm')}${esc(name(i))} ×${q.n}${byId[i] ? ' <small>crafted</small>' : ''}</span>`).join('')}</div>
+    <div class="stats">
+      <div class="stat"><span class="l">Crafting cost</span><span class="v">${money(cost)}</span></div>
+      <div class="stat"><span class="l">Quest payout</span><span class="v">${money(q.payout)}</span></div>
+      <div class="stat"><span class="l">Profit</span><span class="v">${money2(profit)}</span></div>
+      <div class="stat"><span class="l">Profit / hour</span><span class="v">≈ ${money2(perH)}/h</span></div>
+      <span class="stat-note">${q.n} crafts run one after another. Cost counts each Low-Quality base at its sell value.</span></div></div>`;
+}
 function renderFull() {
   document.getElementById('full-list').innerHTML = Object.keys(STATIONS).map(st => `
     <div class="station"><div class="group-label">${esc(STATIONS[st])}</div><div class="recipes">` +
     RECIPES.filter(r => r.st === st).map(r => `
       <div class="recipe"><div class="recipe-top">${ico(r.id)}<div class="ttl">${esc(name(r.id))}</div><span class="time">${esc(r.t)}</span></div>
       <div class="ings">${r.ing.map(i => `<span class="ing ${byId[i] ? 'made' : ''}">${ico(i, 'sm')}${esc(name(i))}${byId[i] ? ' <small>crafted</small>' : ''}</span>`).join('')}</div>${statsHtml(r.id)}</div>`).join('')
+    + QUESTS.filter(q => q.st === st).map(questHtml).join('')
     + '</div></div>').join('');
 }
 
