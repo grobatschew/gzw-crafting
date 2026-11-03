@@ -81,6 +81,8 @@ Match basis: A = abbreviation clearly derives from the long name AND icon matche
 | (no short name seen) | Medium-Quality Morphine Base | $2,500 (shown as $2.5K at Vulture; label on item reads "MORPH. MED Q") | A (item label) |
 | Morph | Morphine (injector) | $135 (Lab Rat) | A |
 | HQMB | High-Quality Morphine Base | $3,000 (shown as $3K at Lab Rat and Vulture) | 2026-11-03 18:48/20:07 batch |
+| DSLog | Deep-Space Observation Data Drive (RSP disassembly) | $12K at Handshake, Gunny, Lab Rat, Artisan, Turncoat, Banshee; Vulture cut off ($12.…) | 20:46 batch |
+| DPBoard | High-Speed Digital Processor Board (RSP disassembly) | $1.2K at Lab Rat only | 20:46 batch |
 | GRing | (short name only) | $615 at most vendors, Turncoat $820, Vulture $656 | 20:07 batch |
 | GCCard | (short name only) | $1.6K at most vendors, Artisan $2.2K, Vulture $1.8K | 20:07 batch |
 | LPhone | (short name only) | $750 at most vendors, Lab Rat $1K, Vulture $800 | 20:07 batch |
@@ -101,7 +103,7 @@ Gear seen without a visible price or no match attempted: Steel, Rush (backpack),
 
 Strychnine $180, HPR 3-S $285, ORI-12 $255, EPO $219, DT-0X $180 (locker view). Morphine ($135 at Lab Rat) was found in the 2026-11-03 locker views. LHem ($63, injector-looking item in locker) has no recipe and stays unmapped.
 
-## Images analyzed (96)
+## Images analyzed (112)
 
 Production/crafting: 20261102142056, 142059, 142100, 142102, 142104, 142109, 142110, 142112, 142113, 142116, 142117, 142121, 142123, 142127, 142129, 142131 (all `_1.jpg`)
 
@@ -141,7 +143,7 @@ Other findings: EKLog, IncrDD (new), EWLog $12K (Vulture price cut off in the sc
 
 ## Vendor price tracking
 
-Full per-vendor price data is in `vendor_prices.json` (244 price rows, 7 vendors, 107 items; 29 rows come from the 2026-11-02 screenshots where only one vendor was looked at). The page's Vendor sell matrix tab embeds this data. An item with no row for a vendor shows a cross if it was checked at all vendors in the 2026-11-03 batch, otherwise a question mark. Craft-relevant findings from the 2026-11-03 batch:
+Full per-vendor price data is in `vendor_prices.json` (252 price rows, 7 vendors, 109 items; 29 rows come from the 2026-11-02 screenshots where only one vendor was looked at). The page's Vendor sell matrix tab embeds this data. An item with no row for a vendor shows a cross if it was checked at all vendors in the 2026-11-03 batch, otherwise a question mark. Craft-relevant findings from the 2026-11-03 batch:
 - Low-Quality Morphine Base $2K and Medium-Quality Morphine Base $2.5K at both Lab Rat and Vulture. Handshake, Gunny, Artisan, Turncoat and Banshee do not buy them.
 - Stabilized Morphine Sulfate Liquid $6K at Lab Rat only. No other vendor showed a price.
 - Morphine injector $135 at Lab Rat. High-Quality Morphine Base is $3K at Lab Rat and Vulture (18:48 batch), so the Morphine injector costs $3,030 to craft and sells for $135 (-$2,895 per craft; the base is worth more sold raw).
@@ -157,3 +159,5 @@ Full per-vendor price data is in `vendor_prices.json` (244 price rows, 7 vendors
 
 - Do not track ammo or magazines (user decision 2026-11-03).
 - Server RAM Module is a disassembly product of the ST1122 Storage Computer (StComp). The green "RAM" sold at Artisan for $90 is separate loose loot; do not equate the two.
+
+- 2026-11-03 20:46/20:49 batches: the RSP disassembly components are in-game short names DSLog (Deep-Space Observation Data Drive) and DPBoard (High-Speed Digital Processor Board), so the RSP disassembled value is at least $13,200. Second batch only re-showed HQMB ($3K Lab Rat and Vulture) plus a G36 rifle (ignored).
