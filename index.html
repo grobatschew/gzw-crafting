@@ -166,6 +166,24 @@ details { margin-top: 14px; color: var(--muted); font-size: 0.88rem; }
 summary { cursor: pointer; font-weight: 500; }
 .note { color: var(--muted); font-size: 0.82rem; margin-top: 10px; }
 
+
+/* vendor sell matrix */
+#vsm-table { min-width: 980px; }
+#vsm-table th { cursor: default; }
+#vsm-table td.vp { white-space: nowrap; font-variant-numeric: tabular-nums; }
+#vsm-table td.vp.best { background: var(--accent-soft); font-weight: 600; }
+#vsm-table td.vp .st { display: inline-flex; align-items: center; vertical-align: middle; }
+.st { display: inline-flex; align-items: center; vertical-align: middle; }
+.st svg { width: 17px; height: 17px; display: block; }
+.st.q { color: var(--warn); }
+.st.x { color: var(--muted); opacity: 0.8; }
+#vsm-table td.rec { min-width: 190px; }
+#vsm-table td.rec small { display: block; color: var(--muted); font-size: 0.78rem; }
+#vsm-table td.rec .st { margin-right: 4px; }
+.ico .sn.solo { position: static; background: none; color: var(--muted); padding: 0; }
+.legend { display: flex; flex-wrap: wrap; gap: 6px 18px; align-items: center; margin: 0 0 12px; font-size: 0.85rem; color: var(--muted); }
+.legend span { display: inline-flex; align-items: center; gap: 6px; }
+
 @media (max-width: 520px) {
   h1 { font-size: 1.6rem; }
   .tab { padding-inline: 12px; font-size: 1.05rem; }
@@ -185,6 +203,7 @@ summary { cursor: pointer; font-weight: 500; }
     <button class="tab" role="tab" id="t-want" aria-controls="v-want" data-tab="want">Want list</button>
     <button class="tab" role="tab" id="t-full" aria-controls="v-full" data-tab="full">Full list</button>
     <button class="tab" role="tab" id="t-backend" aria-controls="v-backend" data-tab="backend">Backend data</button>
+    <button class="tab" role="tab" id="t-vsm" aria-controls="v-vsm" data-tab="vsm">Vendor sell matrix</button>
   </nav>
 
   <section class="view" id="v-want" role="tabpanel" aria-labelledby="t-want">
@@ -226,10 +245,29 @@ summary { cursor: pointer; font-weight: 500; }
       <p id="unmatched"></p>
     </details>
   </section>
+
+  <section class="view" id="v-vsm" role="tabpanel" aria-labelledby="t-vsm" hidden>
+    <h2>Vendor sell matrix</h2>
+    <p class="hint">What each vendor pays for every item we have a price for. The recommendation is the vendor with the highest price.</p>
+    <div class="legend" id="vsm-legend"></div>
+    <div class="tools">
+      <input type="search" id="vsm-search" placeholder="Filter by name or short name" aria-label="Filter items">
+      <select id="vsm-filter" aria-label="Item filter">
+        <option value="all">All items</option>
+        <option value="craft">Craft and production items</option>
+        <option value="other">Other items</option>
+        <option value="unsure">Not fully checked</option>
+      </select>
+    </div>
+    <div class="tablewrap"><table id="vsm-table"></table></div>
+    <p class="note">Prices are per single item as the game shows them. Items with uses left (kits, bandages, packs) are priced by uses left, marked with an asterisk. K amounts are as displayed, for example $2.5K.</p>
+  </section>
 </div>
 
 <script>
 const IMG = {"opium_gum": "images/opium_gum.jpg", "garden_lime": "images/garden_lime.jpg", "ammonium_chloride": "images/ammonium_chloride.jpg", "purified_water": "images/purified_water.jpg", "citric_acid": "images/citric_acid.jpg", "sulfuric_acid": "images/sulfuric_acid.jpg", "methylparaben": "images/methylparaben.jpg", "saline": "images/saline.jpg", "glucose": "images/glucose.jpg", "theophylline": "images/theophylline.jpg", "bromopyridine": "images/bromopyridine.jpg", "empty_autoinjector": "images/empty_autoinjector.jpg", "vitamin_b12": "images/vitamin_b12.jpg", "iron_sucrose": "images/iron_sucrose.jpg", "bone_density_stimulant": "images/bone_density_stimulant.jpg", "methylene_blue": "images/methylene_blue.jpg", "human_growth_hormone": "images/human_growth_hormone.jpg", "aniline": "images/aniline.jpg", "methanol": "images/methanol.jpg", "electrical_parts": "images/electrical_parts.jpg", "civilian_software": "images/civilian_software.jpg", "multi_bus_converter": "images/multi_bus_converter.jpg", "cpu_card": "images/cpu_card.jpg", "spoofing_asic_module": "images/spoofing_asic_module.jpg", "circuit_board": "images/circuit_board.jpg", "lq_base": "images/lq_base.jpg", "morphine_10": "images/morphine_10.jpg", "mq_base": "images/mq_base.jpg", "hq_base": "images/hq_base.jpg", "stabilized_msl": "images/stabilized_msl.jpg", "fenethylline": "images/fenethylline.jpg", "methylphenidate": "images/methylphenidate.jpg", "epo": "images/epo.jpg", "ori_12": "images/ori_12.jpg", "dt_0x": "images/dt_0x.jpg", "hpr_3s": "images/hpr_3s.jpg", "morphine": "images/morphine.jpg", "strychnine": "images/strychnine.jpg", "basic_tracking_tag": "images/basic_tracking_tag.jpg", "basic_hacking_tool": "images/basic_hacking_tool.jpg", "tracking_tag": "images/tracking_tag.jpg"};
+
+const VP = {"meta":{"created":"2026-11-03","source":"locker views at each vendor tab; the price a vendor shows over an item in your locker is what that vendor pays for it","rules":["value is the number as displayed (a K amount is the displayed amount, e.g. $2.5K = 2500)","an item in checked_items with no row for a vendor was shown with no price at that vendor, so that vendor does not buy it (as of the screenshots)","items with uses left (kits, bandages, packs) are priced by uses left, noted per row","item = the in-game short name; long names only where confirmed","rows with src \"earlier screenshots\" come from the 2026-11-02 batch; those items were only looked at for one vendor, so other vendors are unchecked (shown as ? on the page)"],"vendors_checked_all_items":["Handshake","Gunny","Lab Rat","Artisan","Turncoat","Banshee","Vulture"],"screenshots":{"Handshake":["20261103093155_1","20261103093217_1","20261103093221_1"],"Gunny":["20261103093157_1","20261103093216_1","20261103093222_1"],"Lab Rat":["20261103093159_1","20261103093215_1","20261103093222_2"],"Artisan":["20261103093200_1","20261103093214_2","20261103093223_1"],"Turncoat":["20261103093201_1","20261103093214_1","20261103093224_1"],"Banshee":["20261103093203_1","20261103093213_1","20261103093225_1"],"Vulture":["20261103093042_1","20261103093205_1","20261103093212_1","20261103093226_1"]}},"long_names":{"StMSL":"Stabilized Morphine Sulfate Liquid","MePa":"Methylparaben","SodCit":"Sodium Citrate","BoneDS":"Bone Density Stimulant","Brompyr":"Bromopyridine","EAInj":"Empty Autoinjector","HGH":"Human Growth Hormone","Metblue":"Methylene Blue","B12":"Vitamin B12","Chlor":"Chloroform","Ether":"Ether","Ethanol":"Ethyl Alcohol","LQMB":"Low-Quality Morphine Base","MQMB":"Medium-Quality Morphine Base","DT-0X":"DT-0X","Fenethyl":"Fenethylline","Morph":"Morphine","HpR 3-S":"HPR 3-S","ORI-12":"ORI-12","CivSoft":"Civilian Software","OGum":"Opium Gum","Lime":"Garden Lime","AmChl":"Ammonium Chloride","PWat":"Purified Water","CAcid":"Citric Acid","Acid":"Sulfuric Acid","Saline":"Saline","Gluc":"Glucose","Theoph":"Theophylline","IronSuc":"Iron Sucrose","Anil":"Aniline","Methol":"Methanol","EPO":"EPO","Strych":"Strychnine","10MS":"10% Morphine Solution","SodCar":"Sodium Carbonate","EDTA":"Edetate Disodium","HAcid":"Hydrochloric Acid","AcAnh":"Acetic Anhydride","PCB":"Circuit Board"},"checked_items":["B12","BBCap","Bandage","Beret","BoneDS","Brompyr","CCCard","CGLB","ChBar","Chlor","CivSoft","Coffee","Cola","Crusher","DSLR","DT-0X","EAInj","EDrink","EPhone","Ethanol","Ether","Fenethyl","Gauze","Gray","HCKit","HGH","HpR 3-S","Ibalin","IcedTea","Inj C","L Key C","LBlood","LHem","LQMB","MBlood","MQMB","MTWat","MWatch","MePa","Metblue","MilSoft","Morph","NPI2","ORI-12","OTP","Optical Seeker","PFRKit","PGRKit","PMask","PROP SC","Phone","RAM","SBand","SodCit","Soda","StComp","StMSL","SurKit","SutKit","TacRad","Wallet"],"prices":[{"vendor":"Handshake","item":"Crusher","shown":"$6.1K","value":6100},{"vendor":"Handshake","item":"BBCap","shown":"$1","value":1},{"vendor":"Handshake","item":"Beret","shown":"$3","value":3},{"vendor":"Handshake","item":"PMask","shown":"$1","value":1},{"vendor":"Handshake","item":"OTP","shown":"$2.4K","value":2400},{"vendor":"Handshake","item":"MWatch","shown":"$112","value":112},{"vendor":"Handshake","item":"MTWat","shown":"$6K","value":6000},{"vendor":"Handshake","item":"NPI2","shown":"$1.1K","value":1100},{"vendor":"Handshake","item":"CCCard","shown":"$450","value":450},{"vendor":"Handshake","item":"DSLR","shown":"$1.3K","value":1300},{"vendor":"Handshake","item":"EPhone","shown":"$262","value":262},{"vendor":"Handshake","item":"Phone","shown":"$187","value":187},{"vendor":"Handshake","item":"PGRKit","shown":"$1.2K","value":1200},{"vendor":"Handshake","item":"L Key C","shown":"$2.7K","value":2700},{"vendor":"Handshake","item":"CGLB","shown":"$33","value":33},{"vendor":"Gunny","item":"OTP","shown":"$2.4K","value":2400},{"vendor":"Gunny","item":"MWatch","shown":"$112","value":112},{"vendor":"Gunny","item":"MTWat","shown":"$6K","value":6000},{"vendor":"Gunny","item":"NPI2","shown":"$1.1K","value":1100},{"vendor":"Gunny","item":"CCCard","shown":"$450","value":450},{"vendor":"Gunny","item":"DSLR","shown":"$960","value":960},{"vendor":"Gunny","item":"EPhone","shown":"$262","value":262},{"vendor":"Gunny","item":"Phone","shown":"$187","value":187},{"vendor":"Gunny","item":"PFRKit","shown":"$180","value":180},{"vendor":"Lab Rat","item":"ChBar","shown":"$11","value":11},{"vendor":"Lab Rat","item":"Cola","shown":"$33","value":33},{"vendor":"Lab Rat","item":"EDrink","shown":"$13","value":13},{"vendor":"Lab Rat","item":"Gray","shown":"$21","value":21},{"vendor":"Lab Rat","item":"Coffee","shown":"$6","value":6},{"vendor":"Lab Rat","item":"IcedTea","shown":"$11","value":11},{"vendor":"Lab Rat","item":"Soda","shown":"$28","value":28},{"vendor":"Lab Rat","item":"StMSL","shown":"$6K","value":6000},{"vendor":"Lab Rat","item":"OTP","shown":"$2.4K","value":2400},{"vendor":"Lab Rat","item":"MWatch","shown":"$112","value":112},{"vendor":"Lab Rat","item":"MTWat","shown":"$6K","value":6000},{"vendor":"Lab Rat","item":"NPI2","shown":"$1.1K","value":1100},{"vendor":"Lab Rat","item":"CCCard","shown":"$450","value":450},{"vendor":"Lab Rat","item":"DSLR","shown":"$960","value":960},{"vendor":"Lab Rat","item":"EPhone","shown":"$350","value":350},{"vendor":"Lab Rat","item":"Phone","shown":"$250","value":250},{"vendor":"Lab Rat","item":"PFRKit","shown":"$180","value":180},{"vendor":"Lab Rat","item":"PGRKit","shown":"$1.2K","value":1200},{"vendor":"Lab Rat","item":"HCKit","shown":"$27","value":27},{"vendor":"Lab Rat","item":"Chlor","shown":"$45","value":45},{"vendor":"Lab Rat","item":"Ether","shown":"$90","value":90},{"vendor":"Lab Rat","item":"Ethanol","shown":"$90","value":90},{"vendor":"Lab Rat","item":"LQMB","shown":"$2K","value":2000},{"vendor":"Lab Rat","item":"MQMB","shown":"$2.5K","value":2500},{"vendor":"Lab Rat","item":"MePa","shown":"$90","value":90},{"vendor":"Lab Rat","item":"SodCit","shown":"$45","value":45},{"vendor":"Lab Rat","item":"BoneDS","shown":"$30","value":30},{"vendor":"Lab Rat","item":"Brompyr","shown":"$30","value":30},{"vendor":"Lab Rat","item":"EAInj","shown":"$15","value":15},{"vendor":"Lab Rat","item":"HGH","shown":"$30","value":30},{"vendor":"Lab Rat","item":"Metblue","shown":"$30","value":30},{"vendor":"Lab Rat","item":"B12","shown":"$30","value":30},{"vendor":"Lab Rat","item":"LHem","shown":"$63","value":63},{"vendor":"Lab Rat","item":"SurKit","shown":"$195","value":195,"note":"price shown for a full 5/5 kit; a 1/5 kit showed $39 (price scales with uses left)"},{"vendor":"Lab Rat","item":"SutKit","shown":"$81","value":81,"note":"price shown for a full 3/3 kit; a 2/3 kit showed $54"},{"vendor":"Lab Rat","item":"ORI-12","shown":"$255","value":255},{"vendor":"Lab Rat","item":"DT-0X","shown":"$180","value":180},{"vendor":"Lab Rat","item":"Fenethyl","shown":"$29","value":29},{"vendor":"Lab Rat","item":"Morph","shown":"$135","value":135},{"vendor":"Lab Rat","item":"HpR 3-S","shown":"$285","value":285},{"vendor":"Lab Rat","item":"Ibalin","shown":"$7","value":7,"note":"price shown for a full 5/5 pack; a 3/5 pack showed $4"},{"vendor":"Lab Rat","item":"LBlood","shown":"$294","value":294},{"vendor":"Lab Rat","item":"MBlood","shown":"$225","value":225},{"vendor":"Lab Rat","item":"Gauze","shown":"$2","value":2,"note":"shown for a 1/1 gauze"},{"vendor":"Lab Rat","item":"Bandage","shown":"$6","value":6,"note":"shown for a 2/3 bandage"},{"vendor":"Lab Rat","item":"SBand","shown":"$16","value":16},{"vendor":"Artisan","item":"OTP","shown":"$2.4K","value":2400},{"vendor":"Artisan","item":"MWatch","shown":"$112","value":112},{"vendor":"Artisan","item":"MTWat","shown":"$6K","value":6000},{"vendor":"Artisan","item":"NPI2","shown":"$1.1K","value":1100},{"vendor":"Artisan","item":"CCCard","shown":"$600","value":600},{"vendor":"Artisan","item":"DSLR","shown":"$960","value":960},{"vendor":"Artisan","item":"EPhone","shown":"$262","value":262},{"vendor":"Artisan","item":"Phone","shown":"$187","value":187},{"vendor":"Artisan","item":"CivSoft","shown":"$75","value":75},{"vendor":"Artisan","item":"MilSoft","shown":"$75","value":75},{"vendor":"Artisan","item":"RAM","shown":"$90","value":90},{"vendor":"Artisan","item":"TacRad","shown":"$3K","value":3000},{"vendor":"Artisan","item":"StComp","shown":"$3K","value":3000},{"vendor":"Turncoat","item":"Crusher","shown":"$6.1K","value":6100},{"vendor":"Turncoat","item":"BBCap","shown":"$1","value":1},{"vendor":"Turncoat","item":"Beret","shown":"$3","value":3},{"vendor":"Turncoat","item":"PMask","shown":"$1","value":1},{"vendor":"Turncoat","item":"OTP","shown":"$2.4K","value":2400},{"vendor":"Turncoat","item":"MWatch","shown":"$150","value":150},{"vendor":"Turncoat","item":"MTWat","shown":"$8K","value":8000},{"vendor":"Turncoat","item":"NPI2","shown":"$1.1K","value":1100},{"vendor":"Turncoat","item":"CCCard","shown":"$450","value":450},{"vendor":"Turncoat","item":"DSLR","shown":"$960","value":960},{"vendor":"Turncoat","item":"EPhone","shown":"$262","value":262},{"vendor":"Turncoat","item":"Phone","shown":"$187","value":187},{"vendor":"Turncoat","item":"L Key C","shown":"$2.7K","value":2700},{"vendor":"Turncoat","item":"CGLB","shown":"$33","value":33},{"vendor":"Turncoat","item":"Optical Seeker","shown":"$10K","value":10000},{"vendor":"Banshee","item":"OTP","shown":"$2.4K","value":2400},{"vendor":"Banshee","item":"MWatch","shown":"$112","value":112},{"vendor":"Banshee","item":"MTWat","shown":"$6K","value":6000},{"vendor":"Banshee","item":"NPI2","shown":"$1.1K","value":1100},{"vendor":"Banshee","item":"CCCard","shown":"$450","value":450},{"vendor":"Banshee","item":"DSLR","shown":"$1.3K","value":1300},{"vendor":"Banshee","item":"EPhone","shown":"$262","value":262},{"vendor":"Banshee","item":"Phone","shown":"$187","value":187},{"vendor":"Banshee","item":"L Key C","shown":"$2.7K","value":2700},{"vendor":"Vulture","item":"OTP","shown":"$2.6K","value":2600},{"vendor":"Vulture","item":"MWatch","shown":"$120","value":120},{"vendor":"Vulture","item":"MTWat","shown":"$6.4K","value":6400},{"vendor":"Vulture","item":"NPI2","shown":"$1.1K","value":1100},{"vendor":"Vulture","item":"CCCard","shown":"$480","value":480},{"vendor":"Vulture","item":"DSLR","shown":"$1K","value":1000},{"vendor":"Vulture","item":"EPhone","shown":"$280","value":280},{"vendor":"Vulture","item":"Phone","shown":"$200","value":200},{"vendor":"Vulture","item":"LQMB","shown":"$2K","value":2000},{"vendor":"Vulture","item":"MQMB","shown":"$2.5K","value":2500},{"vendor":"Lab Rat","item":"OGum","shown":"$150","value":150,"src":"earlier screenshots (2026-11-02); other vendors not checked for this item"},{"vendor":"Lab Rat","item":"Lime","shown":"$15","value":15,"src":"earlier screenshots (2026-11-02); other vendors not checked for this item"},{"vendor":"Lab Rat","item":"AmChl","shown":"$45","value":45,"src":"earlier screenshots (2026-11-02); other vendors not checked for this item"},{"vendor":"Lab Rat","item":"PWat","shown":"$30","value":30,"src":"earlier screenshots (2026-11-02); other vendors not checked for this item"},{"vendor":"Lab Rat","item":"CAcid","shown":"$15","value":15,"src":"earlier screenshots (2026-11-02); other vendors not checked for this item"},{"vendor":"Lab Rat","item":"Acid","shown":"$39","value":39,"src":"earlier screenshots (2026-11-02); other vendors not checked for this item"},{"vendor":"Lab Rat","item":"Saline","shown":"$15","value":15,"src":"earlier screenshots (2026-11-02); other vendors not checked for this item"},{"vendor":"Lab Rat","item":"Gluc","shown":"$15","value":15,"src":"earlier screenshots (2026-11-02); other vendors not checked for this item"},{"vendor":"Lab Rat","item":"Theoph","shown":"$30","value":30,"src":"earlier screenshots (2026-11-02); other vendors not checked for this item"},{"vendor":"Lab Rat","item":"IronSuc","shown":"$30","value":30,"src":"earlier screenshots (2026-11-02); other vendors not checked for this item"},{"vendor":"Lab Rat","item":"Anil","shown":"$30","value":30,"src":"earlier screenshots (2026-11-02); other vendors not checked for this item"},{"vendor":"Lab Rat","item":"Methol","shown":"$30","value":30,"src":"earlier screenshots (2026-11-02); other vendors not checked for this item"},{"vendor":"Lab Rat","item":"EPO","shown":"$219","value":219,"src":"earlier screenshots (2026-11-02); other vendors not checked for this item"},{"vendor":"Lab Rat","item":"Strych","shown":"$180","value":180,"src":"earlier screenshots (2026-11-02); other vendors not checked for this item"},{"vendor":"Lab Rat","item":"10MS","shown":"$4K","value":4000,"src":"earlier screenshots (2026-11-02); other vendors not checked for this item"},{"vendor":"Lab Rat","item":"SodCar","shown":"$36","value":36,"src":"earlier screenshots (2026-11-02); other vendors not checked for this item"},{"vendor":"Lab Rat","item":"EDTA","shown":"$75","value":75,"src":"earlier screenshots (2026-11-02); other vendors not checked for this item"},{"vendor":"Lab Rat","item":"HAcid","shown":"$150","value":150,"src":"earlier screenshots (2026-11-02); other vendors not checked for this item"},{"vendor":"Lab Rat","item":"AcAnh","shown":"$75","value":75,"src":"earlier screenshots (2026-11-02); other vendors not checked for this item"},{"vendor":"Lab Rat","item":"Splint","shown":"$17","value":17,"src":"earlier screenshots (2026-11-02); other vendors not checked for this item"},{"vendor":"Lab Rat","item":"Moxiflox","shown":"$37","value":37,"src":"earlier screenshots (2026-11-02); other vendors not checked for this item"},{"vendor":"Lab Rat","item":"KI","shown":"$18","value":18,"src":"earlier screenshots (2026-11-02); other vendors not checked for this item"},{"vendor":"Lab Rat","item":"SBlood","shown":"$84","value":84,"src":"earlier screenshots (2026-11-02); other vendors not checked for this item"},{"vendor":"Artisan","item":"PCB","shown":"$45","value":45,"src":"earlier screenshots (2026-11-02); other vendors not checked for this item"},{"vendor":"Artisan","item":"SSteel","shown":"$45","value":45,"src":"earlier screenshots (2026-11-02); other vendors not checked for this item"},{"vendor":"Artisan","item":"PSU","shown":"$75","value":75,"src":"earlier screenshots (2026-11-02); other vendors not checked for this item"},{"vendor":"Artisan","item":"EKLog","shown":"$9K","value":9000,"src":"earlier screenshots (2026-11-02); other vendors not checked for this item"},{"vendor":"Artisan","item":"EWLog","shown":"$12K","value":12000,"src":"earlier screenshots (2026-11-02); other vendors not checked for this item"},{"vendor":"Artisan","item":"Pipette","shown":"$150","value":150,"src":"earlier screenshots (2026-11-02); other vendors not checked for this item"}]};
 
 const STATIONS = {
   lab_prod: 'Laboratory · Production',
@@ -323,7 +361,7 @@ const usedIn = {};
 RECIPES.forEach(r => r.ing.forEach(i => (usedIn[i] = usedIn[i] || []).push(r.id)));
 
 /* ---------- tabs ---------- */
-const TABS = ['want','full','backend'];
+const TABS = ['want','full','backend','vsm'];
 function showTab(t) {
   if (!TABS.includes(t)) t = 'want';
   TABS.forEach(k => {
@@ -512,9 +550,82 @@ document.getElementById('be-table').addEventListener('click', e => {
 document.getElementById('be-search').addEventListener('input', renderBackend);
 document.getElementById('be-type').addEventListener('change', renderBackend);
 
+
+/* ---------- vendor sell matrix ---------- */
+const VENDORS = VP.meta.vendors_checked_all_items;
+const ICON_Q = '<span class="st q" role="img" aria-label="Not checked yet" title="Not checked at this vendor yet"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9.5"/><path d="M9.4 9.3a2.7 2.7 0 1 1 3.9 2.4c-.9.5-1.3 1-1.3 1.9"/><path d="M12 17.2h.01"/></svg></span>';
+const ICON_X = '<span class="st x" role="img" aria-label="Does not buy" title="Does not buy this item"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9.5"/><path d="M8.6 8.6l6.8 6.8M15.4 8.6l-6.8 6.8"/></svg></span>';
+const shortToId = {};
+Object.keys(ITEMS).forEach(id => { if (ITEMS[id].s) shortToId[ITEMS[id].s] = id; });
+const vpChecked = new Set(VP.checked_items);
+const vpBy = {};
+VP.prices.forEach(p => { (vpBy[p.item] = vpBy[p.item] || {})[p.vendor] = p; });
+function vsmRows() {
+  const itemOrder = Object.keys(ITEMS).map(id => ITEMS[id].s).filter(Boolean);
+  const keys = Object.keys(vpBy).sort((a, b) => {
+    const ia = itemOrder.indexOf(a), ib = itemOrder.indexOf(b);
+    if (ia >= 0 && ib >= 0) return ia - ib;
+    if (ia >= 0) return -1;
+    if (ib >= 0) return 1;
+    return a.toLowerCase().localeCompare(b.toLowerCase());
+  });
+  return keys.map(k => {
+    const cells = VENDORS.map(v => {
+      const p = vpBy[k][v];
+      if (p) return {state: 'price', p};
+      return {state: vpChecked.has(k) ? 'no' : 'unknown'};
+    });
+    const known = cells.filter(c => c.state === 'price');
+    const best = known.length ? Math.max(...known.map(c => c.p.value)) : null;
+    const bestVendors = VENDORS.filter((v, i) => cells[i].state === 'price' && cells[i].p.value === best);
+    const unsure = cells.some(c => c.state === 'unknown');
+    const id = shortToId[k];
+    const long = id ? ITEMS[id].n : (VP.long_names[k] || null);
+    return {k, id, long, cells, best, bestVendors, unsure, craft: !!id};
+  });
+}
+const VSM = vsmRows();
+function vsmIco(r) {
+  if (r.id) return ico(r.id, 'sm');
+  return `<span class="ico sm"><span class="sn solo">${esc(r.k)}</span></span>`;
+}
+function vsmRec(r) {
+  const joined = r.bestVendors.join(' or ');
+  const only = r.cells.filter(c => c.state === 'price').length === 1;
+  let sub;
+  if (r.unsure) sub = 'best so far, other vendors not checked';
+  else if (only) sub = 'only buyer';
+  else sub = r.bestVendors.length > 1 ? 'same price at both' : 'highest price';
+  const shown = r.cells.find(c => c.state === 'price' && c.p.value === r.best).p.shown;
+  return `<td class="rec">${r.unsure ? ICON_Q : ''}<b>${esc(joined)}</b> · ${esc(shown)}<small>${sub}</small></td>`;
+}
+function renderVsm() {
+  const q = document.getElementById('vsm-search').value.trim().toLowerCase();
+  const f = document.getElementById('vsm-filter').value;
+  const rows = VSM.filter(r => {
+    if (f === 'craft' && !r.craft) return false;
+    if (f === 'other' && r.craft) return false;
+    if (f === 'unsure' && !r.unsure) return false;
+    if (q && !(r.k.toLowerCase().includes(q) || (r.long || '').toLowerCase().includes(q))) return false;
+    return true;
+  });
+  const th = `<th>Item</th>${VENDORS.map(v => `<th>${esc(v)}</th>`).join('')}<th>Best vendor to sell to</th>`;
+  const body = rows.map(r => `<tr><td class="item"><div class="in">${vsmIco(r)}<span>${esc(r.long || r.k)}${r.long && r.long !== r.k && !r.id ? ` <span class="dim mono" style="font-weight:400">${esc(r.k)}</span>` : ''}</span></div></td>` +
+    r.cells.map(c => {
+      if (c.state === 'no') return `<td class="vp">${ICON_X}</td>`;
+      if (c.state === 'unknown') return `<td class="vp">${ICON_Q}</td>`;
+      const best = c.p.value === r.best && r.cells.filter(x => x.state === 'price').length > 0;
+      return `<td class="vp ${best ? 'best' : ''}"${c.p.note ? ` title="${esc(c.p.note)}"` : ''}>${esc(c.p.shown)}${c.p.note ? '*' : ''}</td>`;
+    }).join('') + vsmRec(r) + '</tr>').join('');
+  document.getElementById('vsm-table').innerHTML = `<thead><tr>${th}</tr></thead><tbody>${body || `<tr><td colspan="${VENDORS.length + 2}" class="dim">No items match.</td></tr>`}</tbody>`;
+  document.getElementById('vsm-legend').innerHTML = `<span><b>$</b> price</span><span>${ICON_X} vendor does not buy it</span><span>${ICON_Q} not checked at this vendor yet</span><span>${rows.length} of ${VSM.length} items</span>`;
+}
+document.getElementById('vsm-search').addEventListener('input', renderVsm);
+document.getElementById('vsm-filter').addEventListener('change', renderVsm);
+
 /* ---------- start ---------- */
 document.getElementById('unmatched').textContent = UNMATCHED;
-buildPicker(); renderWant(); renderFull(); renderBackend();
+buildPicker(); renderWant(); renderFull(); renderBackend(); renderVsm();
 showTab(location.hash.slice(1));
 </script>
 </body>

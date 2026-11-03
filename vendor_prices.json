@@ -6,7 +6,8 @@
    "value is the number as displayed (a K amount is the displayed amount, e.g. $2.5K = 2500)",
    "an item in checked_items with no row for a vendor was shown with no price at that vendor, so that vendor does not buy it (as of the screenshots)",
    "items with uses left (kits, bandages, packs) are priced by uses left, noted per row",
-   "item = the in-game short name; long names only where confirmed"
+   "item = the in-game short name; long names only where confirmed",
+   "rows with src \"earlier screenshots\" come from the 2026-11-02 batch; those items were only looked at for one vendor, so other vendors are unchecked (shown as ? on the page)"
   ],
   "vendors_checked_all_items": [
    "Handshake",
@@ -71,12 +72,32 @@
   "Ethanol": "Ethyl Alcohol",
   "LQMB": "Low-Quality Morphine Base",
   "MQMB": "Medium-Quality Morphine Base",
-  "DT-OX": "DT-0X",
+  "DT-0X": "DT-0X",
   "Fenethyl": "Fenethylline",
   "Morph": "Morphine",
   "HpR 3-S": "HPR 3-S",
   "ORI-12": "ORI-12",
-  "CivSoft": "Civilian Software"
+  "CivSoft": "Civilian Software",
+  "OGum": "Opium Gum",
+  "Lime": "Garden Lime",
+  "AmChl": "Ammonium Chloride",
+  "PWat": "Purified Water",
+  "CAcid": "Citric Acid",
+  "Acid": "Sulfuric Acid",
+  "Saline": "Saline",
+  "Gluc": "Glucose",
+  "Theoph": "Theophylline",
+  "IronSuc": "Iron Sucrose",
+  "Anil": "Aniline",
+  "Methol": "Methanol",
+  "EPO": "EPO",
+  "Strych": "Strychnine",
+  "10MS": "10% Morphine Solution",
+  "SodCar": "Sodium Carbonate",
+  "EDTA": "Edetate Disodium",
+  "HAcid": "Hydrochloric Acid",
+  "AcAnh": "Acetic Anhydride",
+  "PCB": "Circuit Board"
  },
  "checked_items": [
   "B12",
@@ -94,7 +115,7 @@
   "Cola",
   "Crusher",
   "DSLR",
-  "DT-OX",
+  "DT-0X",
   "EAInj",
   "EDrink",
   "EPhone",
@@ -506,7 +527,7 @@
   },
   {
    "vendor": "Lab Rat",
-   "item": "DT-OX",
+   "item": "DT-0X",
    "shown": "$180",
    "value": 180
   },
@@ -848,6 +869,209 @@
    "item": "MQMB",
    "shown": "$2.5K",
    "value": 2500
+  },
+  {
+   "vendor": "Lab Rat",
+   "item": "OGum",
+   "shown": "$150",
+   "value": 150,
+   "src": "earlier screenshots (2026-11-02); other vendors not checked for this item"
+  },
+  {
+   "vendor": "Lab Rat",
+   "item": "Lime",
+   "shown": "$15",
+   "value": 15,
+   "src": "earlier screenshots (2026-11-02); other vendors not checked for this item"
+  },
+  {
+   "vendor": "Lab Rat",
+   "item": "AmChl",
+   "shown": "$45",
+   "value": 45,
+   "src": "earlier screenshots (2026-11-02); other vendors not checked for this item"
+  },
+  {
+   "vendor": "Lab Rat",
+   "item": "PWat",
+   "shown": "$30",
+   "value": 30,
+   "src": "earlier screenshots (2026-11-02); other vendors not checked for this item"
+  },
+  {
+   "vendor": "Lab Rat",
+   "item": "CAcid",
+   "shown": "$15",
+   "value": 15,
+   "src": "earlier screenshots (2026-11-02); other vendors not checked for this item"
+  },
+  {
+   "vendor": "Lab Rat",
+   "item": "Acid",
+   "shown": "$39",
+   "value": 39,
+   "src": "earlier screenshots (2026-11-02); other vendors not checked for this item"
+  },
+  {
+   "vendor": "Lab Rat",
+   "item": "Saline",
+   "shown": "$15",
+   "value": 15,
+   "src": "earlier screenshots (2026-11-02); other vendors not checked for this item"
+  },
+  {
+   "vendor": "Lab Rat",
+   "item": "Gluc",
+   "shown": "$15",
+   "value": 15,
+   "src": "earlier screenshots (2026-11-02); other vendors not checked for this item"
+  },
+  {
+   "vendor": "Lab Rat",
+   "item": "Theoph",
+   "shown": "$30",
+   "value": 30,
+   "src": "earlier screenshots (2026-11-02); other vendors not checked for this item"
+  },
+  {
+   "vendor": "Lab Rat",
+   "item": "IronSuc",
+   "shown": "$30",
+   "value": 30,
+   "src": "earlier screenshots (2026-11-02); other vendors not checked for this item"
+  },
+  {
+   "vendor": "Lab Rat",
+   "item": "Anil",
+   "shown": "$30",
+   "value": 30,
+   "src": "earlier screenshots (2026-11-02); other vendors not checked for this item"
+  },
+  {
+   "vendor": "Lab Rat",
+   "item": "Methol",
+   "shown": "$30",
+   "value": 30,
+   "src": "earlier screenshots (2026-11-02); other vendors not checked for this item"
+  },
+  {
+   "vendor": "Lab Rat",
+   "item": "EPO",
+   "shown": "$219",
+   "value": 219,
+   "src": "earlier screenshots (2026-11-02); other vendors not checked for this item"
+  },
+  {
+   "vendor": "Lab Rat",
+   "item": "Strych",
+   "shown": "$180",
+   "value": 180,
+   "src": "earlier screenshots (2026-11-02); other vendors not checked for this item"
+  },
+  {
+   "vendor": "Lab Rat",
+   "item": "10MS",
+   "shown": "$4K",
+   "value": 4000,
+   "src": "earlier screenshots (2026-11-02); other vendors not checked for this item"
+  },
+  {
+   "vendor": "Lab Rat",
+   "item": "SodCar",
+   "shown": "$36",
+   "value": 36,
+   "src": "earlier screenshots (2026-11-02); other vendors not checked for this item"
+  },
+  {
+   "vendor": "Lab Rat",
+   "item": "EDTA",
+   "shown": "$75",
+   "value": 75,
+   "src": "earlier screenshots (2026-11-02); other vendors not checked for this item"
+  },
+  {
+   "vendor": "Lab Rat",
+   "item": "HAcid",
+   "shown": "$150",
+   "value": 150,
+   "src": "earlier screenshots (2026-11-02); other vendors not checked for this item"
+  },
+  {
+   "vendor": "Lab Rat",
+   "item": "AcAnh",
+   "shown": "$75",
+   "value": 75,
+   "src": "earlier screenshots (2026-11-02); other vendors not checked for this item"
+  },
+  {
+   "vendor": "Lab Rat",
+   "item": "Splint",
+   "shown": "$17",
+   "value": 17,
+   "src": "earlier screenshots (2026-11-02); other vendors not checked for this item"
+  },
+  {
+   "vendor": "Lab Rat",
+   "item": "Moxiflox",
+   "shown": "$37",
+   "value": 37,
+   "src": "earlier screenshots (2026-11-02); other vendors not checked for this item"
+  },
+  {
+   "vendor": "Lab Rat",
+   "item": "KI",
+   "shown": "$18",
+   "value": 18,
+   "src": "earlier screenshots (2026-11-02); other vendors not checked for this item"
+  },
+  {
+   "vendor": "Lab Rat",
+   "item": "SBlood",
+   "shown": "$84",
+   "value": 84,
+   "src": "earlier screenshots (2026-11-02); other vendors not checked for this item"
+  },
+  {
+   "vendor": "Artisan",
+   "item": "PCB",
+   "shown": "$45",
+   "value": 45,
+   "src": "earlier screenshots (2026-11-02); other vendors not checked for this item"
+  },
+  {
+   "vendor": "Artisan",
+   "item": "SSteel",
+   "shown": "$45",
+   "value": 45,
+   "src": "earlier screenshots (2026-11-02); other vendors not checked for this item"
+  },
+  {
+   "vendor": "Artisan",
+   "item": "PSU",
+   "shown": "$75",
+   "value": 75,
+   "src": "earlier screenshots (2026-11-02); other vendors not checked for this item"
+  },
+  {
+   "vendor": "Artisan",
+   "item": "EKLog",
+   "shown": "$9K",
+   "value": 9000,
+   "src": "earlier screenshots (2026-11-02); other vendors not checked for this item"
+  },
+  {
+   "vendor": "Artisan",
+   "item": "EWLog",
+   "shown": "$12K",
+   "value": 12000,
+   "src": "earlier screenshots (2026-11-02); other vendors not checked for this item"
+  },
+  {
+   "vendor": "Artisan",
+   "item": "Pipette",
+   "shown": "$150",
+   "value": 150,
+   "src": "earlier screenshots (2026-11-02); other vendors not checked for this item"
   }
  ]
 }
