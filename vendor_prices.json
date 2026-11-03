@@ -64,6 +64,21 @@
     "20261103121621_1",
     "20261103121622_1",
     "20261103121624_1 (names)"
+   ],
+   "2026-11-03 12:56 batch (workshop disassembly)": [
+    "20261103125613_1",
+    "125617",
+    "125627",
+    "125629",
+    "125635",
+    "125637 (disassembly dialogs)",
+    "125705",
+    "125708",
+    "125711",
+    "125714",
+    "125718",
+    "125720",
+    "125723 (vendor views with the disassembly components in a Rush 72 2.0 backpack)"
    ]
   },
   "note_truncated_names": "FAST\u2026, BCM M\u2026, AK CR\u2026, AK GA\u2026, G36 12\u2026 are truncated by the game UI; full names unknown"
@@ -108,7 +123,10 @@
   "EDTA": "Edetate Disodium",
   "HAcid": "Hydrochloric Acid",
   "AcAnh": "Acetic Anhydride",
-  "PCB": "Circuit Board"
+  "PCB": "Circuit Board",
+  "EKLog": "Encryption Key Drive",
+  "FPGA": "FPGA Module",
+  "IncrDD": "Incriminating Data Drive"
  },
  "checked_items": [
   "B12",
@@ -182,7 +200,13 @@
   "HF2 Hut",
   "Ring",
   "BLPhone",
-  "DriverLic"
+  "DriverLic",
+  "EKLog",
+  "IncrDD",
+  "EWLog",
+  "DSE",
+  "FPGA",
+  "PCB"
  ],
  "prices": [
   {
@@ -1064,20 +1088,6 @@
   },
   {
    "vendor": "Artisan",
-   "item": "EKLog",
-   "shown": "$9K",
-   "value": 9000,
-   "src": "earlier screenshots (2026-11-02); other vendors not checked for this item"
-  },
-  {
-   "vendor": "Artisan",
-   "item": "EWLog",
-   "shown": "$12K",
-   "value": 12000,
-   "src": "earlier screenshots (2026-11-02); other vendors not checked for this item"
-  },
-  {
-   "vendor": "Artisan",
    "item": "Pipette",
    "shown": "$150",
    "value": 150,
@@ -1460,6 +1470,221 @@
    "shown": "$280",
    "value": 280,
    "src": "20261103121614-121624"
+  },
+  {
+   "vendor": "Handshake",
+   "item": "EKLog",
+   "shown": "$9K",
+   "value": 9000,
+   "src": "20261103125705-125723"
+  },
+  {
+   "vendor": "Gunny",
+   "item": "EKLog",
+   "shown": "$9K",
+   "value": 9000,
+   "src": "20261103125705-125723"
+  },
+  {
+   "vendor": "Lab Rat",
+   "item": "EKLog",
+   "shown": "$9K",
+   "value": 9000,
+   "src": "20261103125705-125723"
+  },
+  {
+   "vendor": "Artisan",
+   "item": "EKLog",
+   "shown": "$9K",
+   "value": 9000,
+   "src": "20261103125705-125723"
+  },
+  {
+   "vendor": "Turncoat",
+   "item": "EKLog",
+   "shown": "$9K",
+   "value": 9000,
+   "src": "20261103125705-125723"
+  },
+  {
+   "vendor": "Banshee",
+   "item": "EKLog",
+   "shown": "$9K",
+   "value": 9000,
+   "src": "20261103125705-125723"
+  },
+  {
+   "vendor": "Vulture",
+   "item": "EKLog",
+   "shown": "$9.6K",
+   "value": 9600,
+   "src": "20261103125705-125723"
+  },
+  {
+   "vendor": "Handshake",
+   "item": "IncrDD",
+   "shown": "$9K",
+   "value": 9000,
+   "src": "20261103125705-125723"
+  },
+  {
+   "vendor": "Gunny",
+   "item": "IncrDD",
+   "shown": "$9K",
+   "value": 9000,
+   "src": "20261103125705-125723"
+  },
+  {
+   "vendor": "Lab Rat",
+   "item": "IncrDD",
+   "shown": "$9K",
+   "value": 9000,
+   "src": "20261103125705-125723"
+  },
+  {
+   "vendor": "Artisan",
+   "item": "IncrDD",
+   "shown": "$9K",
+   "value": 9000,
+   "src": "20261103125705-125723"
+  },
+  {
+   "vendor": "Turncoat",
+   "item": "IncrDD",
+   "shown": "$9K",
+   "value": 9000,
+   "src": "20261103125705-125723"
+  },
+  {
+   "vendor": "Banshee",
+   "item": "IncrDD",
+   "shown": "$9K",
+   "value": 9000,
+   "src": "20261103125705-125723"
+  },
+  {
+   "vendor": "Vulture",
+   "item": "IncrDD",
+   "shown": "$9.6K",
+   "value": 9600,
+   "src": "20261103125705-125723"
+  },
+  {
+   "vendor": "Handshake",
+   "item": "EWLog",
+   "shown": "$12K",
+   "value": 12000,
+   "src": "20261103125705-125723"
+  },
+  {
+   "vendor": "Gunny",
+   "item": "EWLog",
+   "shown": "$12K",
+   "value": 12000,
+   "src": "20261103125705-125723"
+  },
+  {
+   "vendor": "Lab Rat",
+   "item": "EWLog",
+   "shown": "$12K",
+   "value": 12000,
+   "src": "20261103125705-125723"
+  },
+  {
+   "vendor": "Artisan",
+   "item": "EWLog",
+   "shown": "$12K",
+   "value": 12000,
+   "src": "20261103125705-125723"
+  },
+  {
+   "vendor": "Turncoat",
+   "item": "EWLog",
+   "shown": "$12K",
+   "value": 12000,
+   "src": "20261103125705-125723"
+  },
+  {
+   "vendor": "Banshee",
+   "item": "EWLog",
+   "shown": "$12K",
+   "value": 12000,
+   "src": "20261103125705-125723"
+  },
+  {
+   "vendor": "Vulture",
+   "item": "EWLog",
+   "shown": "$12.\u2026",
+   "value": null,
+   "src": "20261103125705-125723",
+   "note": "price cut off in the screenshot ($12.\u2026), unknown"
+  },
+  {
+   "vendor": "Lab Rat",
+   "item": "DSE",
+   "shown": "$1.2K",
+   "value": 1200,
+   "src": "20261103125705-125723"
+  },
+  {
+   "vendor": "Lab Rat",
+   "item": "FPGA",
+   "shown": "$900",
+   "value": 900,
+   "src": "20261103125705-125723"
+  }
+ ],
+ "disassembly": [
+  {
+   "item": "RSP",
+   "long": "Radar Signal Processor",
+   "time": "7h 50m",
+   "components": [
+    {
+     "name": "Deep-Space Observation Data Drive",
+     "icon": "DSODD",
+     "item": null
+    },
+    {
+     "name": "High-Speed Digital Processor Board",
+     "icon": "HSDPB",
+     "item": null
+    }
+   ]
+  },
+  {
+   "item": "TacRad",
+   "long": "Manpack Tactical Radio",
+   "time": "12h",
+   "components": [
+    {
+     "name": "Encryption Key Drive",
+     "icon": "EKLog",
+     "item": "EKLog"
+    },
+    {
+     "name": "FPGA Module",
+     "icon": "FPGA",
+     "item": "FPGA"
+    }
+   ]
+  },
+  {
+   "item": "StComp",
+   "long": "ST1122 Storage Computer",
+   "time": "12h",
+   "components": [
+    {
+     "name": "Incriminating Data Drive",
+     "icon": "IncrDD",
+     "item": "IncrDD"
+    },
+    {
+     "name": "Server RAM Module",
+     "icon": "SrvRAM",
+     "item": null
+    }
+   ]
   }
  ]
 }
