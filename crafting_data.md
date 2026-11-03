@@ -137,11 +137,11 @@ Disassembly materials give two components each (the dialog shows one icon per co
 
 Valuation rule (user): disassembly material is valued raw (best vendor price for the item) and disassembled (sum of the best vendor price for each component). The page shows both in a table under the matrix. Result so far: TacRad raw $3K (Artisan) vs $10.5K disassembled; StComp raw $3K vs at least $9.6K. RSP raw price unknown.
 
-Other findings: EKLog, IncrDD (new), EWLog $12K (Vulture price cut off in the screenshot, shown as ?), DSE $1.2K at Lab Rat, FPGA $900 at Lab Rat. Two unnamed backpack items (a 2x2 circuit board $900 at Lab Rat, a large jug $30 at Lab Rat) were not added because their names are unknown.
+Other findings: EKLog, IncrDD (new), EWLog $12K (Vulture price cut off in the screenshot, shown as ?), DSE $1.2K at Lab Rat, FPGA $900 at Lab Rat. The two backpack items seen at Lab Rat are now identified: the jug is PWat (Purified Water, already tracked at $30), and the 2x2 board is the Avionics Processor (AvProc, $900 at Lab Rat), a disassembly product of the Baget-53-31 Onboard Computer (not owned yet; its other components, raw price and time are unknown).
 
 ## Vendor price tracking
 
-Full per-vendor price data is in `vendor_prices.json` (243 price rows, 7 vendors, 106 items; 29 rows come from the 2026-11-02 screenshots where only one vendor was looked at). The page's Vendor sell matrix tab embeds this data. An item with no row for a vendor shows a cross if it was checked at all vendors in the 2026-11-03 batch, otherwise a question mark. Craft-relevant findings from the 2026-11-03 batch:
+Full per-vendor price data is in `vendor_prices.json` (244 price rows, 7 vendors, 107 items; 29 rows come from the 2026-11-02 screenshots where only one vendor was looked at). The page's Vendor sell matrix tab embeds this data. An item with no row for a vendor shows a cross if it was checked at all vendors in the 2026-11-03 batch, otherwise a question mark. Craft-relevant findings from the 2026-11-03 batch:
 - Low-Quality Morphine Base $2K and Medium-Quality Morphine Base $2.5K at both Lab Rat and Vulture. Handshake, Gunny, Artisan, Turncoat and Banshee do not buy them.
 - Stabilized Morphine Sulfate Liquid $6K at Lab Rat only. No other vendor showed a price.
 - Morphine injector $135 at Lab Rat. High-Quality Morphine Base is $3K at Lab Rat and Vulture (18:48 batch), so the Morphine injector costs $3,030 to craft and sells for $135 (-$2,895 per craft; the base is worth more sold raw).
@@ -154,3 +154,6 @@ Full per-vendor price data is in `vendor_prices.json` (243 price rows, 7 vendors
 - Vendor sell matrix icons: for every new item encountered in a screenshot, crop its icon from the screenshot (the short-name label may stay in the crop) and use it in the Vendor sell matrix. Image id is `vp_<short name>` (lowercase, non-alphanumerics to `_`), for example `vp_ekLog` becomes `vp_eklog`; the page picks it up automatically. Recipe items keep their existing icons.
 - Only craft and production information is added to the Want list, Full list and Backend data tabs. Vendor data for everything else goes into `vendor_prices.json` and the matrix.
 - Ignore helmets and weapons in screenshots going forward (do not add them to the matrix or the price data). Weapon parts (grips, stocks, handguards, sights, barrels, rails) are still tracked. The two Crusher helmets that were in the data were removed on request.
+
+- Do not track ammo or magazines (user decision 2026-11-03).
+- Server RAM Module is a disassembly product of the ST1122 Storage Computer (StComp). The green "RAM" sold at Artisan for $90 is separate loose loot; do not equate the two.
