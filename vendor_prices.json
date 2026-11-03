@@ -108,8 +108,7 @@
   "EDTA": "Edetate Disodium",
   "HAcid": "Hydrochloric Acid",
   "AcAnh": "Acetic Anhydride",
-  "PCB": "Circuit Board",
-  "Crusher 2": "Crusher (second variant)"
+  "PCB": "Circuit Board"
  },
  "checked_items": [
   "B12",
@@ -125,7 +124,6 @@
   "CivSoft",
   "Coffee",
   "Cola",
-  "Crusher",
   "DSLR",
   "DT-0X",
   "EAInj",
@@ -181,19 +179,12 @@
   "AK GA\u2026",
   "G36 HG",
   "G36 12\u2026",
-  "Crusher 2",
   "HF2 Hut",
   "Ring",
   "BLPhone",
   "DriverLic"
  ],
  "prices": [
-  {
-   "vendor": "Handshake",
-   "item": "Crusher",
-   "shown": "$6.1K",
-   "value": 6100
-  },
   {
    "vendor": "Handshake",
    "item": "BBCap",
@@ -690,12 +681,6 @@
    "item": "StComp",
    "shown": "$3K",
    "value": 3000
-  },
-  {
-   "vendor": "Turncoat",
-   "item": "Crusher",
-   "shown": "$6.1K",
-   "value": 6100
   },
   {
    "vendor": "Turncoat",
@@ -1320,20 +1305,6 @@
    "item": "G36 12\u2026",
    "shown": "$138",
    "value": 138,
-   "src": "20261103121614-121624"
-  },
-  {
-   "vendor": "Handshake",
-   "item": "Crusher 2",
-   "shown": "$2.8K",
-   "value": 2800,
-   "src": "20261103121614-121624"
-  },
-  {
-   "vendor": "Turncoat",
-   "item": "Crusher 2",
-   "shown": "$2.8K",
-   "value": 2800,
    "src": "20261103121614-121624"
   },
   {
