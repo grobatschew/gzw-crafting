@@ -590,12 +590,14 @@ function vsmIco(r) {
   return `<span class="ico sm"><span class="sn solo">${esc(r.k)}</span></span>`;
 }
 function vsmRec(r) {
-  const joined = r.bestVendors.join(' or ');
+  const everyone = r.bestVendors.length === VENDORS.length;
+  const joined = everyone ? 'Whoever' : r.bestVendors.join(' or ');
   const only = r.cells.filter(c => c.state === 'price').length === 1;
   let sub;
   if (r.unsure) sub = 'best so far, other vendors not checked';
   else if (only) sub = 'only buyer';
-  else sub = r.bestVendors.length > 1 ? 'same price at both' : 'highest price';
+  else if (everyone) sub = 'same price at every vendor';
+  else sub = r.bestVendors.length === 2 ? 'same price at both' : r.bestVendors.length > 2 ? 'same price at each' : 'highest price';
   const shown = r.cells.find(c => c.state === 'price' && c.p.value === r.best).p.shown;
   return `<td class="rec">${r.unsure ? ICON_Q : ''}<b>${esc(joined)}</b> · ${esc(shown)}<small>${sub}</small></td>`;
 }
