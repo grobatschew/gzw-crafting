@@ -585,8 +585,11 @@ function vsmRows() {
   });
 }
 const VSM = vsmRows();
+const vpSlug = k => k.toLowerCase().replace(/[^a-z0-9]+/g, '_').replace(/^_|_$/g, '');
 function vsmIco(r) {
   if (r.id) return ico(r.id, 'sm');
+  const im = IMG['vp_' + vpSlug(r.k)];
+  if (im) return `<span class="ico sm"><img src="${im}" alt="" loading="lazy"></span>`;
   return `<span class="ico sm"><span class="sn solo">${esc(r.k)}</span></span>`;
 }
 function vsmRec(r) {
