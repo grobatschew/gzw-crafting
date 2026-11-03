@@ -171,6 +171,10 @@ summary { cursor: pointer; font-weight: 500; }
 /* vendor sell matrix */
 #vsm-table { min-width: 980px; }
 #vsm-table th { cursor: default; }
+#vsm-wrap { overflow: visible; }
+#vsm-table th { top: var(--tabh, 48px); z-index: 4; box-shadow: 0 1px 0 var(--border); }
+@media (max-width: 1100px) { #vsm-wrap { overflow: auto; max-height: calc(100vh - var(--tabh, 48px) - 12px); } #vsm-table th { top: 0; } }
+
 #vsm-table td.vp { white-space: nowrap; font-variant-numeric: tabular-nums; }
 #vsm-table td.vp.best { background: var(--accent-soft); font-weight: 600; }
 #vsm-table td.vp .st { display: inline-flex; align-items: center; vertical-align: middle; }
@@ -260,7 +264,7 @@ summary { cursor: pointer; font-weight: 500; }
         <option value="unsure">Not fully checked</option>
       </select>
     </div>
-    <div class="tablewrap"><table id="vsm-table"></table></div>
+    <div class="tablewrap" id="vsm-wrap"><table id="vsm-table"></table></div>
     <p class="note">Prices are per single item as the game shows them. Items with uses left (kits, bandages, packs) are priced by uses left, marked with an asterisk. K amounts are as displayed, for example $2.5K.</p>
   </section>
 </div>
@@ -626,6 +630,8 @@ function renderVsm() {
   document.getElementById('vsm-table').innerHTML = `<thead><tr>${th}</tr></thead><tbody>${body || `<tr><td colspan="${VENDORS.length + 2}" class="dim">No items match.</td></tr>`}</tbody>`;
   document.getElementById('vsm-legend').innerHTML = `<span><b>$</b> price</span><span>${ICON_X} vendor does not buy it</span><span>${ICON_Q} not checked at this vendor yet</span><span>${rows.length} of ${VSM.length} items</span>`;
 }
+
+(function(){ const nav = document.querySelector('nav.tabs'); const set = () => document.documentElement.style.setProperty('--tabh', nav.offsetHeight + 'px'); set(); addEventListener('resize', set); })();
 document.getElementById('vsm-search').addEventListener('input', renderVsm);
 document.getElementById('vsm-filter').addEventListener('change', renderVsm);
 
