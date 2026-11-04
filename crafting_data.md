@@ -174,3 +174,5 @@ Added to the Vendor sell matrix only, with icons:
 - Spirits and valuables: Breda $2.9K (Gunny $3.8K, Vulture $3K), Allanach $4.1K (Gunny $5.5K, Vulture $4.4K), Goodlad $337 (Gunny $450, Vulture $360), ANPY... $3.2K (Vulture $3.4K), GDRing $5.8K (Turncoat $7.7K, Vulture $6.2K), SWatch $1.3K (Turncoat $1.7K, Vulture $1.4K), LS KLab $90 (Artisan only).
 - GHer (Gray Heroin, Laboratory Supplies, 1.000 kg): only Vulture buys it, $7K. No recipe uses it so far.
 - The 11:04 batch (bottom of locker) showed nothing new. Ignored: ammo, magazines, grenades, helmets, weapons, USD stacks, backpacks (AMP12).
+
+- HVL watchlist: `hvl_watchlist.md` lists high value loot from whereisvulture.com/loot that we have not seen in screenshots. Names only, never use the site's prices. Add an item to the matrix only once it appears in a screenshot (use in-game prices), then remove it from the watchlist.
