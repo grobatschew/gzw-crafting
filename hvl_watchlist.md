@@ -9,14 +9,11 @@ Site short names are in brackets.
 ## Military
 - LTSD-4-3 Laser Designator [LTSD43]
 - R-438 Barrier-T [R438]
-- PBG-01+ UAV Control Station [PBG01]
 - C2 Military Laptop [C2Laptop]
 - STRELETS-M Tablet [STRELETS]
 - KIK-11 Tactical Key Loader [KIK11]
-- HGCS-30 UAV Control Station [HGCS30]
 - Biometric Thumb Drive [BioThumb]
 - Rugged Military Tablet [RuggedTab]
-- GLONASS Grot-M Navigation Receiver [GLONASS]
 - Handheld ECM Jammer [ECMJammer]
 - Signal Repeater RT97S [SigRepeater]
 - Biometric Access Card [BioCard]
@@ -26,10 +23,7 @@ Site short names are in brackets.
 
 ## Jewellery
 - Platinum Ring [PDRing]
-- Diamond Earrings [DEarrings]
-- Perfect Pearl Earrings [PPEarrings]
 - Elaborate Ring [ERing]
-- Sapphire Pendant [SPendant]
 - Master Carbon SEAL Automatic Watch [MCSAWatch]
 - Dark Pearl Necklace [DNecklace]
 
@@ -42,20 +36,15 @@ Site short names are in brackets.
 ## Evidence
 - VIP Passport [VIPPass]
 - Tourist Passport [TPassport]
-- Reinforced Military Laptop [ReLaptop]
 - Army Intel [AIntel]
 - Businessman ID Card [BizID]
 - Laptop [Laptop]
 - Local ID Card [LocalID]
 - Crime-related Intel [CrIntel]
-- Digital Camera [DigiCam]
 - Tourist ID Card [TouristID]
 
 ## Vices
-- Moutai - 50y [Moutai]
-- Snake Wine [SWine]
 - Heavenly Perfume Bottle [HPerfume]
-- Lambert Cigars [LCigars]
 - Fragrant Perfume Bottle [FPerfume]
 - Hyperborea Cigarettes [HCigs]
 

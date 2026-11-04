@@ -185,3 +185,12 @@ Files: 20261102160213, 160216, 160228, 160231, 160456, 185650, 185655, 202611030
 - 11:55 4-Nov locker + 7 vendor views: identical to already-logged prices, no new items.
 - Still unpriced: Server RAM Module, CPU (no vendor shows them yet), Electrical Parts.
 - Images analyzed: 146 + 18 = 164.
+
+## Steam folder batch 2 (2026-11-04 13:08 to 22:32, 40 files, read-only folder)
+Files: 20261104 130826-130832 (6), 164555-164629 (8), 192205-192236 (16), 192312, 223143-223227 (9).
+- 13:08 set: lower part of locker, only 5 vendors captured (no Banshee/Vulture) -> those two shown as ? for BAC, SPend…, SCPU, SWine, HGCS30.
+- NEW items (price per vendor in vendor_prices.json): SATCOM (Portable Satcom Terminal, Artisan $4.5K only), X400 $240, EXPS3 $204, AEMS (2) $210 (label shown untruncated; different from the $36 "AEMS…"), PTK $68 (all four at Gunny/Artisan/Turncoat/Banshee), RLSL S… (Artisan $60 only), NR Arm (Artisan $90 each), ReLaptop (Reinforced Military Laptop), Grot-M (GLONASS Grot-M), BTD, DigiCam, CMeal (Lab Rat $17 only), BAC ($2K), SPend… (Sapphire Pendant), SCPU (Artisan $180 only), SWine (Snake Wine), HGCS30, PBG01, Lamberts (Lambert Cigars), Moutai (display truncated "$11…" at most vendors; Gunny $15K, Vulture $12K), PPEarr… (Perfect Pearl Earrings), DAEarr… (Diamond Earrings).
+- Removed from HVL watchlist (now in screenshots with in-game prices): PBG01, HGCS30, GLONASS Grot-M, DEarrings, PPEarrings, SPendant, ReLaptop, DigiCam, Moutai, SWine, LCigars.
+- Disassembly: Portable Satcom Terminal 11h 59m 56s (12.2 kg) -> Uplink Credentials Drive + Oven-Controlled Crystal Oscillator (both unpriced). Optical Seeker 9h 31m 32s -> Missile Seeker Head (name from the later queue label; 1h 24m 6s shown on 192312 is most likely remaining time on the same job, not a new time).
+- Not tracked on purpose: Sub SX/VMAX/AP/SR ammo, F-1/M67/RGD-5 grenades, Crusher helmets, 1911/MCX/Glock weapons, USD, Rush/Trekstars/AMP12 backpacks.
+- Images analyzed: 164 + 40 = 204.

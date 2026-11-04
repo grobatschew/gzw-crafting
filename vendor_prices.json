@@ -102,6 +102,13 @@
     "20261102160228/160231 (Baget 11h57m, Optical Seeker 9h31m disassembly)",
     "20261102185650/185655 (recipes Advanced Hacking Tool, Advanced Tracking Tag)",
     "20261104115524-115536 (names + 7 vendors; no new items/prices)"
+   ],
+   "Steam folder 2026-11-04 13:08-22:32": [
+    "20261104130826-130832 (locker lower part, 5 vendors: no Banshee/Vulture)",
+    "20261104164555-164629 (7 vendors)",
+    "20261104192205-192236 (7 vendors)",
+    "20261104192312, 223227 (Satcom disassembly)",
+    "20261104223143-223214 (7 vendors; SATCOM, Optical Seeker)"
    ]
   },
   "note_truncated_names": "FAST…, BCM M…, AK CR…, AK GA…, G36 12… are truncated by the game UI; full names unknown"
@@ -158,7 +165,22 @@
   "DPBoard": "High-Speed Digital Processor Board",
   "GHer": "Gray Heroin",
   "FlightD": "Flight Data… (truncated)",
-  "Missile": "Missile… (truncated)"
+  "Missile": "Missile Seeker Head",
+  "SATCOM": "Portable Satcom Terminal",
+  "AEMS (2)": "AEMS (label shown untruncated; $210 item, not the $36 \"AEMS…\")",
+  "ReLaptop": "Reinforced Military Laptop",
+  "Grot-M": "GLONASS Grot-M Navigation Receiver",
+  "PBG01": "PBG-01+ UAV Control Station",
+  "HGCS30": "HGCS-30 UAV Control Station",
+  "DigiCam": "Digital Camera",
+  "PPEarr…": "Perfect Pearl Earrings",
+  "DAEarr…": "Diamond Earrings",
+  "SPend…": "Sapphire Pendant",
+  "Moutai": "Moutai - 50y",
+  "SWine": "Snake Wine",
+  "Lamberts": "Lambert Cigars",
+  "UCDrive": "Uplink Credentials Drive",
+  "OCXO": "Oven-Controlled Crystal Oscillator"
  },
  "checked_items": [
   "B12",
@@ -276,7 +298,29 @@
   "ANPY…",
   "GDRing",
   "SWatch",
-  "GHer"
+  "GHer",
+  "SATCOM",
+  "X400",
+  "EXPS3",
+  "AEMS (2)",
+  "PTK",
+  "RLSL S…",
+  "NR Arm",
+  "ReLaptop",
+  "Grot-M",
+  "BTD",
+  "DigiCam",
+  "CMeal",
+  "BAC",
+  "SPend…",
+  "SCPU",
+  "SWine",
+  "HGCS30",
+  "PBG01",
+  "Lamberts",
+  "Moutai",
+  "PPEarr…",
+  "DAEarr…"
  ],
  "prices": [
   {
@@ -2999,6 +3043,829 @@
    "shown": "$7K",
    "value": 7000,
    "src": "20261104110319-110331"
+  },
+  {
+   "vendor": "Artisan",
+   "item": "SATCOM",
+   "shown": "$4.5K",
+   "value": 4500,
+   "src": "Steam folder 2026-11-04"
+  },
+  {
+   "vendor": "Gunny",
+   "item": "X400",
+   "shown": "$240",
+   "value": 240,
+   "src": "Steam folder 2026-11-04"
+  },
+  {
+   "vendor": "Artisan",
+   "item": "X400",
+   "shown": "$240",
+   "value": 240,
+   "src": "Steam folder 2026-11-04"
+  },
+  {
+   "vendor": "Turncoat",
+   "item": "X400",
+   "shown": "$240",
+   "value": 240,
+   "src": "Steam folder 2026-11-04"
+  },
+  {
+   "vendor": "Banshee",
+   "item": "X400",
+   "shown": "$240",
+   "value": 240,
+   "src": "Steam folder 2026-11-04"
+  },
+  {
+   "vendor": "Gunny",
+   "item": "EXPS3",
+   "shown": "$204",
+   "value": 204,
+   "src": "Steam folder 2026-11-04"
+  },
+  {
+   "vendor": "Artisan",
+   "item": "EXPS3",
+   "shown": "$204",
+   "value": 204,
+   "src": "Steam folder 2026-11-04"
+  },
+  {
+   "vendor": "Turncoat",
+   "item": "EXPS3",
+   "shown": "$204",
+   "value": 204,
+   "src": "Steam folder 2026-11-04"
+  },
+  {
+   "vendor": "Banshee",
+   "item": "EXPS3",
+   "shown": "$204",
+   "value": 204,
+   "src": "Steam folder 2026-11-04"
+  },
+  {
+   "vendor": "Gunny",
+   "item": "AEMS (2)",
+   "shown": "$210",
+   "value": 210,
+   "src": "Steam folder 2026-11-04"
+  },
+  {
+   "vendor": "Artisan",
+   "item": "AEMS (2)",
+   "shown": "$210",
+   "value": 210,
+   "src": "Steam folder 2026-11-04"
+  },
+  {
+   "vendor": "Turncoat",
+   "item": "AEMS (2)",
+   "shown": "$210",
+   "value": 210,
+   "src": "Steam folder 2026-11-04"
+  },
+  {
+   "vendor": "Banshee",
+   "item": "AEMS (2)",
+   "shown": "$210",
+   "value": 210,
+   "src": "Steam folder 2026-11-04"
+  },
+  {
+   "vendor": "Gunny",
+   "item": "PTK",
+   "shown": "$68",
+   "value": 68,
+   "src": "Steam folder 2026-11-04"
+  },
+  {
+   "vendor": "Artisan",
+   "item": "PTK",
+   "shown": "$68",
+   "value": 68,
+   "src": "Steam folder 2026-11-04"
+  },
+  {
+   "vendor": "Turncoat",
+   "item": "PTK",
+   "shown": "$68",
+   "value": 68,
+   "src": "Steam folder 2026-11-04"
+  },
+  {
+   "vendor": "Banshee",
+   "item": "PTK",
+   "shown": "$68",
+   "value": 68,
+   "src": "Steam folder 2026-11-04"
+  },
+  {
+   "vendor": "Artisan",
+   "item": "RLSL S…",
+   "shown": "$60",
+   "value": 60,
+   "src": "Steam folder 2026-11-04"
+  },
+  {
+   "vendor": "Artisan",
+   "item": "NR Arm",
+   "shown": "$90",
+   "value": 90,
+   "src": "Steam folder 2026-11-04",
+   "note": "each of 2 keys"
+  },
+  {
+   "vendor": "Handshake",
+   "item": "ReLaptop",
+   "shown": "$3.1K",
+   "value": 3100,
+   "src": "Steam folder 2026-11-04"
+  },
+  {
+   "vendor": "Gunny",
+   "item": "ReLaptop",
+   "shown": "$2.3K",
+   "value": 2300,
+   "src": "Steam folder 2026-11-04"
+  },
+  {
+   "vendor": "Lab Rat",
+   "item": "ReLaptop",
+   "shown": "$2.3K",
+   "value": 2300,
+   "src": "Steam folder 2026-11-04"
+  },
+  {
+   "vendor": "Artisan",
+   "item": "ReLaptop",
+   "shown": "$2.3K",
+   "value": 2300,
+   "src": "Steam folder 2026-11-04"
+  },
+  {
+   "vendor": "Turncoat",
+   "item": "ReLaptop",
+   "shown": "$2.3K",
+   "value": 2300,
+   "src": "Steam folder 2026-11-04"
+  },
+  {
+   "vendor": "Banshee",
+   "item": "ReLaptop",
+   "shown": "$3.1K",
+   "value": 3100,
+   "src": "Steam folder 2026-11-04"
+  },
+  {
+   "vendor": "Vulture",
+   "item": "ReLaptop",
+   "shown": "$2.5K",
+   "value": 2500,
+   "src": "Steam folder 2026-11-04"
+  },
+  {
+   "vendor": "Handshake",
+   "item": "Grot-M",
+   "shown": "$937",
+   "value": 937,
+   "src": "Steam folder 2026-11-04"
+  },
+  {
+   "vendor": "Gunny",
+   "item": "Grot-M",
+   "shown": "$937",
+   "value": 937,
+   "src": "Steam folder 2026-11-04"
+  },
+  {
+   "vendor": "Lab Rat",
+   "item": "Grot-M",
+   "shown": "$937",
+   "value": 937,
+   "src": "Steam folder 2026-11-04"
+  },
+  {
+   "vendor": "Artisan",
+   "item": "Grot-M",
+   "shown": "$937",
+   "value": 937,
+   "src": "Steam folder 2026-11-04"
+  },
+  {
+   "vendor": "Turncoat",
+   "item": "Grot-M",
+   "shown": "$937",
+   "value": 937,
+   "src": "Steam folder 2026-11-04"
+  },
+  {
+   "vendor": "Banshee",
+   "item": "Grot-M",
+   "shown": "$937",
+   "value": 937,
+   "src": "Steam folder 2026-11-04"
+  },
+  {
+   "vendor": "Vulture",
+   "item": "Grot-M",
+   "shown": "$1K",
+   "value": 1000,
+   "src": "Steam folder 2026-11-04"
+  },
+  {
+   "vendor": "Handshake",
+   "item": "BTD",
+   "shown": "$1.9K",
+   "value": 1900,
+   "src": "Steam folder 2026-11-04",
+   "note": "each of 2"
+  },
+  {
+   "vendor": "Gunny",
+   "item": "BTD",
+   "shown": "$1.9K",
+   "value": 1900,
+   "src": "Steam folder 2026-11-04",
+   "note": "each of 2"
+  },
+  {
+   "vendor": "Lab Rat",
+   "item": "BTD",
+   "shown": "$1.9K",
+   "value": 1900,
+   "src": "Steam folder 2026-11-04",
+   "note": "each of 2"
+  },
+  {
+   "vendor": "Artisan",
+   "item": "BTD",
+   "shown": "$1.9K",
+   "value": 1900,
+   "src": "Steam folder 2026-11-04",
+   "note": "each of 2"
+  },
+  {
+   "vendor": "Turncoat",
+   "item": "BTD",
+   "shown": "$1.9K",
+   "value": 1900,
+   "src": "Steam folder 2026-11-04",
+   "note": "each of 2"
+  },
+  {
+   "vendor": "Banshee",
+   "item": "BTD",
+   "shown": "$1.9K",
+   "value": 1900,
+   "src": "Steam folder 2026-11-04",
+   "note": "each of 2"
+  },
+  {
+   "vendor": "Vulture",
+   "item": "BTD",
+   "shown": "$2K",
+   "value": 2000,
+   "src": "Steam folder 2026-11-04",
+   "note": "each of 2"
+  },
+  {
+   "vendor": "Handshake",
+   "item": "DigiCam",
+   "shown": "$150",
+   "value": 150,
+   "src": "Steam folder 2026-11-04"
+  },
+  {
+   "vendor": "Gunny",
+   "item": "DigiCam",
+   "shown": "$112",
+   "value": 112,
+   "src": "Steam folder 2026-11-04"
+  },
+  {
+   "vendor": "Lab Rat",
+   "item": "DigiCam",
+   "shown": "$112",
+   "value": 112,
+   "src": "Steam folder 2026-11-04"
+  },
+  {
+   "vendor": "Artisan",
+   "item": "DigiCam",
+   "shown": "$112",
+   "value": 112,
+   "src": "Steam folder 2026-11-04"
+  },
+  {
+   "vendor": "Turncoat",
+   "item": "DigiCam",
+   "shown": "$112",
+   "value": 112,
+   "src": "Steam folder 2026-11-04"
+  },
+  {
+   "vendor": "Banshee",
+   "item": "DigiCam",
+   "shown": "$150",
+   "value": 150,
+   "src": "Steam folder 2026-11-04"
+  },
+  {
+   "vendor": "Vulture",
+   "item": "DigiCam",
+   "shown": "$120",
+   "value": 120,
+   "src": "Steam folder 2026-11-04"
+  },
+  {
+   "vendor": "Lab Rat",
+   "item": "CMeal",
+   "shown": "$17",
+   "value": 17,
+   "src": "Steam folder 2026-11-04"
+  },
+  {
+   "vendor": "Handshake",
+   "item": "BAC",
+   "shown": "$2K",
+   "value": 2000,
+   "src": "Steam folder 2026-11-04"
+  },
+  {
+   "vendor": "Gunny",
+   "item": "BAC",
+   "shown": "$2K",
+   "value": 2000,
+   "src": "Steam folder 2026-11-04"
+  },
+  {
+   "vendor": "Lab Rat",
+   "item": "BAC",
+   "shown": "$2K",
+   "value": 2000,
+   "src": "Steam folder 2026-11-04"
+  },
+  {
+   "vendor": "Artisan",
+   "item": "BAC",
+   "shown": "$2K",
+   "value": 2000,
+   "src": "Steam folder 2026-11-04"
+  },
+  {
+   "vendor": "Turncoat",
+   "item": "BAC",
+   "shown": "$2K",
+   "value": 2000,
+   "src": "Steam folder 2026-11-04"
+  },
+  {
+   "vendor": "Banshee",
+   "item": "BAC",
+   "shown": "—",
+   "value": null,
+   "note": "not checked (vendor tab not captured for this locker view)",
+   "src": "Steam folder 2026-11-04"
+  },
+  {
+   "vendor": "Vulture",
+   "item": "BAC",
+   "shown": "—",
+   "value": null,
+   "note": "not checked (vendor tab not captured for this locker view)",
+   "src": "Steam folder 2026-11-04"
+  },
+  {
+   "vendor": "Handshake",
+   "item": "SPend…",
+   "shown": "$2.7K",
+   "value": 2700,
+   "src": "Steam folder 2026-11-04"
+  },
+  {
+   "vendor": "Gunny",
+   "item": "SPend…",
+   "shown": "$2.7K",
+   "value": 2700,
+   "src": "Steam folder 2026-11-04"
+  },
+  {
+   "vendor": "Lab Rat",
+   "item": "SPend…",
+   "shown": "$2.7K",
+   "value": 2700,
+   "src": "Steam folder 2026-11-04"
+  },
+  {
+   "vendor": "Artisan",
+   "item": "SPend…",
+   "shown": "$2.7K",
+   "value": 2700,
+   "src": "Steam folder 2026-11-04"
+  },
+  {
+   "vendor": "Turncoat",
+   "item": "SPend…",
+   "shown": "$3.6K",
+   "value": 3600,
+   "src": "Steam folder 2026-11-04"
+  },
+  {
+   "vendor": "Banshee",
+   "item": "SPend…",
+   "shown": "—",
+   "value": null,
+   "note": "not checked (vendor tab not captured for this locker view)",
+   "src": "Steam folder 2026-11-04"
+  },
+  {
+   "vendor": "Vulture",
+   "item": "SPend…",
+   "shown": "—",
+   "value": null,
+   "note": "not checked (vendor tab not captured for this locker view)",
+   "src": "Steam folder 2026-11-04"
+  },
+  {
+   "vendor": "Artisan",
+   "item": "SCPU",
+   "shown": "$180",
+   "value": 180,
+   "src": "Steam folder 2026-11-04"
+  },
+  {
+   "vendor": "Banshee",
+   "item": "SCPU",
+   "shown": "—",
+   "value": null,
+   "note": "not checked (vendor tab not captured for this locker view)",
+   "src": "Steam folder 2026-11-04"
+  },
+  {
+   "vendor": "Vulture",
+   "item": "SCPU",
+   "shown": "—",
+   "value": null,
+   "note": "not checked (vendor tab not captured for this locker view)",
+   "src": "Steam folder 2026-11-04"
+  },
+  {
+   "vendor": "Handshake",
+   "item": "SWine",
+   "shown": "$299",
+   "value": 299,
+   "src": "Steam folder 2026-11-04"
+  },
+  {
+   "vendor": "Gunny",
+   "item": "SWine",
+   "shown": "$399",
+   "value": 399,
+   "src": "Steam folder 2026-11-04"
+  },
+  {
+   "vendor": "Lab Rat",
+   "item": "SWine",
+   "shown": "$299",
+   "value": 299,
+   "src": "Steam folder 2026-11-04"
+  },
+  {
+   "vendor": "Artisan",
+   "item": "SWine",
+   "shown": "$299",
+   "value": 299,
+   "src": "Steam folder 2026-11-04"
+  },
+  {
+   "vendor": "Turncoat",
+   "item": "SWine",
+   "shown": "$299",
+   "value": 299,
+   "src": "Steam folder 2026-11-04"
+  },
+  {
+   "vendor": "Banshee",
+   "item": "SWine",
+   "shown": "—",
+   "value": null,
+   "note": "not checked (vendor tab not captured for this locker view)",
+   "src": "Steam folder 2026-11-04"
+  },
+  {
+   "vendor": "Vulture",
+   "item": "SWine",
+   "shown": "—",
+   "value": null,
+   "note": "not checked (vendor tab not captured for this locker view)",
+   "src": "Steam folder 2026-11-04"
+  },
+  {
+   "vendor": "Handshake",
+   "item": "HGCS30",
+   "shown": "$2K",
+   "value": 2000,
+   "src": "Steam folder 2026-11-04"
+  },
+  {
+   "vendor": "Gunny",
+   "item": "HGCS30",
+   "shown": "$2K",
+   "value": 2000,
+   "src": "Steam folder 2026-11-04"
+  },
+  {
+   "vendor": "Lab Rat",
+   "item": "HGCS30",
+   "shown": "$2K",
+   "value": 2000,
+   "src": "Steam folder 2026-11-04"
+  },
+  {
+   "vendor": "Artisan",
+   "item": "HGCS30",
+   "shown": "$2K",
+   "value": 2000,
+   "src": "Steam folder 2026-11-04"
+  },
+  {
+   "vendor": "Turncoat",
+   "item": "HGCS30",
+   "shown": "$2K",
+   "value": 2000,
+   "src": "Steam folder 2026-11-04"
+  },
+  {
+   "vendor": "Banshee",
+   "item": "HGCS30",
+   "shown": "—",
+   "value": null,
+   "note": "not checked (vendor tab not captured for this locker view)",
+   "src": "Steam folder 2026-11-04"
+  },
+  {
+   "vendor": "Vulture",
+   "item": "HGCS30",
+   "shown": "—",
+   "value": null,
+   "note": "not checked (vendor tab not captured for this locker view)",
+   "src": "Steam folder 2026-11-04"
+  },
+  {
+   "vendor": "Handshake",
+   "item": "PBG01",
+   "shown": "$6.4K",
+   "value": 6400,
+   "src": "Steam folder 2026-11-04"
+  },
+  {
+   "vendor": "Gunny",
+   "item": "PBG01",
+   "shown": "$6.4K",
+   "value": 6400,
+   "src": "Steam folder 2026-11-04"
+  },
+  {
+   "vendor": "Lab Rat",
+   "item": "PBG01",
+   "shown": "$6.4K",
+   "value": 6400,
+   "src": "Steam folder 2026-11-04"
+  },
+  {
+   "vendor": "Artisan",
+   "item": "PBG01",
+   "shown": "$6.4K",
+   "value": 6400,
+   "src": "Steam folder 2026-11-04"
+  },
+  {
+   "vendor": "Turncoat",
+   "item": "PBG01",
+   "shown": "$6.4K",
+   "value": 6400,
+   "src": "Steam folder 2026-11-04"
+  },
+  {
+   "vendor": "Banshee",
+   "item": "PBG01",
+   "shown": "$6.4K",
+   "value": 6400,
+   "src": "Steam folder 2026-11-04"
+  },
+  {
+   "vendor": "Vulture",
+   "item": "PBG01",
+   "shown": "$6.8K",
+   "value": 6800,
+   "src": "Steam folder 2026-11-04"
+  },
+  {
+   "vendor": "Handshake",
+   "item": "Lamberts",
+   "shown": "$211",
+   "value": 211,
+   "src": "Steam folder 2026-11-04"
+  },
+  {
+   "vendor": "Gunny",
+   "item": "Lamberts",
+   "shown": "$282",
+   "value": 282,
+   "src": "Steam folder 2026-11-04"
+  },
+  {
+   "vendor": "Lab Rat",
+   "item": "Lamberts",
+   "shown": "$211",
+   "value": 211,
+   "src": "Steam folder 2026-11-04"
+  },
+  {
+   "vendor": "Artisan",
+   "item": "Lamberts",
+   "shown": "$211",
+   "value": 211,
+   "src": "Steam folder 2026-11-04"
+  },
+  {
+   "vendor": "Turncoat",
+   "item": "Lamberts",
+   "shown": "$211",
+   "value": 211,
+   "src": "Steam folder 2026-11-04"
+  },
+  {
+   "vendor": "Banshee",
+   "item": "Lamberts",
+   "shown": "$211",
+   "value": 211,
+   "src": "Steam folder 2026-11-04"
+  },
+  {
+   "vendor": "Vulture",
+   "item": "Lamberts",
+   "shown": "$225",
+   "value": 225,
+   "src": "Steam folder 2026-11-04"
+  },
+  {
+   "vendor": "Handshake",
+   "item": "Moutai",
+   "shown": "$11…",
+   "value": null,
+   "src": "Steam folder 2026-11-04",
+   "note": "$11… = display truncated, exact value unknown"
+  },
+  {
+   "vendor": "Gunny",
+   "item": "Moutai",
+   "shown": "$15K",
+   "value": 15000,
+   "src": "Steam folder 2026-11-04",
+   "note": "$11… = display truncated, exact value unknown"
+  },
+  {
+   "vendor": "Lab Rat",
+   "item": "Moutai",
+   "shown": "$11…",
+   "value": null,
+   "src": "Steam folder 2026-11-04",
+   "note": "$11… = display truncated, exact value unknown"
+  },
+  {
+   "vendor": "Artisan",
+   "item": "Moutai",
+   "shown": "$11…",
+   "value": null,
+   "src": "Steam folder 2026-11-04",
+   "note": "$11… = display truncated, exact value unknown"
+  },
+  {
+   "vendor": "Turncoat",
+   "item": "Moutai",
+   "shown": "$11…",
+   "value": null,
+   "src": "Steam folder 2026-11-04",
+   "note": "$11… = display truncated, exact value unknown"
+  },
+  {
+   "vendor": "Banshee",
+   "item": "Moutai",
+   "shown": "$11…",
+   "value": null,
+   "src": "Steam folder 2026-11-04",
+   "note": "$11… = display truncated, exact value unknown"
+  },
+  {
+   "vendor": "Vulture",
+   "item": "Moutai",
+   "shown": "$12K",
+   "value": 12000,
+   "src": "Steam folder 2026-11-04",
+   "note": "$11… = display truncated, exact value unknown"
+  },
+  {
+   "vendor": "Handshake",
+   "item": "PPEarr…",
+   "shown": "$3.8K",
+   "value": 3800,
+   "src": "Steam folder 2026-11-04"
+  },
+  {
+   "vendor": "Gunny",
+   "item": "PPEarr…",
+   "shown": "$3.8K",
+   "value": 3800,
+   "src": "Steam folder 2026-11-04"
+  },
+  {
+   "vendor": "Lab Rat",
+   "item": "PPEarr…",
+   "shown": "$3.8K",
+   "value": 3800,
+   "src": "Steam folder 2026-11-04"
+  },
+  {
+   "vendor": "Artisan",
+   "item": "PPEarr…",
+   "shown": "$3.8K",
+   "value": 3800,
+   "src": "Steam folder 2026-11-04"
+  },
+  {
+   "vendor": "Turncoat",
+   "item": "PPEarr…",
+   "shown": "$5K",
+   "value": 5000,
+   "src": "Steam folder 2026-11-04"
+  },
+  {
+   "vendor": "Banshee",
+   "item": "PPEarr…",
+   "shown": "$3.8K",
+   "value": 3800,
+   "src": "Steam folder 2026-11-04"
+  },
+  {
+   "vendor": "Vulture",
+   "item": "PPEarr…",
+   "shown": "$4K",
+   "value": 4000,
+   "src": "Steam folder 2026-11-04"
+  },
+  {
+   "vendor": "Handshake",
+   "item": "DAEarr…",
+   "shown": "$4.3K",
+   "value": 4300,
+   "src": "Steam folder 2026-11-04"
+  },
+  {
+   "vendor": "Gunny",
+   "item": "DAEarr…",
+   "shown": "$4.3K",
+   "value": 4300,
+   "src": "Steam folder 2026-11-04"
+  },
+  {
+   "vendor": "Lab Rat",
+   "item": "DAEarr…",
+   "shown": "$4.3K",
+   "value": 4300,
+   "src": "Steam folder 2026-11-04"
+  },
+  {
+   "vendor": "Artisan",
+   "item": "DAEarr…",
+   "shown": "$4.3K",
+   "value": 4300,
+   "src": "Steam folder 2026-11-04"
+  },
+  {
+   "vendor": "Turncoat",
+   "item": "DAEarr…",
+   "shown": "$5.7K",
+   "value": 5700,
+   "src": "Steam folder 2026-11-04"
+  },
+  {
+   "vendor": "Banshee",
+   "item": "DAEarr…",
+   "shown": "$4.3K",
+   "value": 4300,
+   "src": "Steam folder 2026-11-04"
+  },
+  {
+   "vendor": "Vulture",
+   "item": "DAEarr…",
+   "shown": "$4.6K",
+   "value": 4600,
+   "src": "Steam folder 2026-11-04"
   }
  ],
  "disassembly": [
@@ -3076,8 +3943,25 @@
    "time": "9h 31m",
    "components": [
     {
-     "name": "Missile… (name truncated)",
+     "name": "Missile Seeker Head",
      "icon": "Missile",
+     "item": null
+    }
+   ]
+  },
+  {
+   "item": "SATCOM",
+   "long": "Portable Satcom Terminal",
+   "time": "11h 59m",
+   "components": [
+    {
+     "name": "Uplink Credentials Drive",
+     "icon": "UCDrive",
+     "item": null
+    },
+    {
+     "name": "Oven-Controlled Crystal Oscillator",
+     "icon": "OCXO",
      "item": null
     }
    ]
