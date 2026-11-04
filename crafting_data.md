@@ -194,3 +194,10 @@ Files: 20261104 130826-130832 (6), 164555-164629 (8), 192205-192236 (16), 192312
 - Disassembly: Portable Satcom Terminal 11h 59m 56s (12.2 kg) -> Uplink Credentials Drive + Oven-Controlled Crystal Oscillator (both unpriced). Optical Seeker 9h 31m 32s -> Missile Seeker Head (name from the later queue label; 1h 24m 6s shown on 192312 is most likely remaining time on the same job, not a new time).
 - Not tracked on purpose: Sub SX/VMAX/AP/SR ammo, F-1/M67/RGD-5 grenades, Crusher helmets, 1911/MCX/Glock weapons, USD, Rush/Trekstars/AMP12 backpacks.
 - Images analyzed: 164 + 40 = 204.
+
+## Steam folder batch 3 (2026-11-04 23:21, 8 files: 232115, 232119-232131)
+- NEW matrix items: Melox (Lab Rat $4, 2/2), ERing ($3.3K, Turncoat $4.4K, Vulture $3.5K), IDBusi… Businessman ID Card ($937-1.3K), IDTouri… Tourist ID Card ($112-150), AK308 Sup ($510 at Gunny/Artisan/Turncoat/Banshee), Razor (Handshake/Turncoat $70), BeltB (Handshake/Turncoat $44), Antigen Vial of Antigens ($947, Vulture $1K), MTablet ($1.2K everywhere), Splint (blue) (Lab Rat $2 for 1/6 uses; separate from the red Splint).
+- MTablet long name not set: could be STRELETS-M Tablet or Rugged Military Tablet (both stay on the HVL watchlist).
+- Removed from HVL watchlist: VialAntigens, BizID, TouristID.
+- Ignored: SVD Mag (magazine), 1911 weapons.
+- Images analyzed: 204 + 8 = 212.

@@ -109,6 +109,9 @@
     "20261104192205-192236 (7 vendors)",
     "20261104192312, 223227 (Satcom disassembly)",
     "20261104223143-223214 (7 vendors; SATCOM, Optical Seeker)"
+   ],
+   "Steam folder 2026-11-04 23:21": [
+    "20261104232115 (character), 232119-232131 (7 vendors)"
    ]
   },
   "note_truncated_names": "FAST…, BCM M…, AK CR…, AK GA…, G36 12… are truncated by the game UI; full names unknown"
@@ -180,7 +183,10 @@
   "SWine": "Snake Wine",
   "Lamberts": "Lambert Cigars",
   "UCDrive": "Uplink Credentials Drive",
-  "OCXO": "Oven-Controlled Crystal Oscillator"
+  "OCXO": "Oven-Controlled Crystal Oscillator",
+  "Antigen": "Vial of Antigens",
+  "IDBusi…": "Businessman ID Card",
+  "IDTouri…": "Tourist ID Card"
  },
  "checked_items": [
   "B12",
@@ -320,7 +326,17 @@
   "Lamberts",
   "Moutai",
   "PPEarr…",
-  "DAEarr…"
+  "DAEarr…",
+  "Melox",
+  "ERing",
+  "IDBusi…",
+  "IDTouri…",
+  "AK308 Sup",
+  "Razor",
+  "BeltB",
+  "Antigen",
+  "MTablet",
+  "Splint (blue)"
  ],
  "prices": [
   {
@@ -3866,6 +3882,323 @@
    "shown": "$4.6K",
    "value": 4600,
    "src": "Steam folder 2026-11-04"
+  },
+  {
+   "vendor": "Lab Rat",
+   "item": "Melox",
+   "shown": "$4",
+   "value": 4,
+   "src": "Steam folder 2026-11-04 23:21",
+   "note": "2/2 uses"
+  },
+  {
+   "vendor": "Handshake",
+   "item": "ERing",
+   "shown": "$3.3K",
+   "value": 3300,
+   "src": "Steam folder 2026-11-04 23:21"
+  },
+  {
+   "vendor": "Gunny",
+   "item": "ERing",
+   "shown": "$3.3K",
+   "value": 3300,
+   "src": "Steam folder 2026-11-04 23:21"
+  },
+  {
+   "vendor": "Lab Rat",
+   "item": "ERing",
+   "shown": "$3.3K",
+   "value": 3300,
+   "src": "Steam folder 2026-11-04 23:21"
+  },
+  {
+   "vendor": "Artisan",
+   "item": "ERing",
+   "shown": "$3.3K",
+   "value": 3300,
+   "src": "Steam folder 2026-11-04 23:21"
+  },
+  {
+   "vendor": "Turncoat",
+   "item": "ERing",
+   "shown": "$4.4K",
+   "value": 4400,
+   "src": "Steam folder 2026-11-04 23:21"
+  },
+  {
+   "vendor": "Banshee",
+   "item": "ERing",
+   "shown": "$3.3K",
+   "value": 3300,
+   "src": "Steam folder 2026-11-04 23:21"
+  },
+  {
+   "vendor": "Vulture",
+   "item": "ERing",
+   "shown": "$3.5K",
+   "value": 3500,
+   "src": "Steam folder 2026-11-04 23:21"
+  },
+  {
+   "vendor": "Handshake",
+   "item": "IDBusi…",
+   "shown": "$1.3K",
+   "value": 1300,
+   "src": "Steam folder 2026-11-04 23:21"
+  },
+  {
+   "vendor": "Gunny",
+   "item": "IDBusi…",
+   "shown": "$937",
+   "value": 937,
+   "src": "Steam folder 2026-11-04 23:21"
+  },
+  {
+   "vendor": "Lab Rat",
+   "item": "IDBusi…",
+   "shown": "$937",
+   "value": 937,
+   "src": "Steam folder 2026-11-04 23:21"
+  },
+  {
+   "vendor": "Artisan",
+   "item": "IDBusi…",
+   "shown": "$937",
+   "value": 937,
+   "src": "Steam folder 2026-11-04 23:21"
+  },
+  {
+   "vendor": "Turncoat",
+   "item": "IDBusi…",
+   "shown": "$937",
+   "value": 937,
+   "src": "Steam folder 2026-11-04 23:21"
+  },
+  {
+   "vendor": "Banshee",
+   "item": "IDBusi…",
+   "shown": "$1.3K",
+   "value": 1300,
+   "src": "Steam folder 2026-11-04 23:21"
+  },
+  {
+   "vendor": "Vulture",
+   "item": "IDBusi…",
+   "shown": "$1K",
+   "value": 1000,
+   "src": "Steam folder 2026-11-04 23:21"
+  },
+  {
+   "vendor": "Handshake",
+   "item": "IDTouri…",
+   "shown": "$150",
+   "value": 150,
+   "src": "Steam folder 2026-11-04 23:21"
+  },
+  {
+   "vendor": "Gunny",
+   "item": "IDTouri…",
+   "shown": "$112",
+   "value": 112,
+   "src": "Steam folder 2026-11-04 23:21"
+  },
+  {
+   "vendor": "Lab Rat",
+   "item": "IDTouri…",
+   "shown": "$112",
+   "value": 112,
+   "src": "Steam folder 2026-11-04 23:21"
+  },
+  {
+   "vendor": "Artisan",
+   "item": "IDTouri…",
+   "shown": "$112",
+   "value": 112,
+   "src": "Steam folder 2026-11-04 23:21"
+  },
+  {
+   "vendor": "Turncoat",
+   "item": "IDTouri…",
+   "shown": "$112",
+   "value": 112,
+   "src": "Steam folder 2026-11-04 23:21"
+  },
+  {
+   "vendor": "Banshee",
+   "item": "IDTouri…",
+   "shown": "$150",
+   "value": 150,
+   "src": "Steam folder 2026-11-04 23:21"
+  },
+  {
+   "vendor": "Vulture",
+   "item": "IDTouri…",
+   "shown": "$120",
+   "value": 120,
+   "src": "Steam folder 2026-11-04 23:21"
+  },
+  {
+   "vendor": "Gunny",
+   "item": "AK308 Sup",
+   "shown": "$510",
+   "value": 510,
+   "src": "Steam folder 2026-11-04 23:21"
+  },
+  {
+   "vendor": "Artisan",
+   "item": "AK308 Sup",
+   "shown": "$510",
+   "value": 510,
+   "src": "Steam folder 2026-11-04 23:21"
+  },
+  {
+   "vendor": "Turncoat",
+   "item": "AK308 Sup",
+   "shown": "$510",
+   "value": 510,
+   "src": "Steam folder 2026-11-04 23:21"
+  },
+  {
+   "vendor": "Banshee",
+   "item": "AK308 Sup",
+   "shown": "$510",
+   "value": 510,
+   "src": "Steam folder 2026-11-04 23:21"
+  },
+  {
+   "vendor": "Handshake",
+   "item": "Razor",
+   "shown": "$70",
+   "value": 70,
+   "src": "Steam folder 2026-11-04 23:21"
+  },
+  {
+   "vendor": "Turncoat",
+   "item": "Razor",
+   "shown": "$70",
+   "value": 70,
+   "src": "Steam folder 2026-11-04 23:21"
+  },
+  {
+   "vendor": "Handshake",
+   "item": "BeltB",
+   "shown": "$44",
+   "value": 44,
+   "src": "Steam folder 2026-11-04 23:21"
+  },
+  {
+   "vendor": "Turncoat",
+   "item": "BeltB",
+   "shown": "$44",
+   "value": 44,
+   "src": "Steam folder 2026-11-04 23:21"
+  },
+  {
+   "vendor": "Handshake",
+   "item": "Antigen",
+   "shown": "$947",
+   "value": 947,
+   "src": "Steam folder 2026-11-04 23:21"
+  },
+  {
+   "vendor": "Gunny",
+   "item": "Antigen",
+   "shown": "$947",
+   "value": 947,
+   "src": "Steam folder 2026-11-04 23:21"
+  },
+  {
+   "vendor": "Lab Rat",
+   "item": "Antigen",
+   "shown": "$947",
+   "value": 947,
+   "src": "Steam folder 2026-11-04 23:21"
+  },
+  {
+   "vendor": "Artisan",
+   "item": "Antigen",
+   "shown": "$947",
+   "value": 947,
+   "src": "Steam folder 2026-11-04 23:21"
+  },
+  {
+   "vendor": "Turncoat",
+   "item": "Antigen",
+   "shown": "$947",
+   "value": 947,
+   "src": "Steam folder 2026-11-04 23:21"
+  },
+  {
+   "vendor": "Banshee",
+   "item": "Antigen",
+   "shown": "$947",
+   "value": 947,
+   "src": "Steam folder 2026-11-04 23:21"
+  },
+  {
+   "vendor": "Vulture",
+   "item": "Antigen",
+   "shown": "$1K",
+   "value": 1000,
+   "src": "Steam folder 2026-11-04 23:21"
+  },
+  {
+   "vendor": "Handshake",
+   "item": "MTablet",
+   "shown": "$1.2K",
+   "value": 1200,
+   "src": "Steam folder 2026-11-04 23:21"
+  },
+  {
+   "vendor": "Gunny",
+   "item": "MTablet",
+   "shown": "$1.2K",
+   "value": 1200,
+   "src": "Steam folder 2026-11-04 23:21"
+  },
+  {
+   "vendor": "Lab Rat",
+   "item": "MTablet",
+   "shown": "$1.2K",
+   "value": 1200,
+   "src": "Steam folder 2026-11-04 23:21"
+  },
+  {
+   "vendor": "Artisan",
+   "item": "MTablet",
+   "shown": "$1.2K",
+   "value": 1200,
+   "src": "Steam folder 2026-11-04 23:21"
+  },
+  {
+   "vendor": "Turncoat",
+   "item": "MTablet",
+   "shown": "$1.2K",
+   "value": 1200,
+   "src": "Steam folder 2026-11-04 23:21"
+  },
+  {
+   "vendor": "Banshee",
+   "item": "MTablet",
+   "shown": "$1.2K",
+   "value": 1200,
+   "src": "Steam folder 2026-11-04 23:21"
+  },
+  {
+   "vendor": "Vulture",
+   "item": "MTablet",
+   "shown": "$1.2K",
+   "value": 1200,
+   "src": "Steam folder 2026-11-04 23:21"
+  },
+  {
+   "vendor": "Lab Rat",
+   "item": "Splint (blue)",
+   "shown": "$2",
+   "value": 2,
+   "src": "Steam folder 2026-11-04 23:21",
+   "note": "1/6 uses; blue icon, distinct from the red Splint 2/2"
   }
  ],
  "disassembly": [

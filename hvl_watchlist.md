@@ -37,11 +37,9 @@ Site short names are in brackets.
 - VIP Passport [VIPPass]
 - Tourist Passport [TPassport]
 - Army Intel [AIntel]
-- Businessman ID Card [BizID]
 - Laptop [Laptop]
 - Local ID Card [LocalID]
 - Crime-related Intel [CrIntel]
-- Tourist ID Card [TouristID]
 
 ## Vices
 - Heavenly Perfume Bottle [HPerfume]
@@ -49,7 +47,6 @@ Site short names are in brackets.
 - Hyperborea Cigarettes [HCigs]
 
 ## Lab supplies
-- Vial of Antigens [VialAntigens]
 - Disinfectant [Disinfectant]
 - Industrial Solvent [IndSolvent]
 - Water Purification Tablets [WaterPurif]
