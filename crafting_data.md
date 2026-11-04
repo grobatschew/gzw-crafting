@@ -103,7 +103,7 @@ Gear seen without a visible price or no match attempted: Steel, Rush (backpack),
 
 Strychnine $180, HPR 3-S $285, ORI-12 $255, EPO $219, DT-0X $180 (locker view). Morphine ($135 at Lab Rat) was found in the 2026-11-03 locker views. LHem ($63, injector-looking item in locker) has no recipe and stays unmapped.
 
-## Images analyzed (120)
+## Images analyzed (146)
 
 Production/crafting: 20261102142056, 142059, 142100, 142102, 142104, 142109, 142110, 142112, 142113, 142116, 142117, 142121, 142123, 142127, 142129, 142131 (all `_1.jpg`)
 
@@ -143,7 +143,7 @@ Other findings: EKLog, IncrDD (new), EWLog $12K (Vulture price cut off in the sc
 
 ## Vendor price tracking
 
-Full per-vendor price data is in `vendor_prices.json` (352 price rows, 7 vendors, 129 items; 29 rows come from the 2026-11-02 screenshots where only one vendor was looked at). The page's Vendor sell matrix tab embeds this data. An item with no row for a vendor shows a cross if it was checked at all vendors in the 2026-11-03 batch, otherwise a question mark. Craft-relevant findings from the 2026-11-03 batch:
+Full per-vendor price data is in `vendor_prices.json` (404 price rows, 7 vendors, 116 items; 29 rows come from the 2026-11-02 screenshots where only one vendor was looked at). The page's Vendor sell matrix tab embeds this data. An item with no row for a vendor shows a cross if it was checked at all vendors in the 2026-11-03 batch, otherwise a question mark. Craft-relevant findings from the 2026-11-03 batch:
 - Low-Quality Morphine Base $2K and Medium-Quality Morphine Base $2.5K at both Lab Rat and Vulture. Handshake, Gunny, Artisan, Turncoat and Banshee do not buy them.
 - Stabilized Morphine Sulfate Liquid $6K at Lab Rat only. No other vendor showed a price.
 - Morphine injector $135 at Lab Rat. High-Quality Morphine Base is $3K at Lab Rat and Vulture (18:48 batch), so the Morphine injector costs $3,030 to craft and sells for $135 (-$2,895 per craft; the base is worth more sold raw).
@@ -167,3 +167,10 @@ New items added to the Vendor sell matrix only (no craft relevance), with icons:
 - Weapon parts (Gunny, Artisan, Turncoat, Banshee pay the same; Handshake, Lab Rat, Vulture do not buy): EXPS2 $165, RMR $190, NcStar... $105, CQBL-1 $405, PERST-4 $660, STS M... $150, FTC O... $204, AEMS... $36, LS Mou... $67, AK12 Sport $375.
 - LBoonie $4 (Handshake, Turncoat only). Perfume $112 (Gunny $150, Vulture $120). Tzintzi... $1.5K (Gunny $2K, Vulture $1.6K). Azart $825 (Vulture $880). ENeckl... $4K (Turncoat $5.3K, Vulture $4.2K). Neckla... $135 (Turncoat $180, Vulture $144). LWatch $450 (Turncoat $600, Vulture $480). DCRing $3.9K (Turncoat $5.3K, Vulture $4.2K). PCCard $4.5K (Artisan $6K, Vulture $4.8K). AFRKit $285 (Gunny and Lab Rat only).
 - Ignored on purpose: Crusher helmet, VMAX ammo, MP7 mags, M67/F-1 grenades (weapons), USD stacks, Rush/Trekstars backpacks. Items already known were not re-added.
+
+## 2026-11-04 batches (26 images)
+Added to the Vendor sell matrix only, with icons:
+- Weapon parts: MP7 Rotex $357 and MCX G... $61 (Gunny, Artisan, Turncoat, Banshee only).
+- Spirits and valuables: Breda $2.9K (Gunny $3.8K, Vulture $3K), Allanach $4.1K (Gunny $5.5K, Vulture $4.4K), Goodlad $337 (Gunny $450, Vulture $360), ANPY... $3.2K (Vulture $3.4K), GDRing $5.8K (Turncoat $7.7K, Vulture $6.2K), SWatch $1.3K (Turncoat $1.7K, Vulture $1.4K), LS KLab $90 (Artisan only).
+- GHer (Gray Heroin, Laboratory Supplies, 1.000 kg): only Vulture buys it, $7K. No recipe uses it so far.
+- The 11:04 batch (bottom of locker) showed nothing new. Ignored: ammo, magazines, grenades, helmets, weapons, USD stacks, backpacks (AMP12).
