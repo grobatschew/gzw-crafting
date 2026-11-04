@@ -201,3 +201,9 @@ Files: 20261104 130826-130832 (6), 164555-164629 (8), 192205-192236 (16), 192312
 - Removed from HVL watchlist: VialAntigens, BizID, TouristID.
 - Ignored: SVD Mag (magazine), 1911 weapons.
 - Images analyzed: 204 + 8 = 212.
+
+## Steam folder batch 4 (2026-11-04 23:27, file 20261104232706)
+- NEW recipe (Electronics Workshop, 1s): Superior Hacking Tool (Hacking Tool, 1.000 kg) = Oven-Controlled Crystal Oscillator x1 (owned 0/1, comes from Portable Satcom Terminal disassembly) + High-Speed Digital Processor Board x1 (DPBoard, Lab Rat $1.2K, owned 1) + Digital Synthesis Engine x1 (unpriced, owned 1).
+- Queue showed Portable Satcom Terminal at 11h 5m 17s, consistent with the earlier reading that queue times count down (remaining time).
+- Not costable yet: OCXO and Digital Synthesis Engine have no sell price.
+- Images analyzed: 212 + 1 = 213.
