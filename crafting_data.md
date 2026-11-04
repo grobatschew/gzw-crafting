@@ -176,3 +176,12 @@ Added to the Vendor sell matrix only, with icons:
 - The 11:04 batch (bottom of locker) showed nothing new. Ignored: ammo, magazines, grenades, helmets, weapons, USD stacks, backpacks (AMP12).
 
 - HVL watchlist: `hvl_watchlist.md` lists high value loot from whereisvulture.com/loot that we have not seen in screenshots. Names only, never use the site's prices. Add an item to the matrix only once it appears in a screenshot (use in-game prices), then remove it from the watchlist.
+
+## Steam folder batch (read-only folder, 2026-11-02..04)
+Files: 20261102160213, 160216, 160228, 160231, 160456, 185650, 185655, 20261103003228, 003901, 121142, 20261104115524, 115530-115536.
+- NEW recipe (Electronics Workshop, 1s): Advanced Hacking Tool (Hacking Tool, 1.000 kg) = FPGA Module x1 + Avionics Processor Board x1 + Server RAM Module x1.
+- NEW recipe (1s): Advanced Tracking Tag (Tracking Tag, 0.014 kg) = Electrical Parts x1 + Military Software x1 + CPU x1.
+- Disassembly: Baget-53-31 Onboard Computer 11h 57m, parts: Flight D… (truncated, unpriced) + Avionics Processor Board. Optical Seeker 9h 31m 32s, part: Missile… (truncated, unpriced). Optical Seeker raw: $10K Turncoat only.
+- 11:55 4-Nov locker + 7 vendor views: identical to already-logged prices, no new items.
+- Still unpriced: Server RAM Module, CPU (no vendor shows them yet), Electrical Parts.
+- Images analyzed: 146 + 18 = 164.
