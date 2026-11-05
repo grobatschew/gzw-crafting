@@ -9,7 +9,6 @@ Site short names are in brackets.
 ## Military
 - LTSD-4-3 Laser Designator [LTSD43]
 - R-438 Barrier-T [R438]
-- C2 Military Laptop [C2Laptop]
 - STRELETS-M Tablet [STRELETS]
 - KIK-11 Tactical Key Loader [KIK11]
 - Biometric Thumb Drive [BioThumb]
@@ -22,7 +21,6 @@ Site short names are in brackets.
 - LAF Dog Tag [DogTag]
 
 ## Jewellery
-- Platinum Ring [PDRing]
 - Elaborate Ring [ERing]
 - Master Carbon SEAL Automatic Watch [MCSAWatch]
 - Dark Pearl Necklace [DNecklace]

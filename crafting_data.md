@@ -213,3 +213,12 @@ Files: 20261104 130826-130832 (6), 164555-164629 (8), 192205-192236 (16), 192312
 - New price info is taken ONLY from screenshots taken after the patch (check the version in the screenshot footer, e.g. "0.5.1.0-..."). Old screenshots are never re-read for prices.
 - New rows carry "ver":"0.5.1.0" in vendor_prices.json (craft items: "pv":"0.5.1.0" in ITEMS). They override older rows for the same vendor and item and are shown in the normal colour. If a vendor no longer buys an item, add a row with value null and ver 0.5.1.0.
 - Recipes, disassembly times and names are not prices and stay as recorded until a new screenshot contradicts them.
+
+## 2026-11-05 batch (first 0.5.1.0 screenshots)
+- 56 new files (Steam folder 20261105110140 .. 20261105120959), footer reads 0.5.1.0-325552-H. 35 are vendor tabs at 3 locker positions plus the medical/morphine block (7 vendors each), 4 positions in all with the first block.
+- Read by eye (OCR was unreliable). 234 price rows carry "ver":"0.5.1.0" and override the old rows. No vendor stopped buying anything, so there are no "nobuy" rows yet.
+- Almost every price is unchanged from the pre-patch reading. Changed: High-Quality Morphine Base $3,000 -> $4,500 (Lab Rat, Vulture), Stabilized Morphine Sulfate Liquid $6,000 -> $12,000 (Lab Rat), red Splint $17 -> $4 (old reading was from the 2026-11-02 batch, condition unknown). PFRKit $180 -> $1.1K is the full 2,000/2,000 kit versus an unknown fill earlier. Bandage $6 -> $9 is 3/3 versus 2/3 earlier.
+- New items: PDRing (Platinum Ring) $7.5K (Turncoat $10K, Vulture $8K), C2 LAP (C2 Military Laptop) $4.9K (Vulture $5.2K), Alien (suppressed pistol part, truncated) $4.6K at Gunny/Artisan/Turncoat/Banshee, DD FG $84, UCLog $18K (Artisan only), Ibalin blister pack (2/2) $2 (Lab Rat), SHem $39 (Lab Rat), Seal $15 (Artisan), Oven-Controlled Crystal Oscillator (OCXO) $9K (Artisan only; now linked into the SATCOM disassembly).
+- Tabs not re-read: Optical Seeker disassembly shows 5h 59m 50s for Missile Seeker Head (kept 9h 31m, it may be remaining time). Lab crafting screens and the quest screen were not used for data.
+- ITEMS prices re-confirmed with pv 0.5.1.0: Opium Gum, Garden Lime, Ammonium Chloride, Purified Water, Methanol, Fenethylline, HPR 3-S, Strychnine; changed: HQMB 4500, StMSL 12000, OCXO 9000 (Artisan).
+- Removed from the HVL watchlist because they now have in-game prices: C2 Military Laptop, Platinum Ring.
