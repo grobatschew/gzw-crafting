@@ -229,3 +229,8 @@ Files: 20261104 130826-130832 (6), 164555-164629 (8), 192205-192236 (16), 192312
 
 ## 2026-11-05 14:39-14:43 batch (0.5.1.0, 17 files)
 - Backpacks opened in the locker (Patrol Backpack x4, Civilian Trekstars 70L, Rush 72 2.0). Inside are Lab Rat chemical stacks priced $15/$30/$36/$39/$45/$75/$90/$150, all matching the earlier readings. Item names are hidden in the opened-bag view, so only label-readable items were recorded: Ethanol $90, Chloroform $45, Sulfuric Acid $39, Purified Water $30 (Lab Rat, 0.5.1.0). The $75 brown bottle and the $15/$45 bottles could not be told apart by icon and were skipped. No new items, no price changes found.
+
+## 2026-11-05 15:30 batch (0.5.1.0, 9 files)
+- One locker position at 7 vendors, 60 more 0.5.1.0 rows; names read from the Character screens (153010, 144312).
+- Electrical Parts ($60, Artisan only) now has a price, so the missing-price gap is closed for the tracking tags. Other new items: Copper $30 (Artisan), Fan $15 (Artisan), Water Purification Tablets $27 ($29 Vulture), Prism (3) $150 (Artisan), FN GOfc $90 (Artisan), 1911 C... $484 at Gunny/Artisan/Turncoat/Banshee. PFRKit 1,972/2,000 $1.1K (Gunny, Lab Rat), PGRKit 2,798/3,000 $1.2K (Handshake, Lab Rat).
+- Reconfirmed unchanged: EPhone $262 (Lab Rat $350, Vulture $280), NPI2 $1.1K, MWatch, DCRing, ORI-12 $255, HpR 3-S $285, Strych $180, B12 $30, HGH $30, Anil $30, SodCit $45, Methol $30, PSU $75, PCB $45.
