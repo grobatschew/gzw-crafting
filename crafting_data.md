@@ -207,3 +207,9 @@ Files: 20261104 130826-130832 (6), 164555-164629 (8), 192205-192236 (16), 192312
 - Queue showed Portable Satcom Terminal at 11h 5m 17s, consistent with the earlier reading that queue times count down (remaining time).
 - Not costable yet: OCXO and Digital Synthesis Engine have no sell price.
 - Images analyzed: 212 + 1 = 213.
+
+## PATCH 0.5.1.0 RULE (added 2026-11-05)
+- Patch 0.5.1.0 overhauled prices. Everything recorded up to 2026-11-04 23:27 (last file 20261104232706) is PRE 0.5.1.0 and shown in purple on the page with a "pre 0.5.1.0" tag.
+- New price info is taken ONLY from screenshots taken after the patch (check the version in the screenshot footer, e.g. "0.5.1.0-..."). Old screenshots are never re-read for prices.
+- New rows carry "ver":"0.5.1.0" in vendor_prices.json (craft items: "pv":"0.5.1.0" in ITEMS). They override older rows for the same vendor and item and are shown in the normal colour. If a vendor no longer buys an item, add a row with value null and ver 0.5.1.0.
+- Recipes, disassembly times and names are not prices and stay as recorded until a new screenshot contradicts them.

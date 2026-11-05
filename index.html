@@ -21,6 +21,8 @@
   --accent-soft: #d3dfbb;
   --warn: #8a5a0b;
   --warn-soft: #f0dfb8;
+  --pre: #6a3fb0;
+  --pre-soft: #e6dcf5;
   --tile: #1b1e18;
   --tile-border: #353a30;
   --font-display: "Barlow Condensed", "Arial Narrow", sans-serif;
@@ -40,6 +42,8 @@
     --accent-soft: #2c3820;
     --warn: #e0b157;
     --warn-soft: #3a2f14;
+    --pre: #bda4f0;
+    --pre-soft: #2e2548;
     color-scheme: dark;
   }
 }
@@ -204,6 +208,11 @@ summary { cursor: pointer; font-weight: 500; }
   .recipes { grid-template-columns: 1fr; }
 }
 @media (prefers-reduced-motion: reduce) { * { scroll-behavior: auto !important; transition: none !important; } }
+.pre { color: var(--pre); }
+.pretag { display: inline-block; font-family: var(--font-display); font-weight: 600; font-size: 0.72rem; letter-spacing: 0.06em; text-transform: uppercase; color: var(--pre); background: var(--pre-soft); border: 1px solid var(--pre); border-radius: 3px; padding: 0 6px; line-height: 1.5; white-space: nowrap; }
+.patchbar { flex-basis: 100%; margin: 6px 0 0; padding: 8px 12px; font-size: 0.88rem; border-left: 4px solid var(--pre); background: var(--pre-soft); border-radius: 3px; }
+#vsm-table td.vp.pre { color: var(--pre); box-shadow: inset 3px 0 0 var(--pre); }
+#vsm-table td.vp.pre.best { color: var(--pre); }
 </style>
 <style>body{margin:0}[hidden]{display:none!important}img{max-width:100%}</style>
 </head>
@@ -212,6 +221,7 @@ summary { cursor: pointer; font-weight: 500; }
   <header class="top">
     <h1>GZW Craft Overview</h1>
     <p class="sub">Laboratory and Electronics Workshop recipes, items and vendor prices</p>
+    <p class="patchbar"><span class="pretag">pre 0.5.1.0</span> Patch 0.5.1.0 changed prices. Figures in <b class="pre">purple</b> were read before the patch and may be out of date. Figures in the normal colour were read from 0.5.1.0 or later screenshots.</p>
   </header>
   <nav class="tabs" role="tablist" aria-label="Views">
     <button class="tab" role="tab" id="t-want" aria-controls="v-want" data-tab="want">Want list</button>
@@ -385,7 +395,10 @@ const QUESTS = [
 const esc = s => String(s).replace(/[&<>"]/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));
 const name = id => ITEMS[id].n;
 const ico = (id, cls) => `<span class="ico ${cls||''}">${IMG[id] ? `<img src="${IMG[id]}" alt="" loading="lazy">` : ''}${ITEMS[id].s ? `<span class="sn">${esc(ITEMS[id].s)}</span>` : ''}</span>`;
-const price = id => ITEMS[id].p != null ? (ITEMS[id].r ? '~' : '') + '$' + ITEMS[id].p.toLocaleString('en-US') : null;
+const NEWVER = '0.5.1.0';
+const isPre = ver => ver !== NEWVER;
+const PRETAG = '<span class="pretag">pre 0.5.1.0</span>';
+const price = id => { if (ITEMS[id].p == null) return null; const s = (ITEMS[id].r ? '~' : '') + '$' + ITEMS[id].p.toLocaleString('en-US'); return isPre(ITEMS[id].pv) ? `<span class="pre">${s}</span>` : s; };
 
 /* used-in map */
 const usedIn = {};
@@ -479,12 +492,12 @@ function renderWant() {
 /* ---------- full list ---------- */
 /* crafting cost = sum of ingredient sell prices; a crafted ingredient counts at its own sell value (listed as missing while that is unknown) */
 function craftCost(id) {
-  let sum = 0, priced = 0; const missing = [];
+  let sum = 0, priced = 0, pre = false; const missing = [];
   byId[id].ing.forEach(i => {
-    if (ITEMS[i].p != null) { sum += ITEMS[i].p; priced++; }
+    if (ITEMS[i].p != null) { sum += ITEMS[i].p; priced++; if (isPre(ITEMS[i].pv)) pre = true; }
     else missing.push(name(i));
   });
-  return {sum, priced, missing};
+  return {sum, priced, missing, pre};
 }
 const money = n => '$' + n.toLocaleString('en-US');
 function statsHtml(id) {
@@ -493,8 +506,8 @@ function statsHtml(id) {
   const val = ITEMS[id].p != null ? price(id) : '–';
   const note = c.missing.length ? `<span class="stat-note">${c.priced ? 'Plus' : 'No price yet for'} ${c.missing.map(esc).join(', ')}</span>` : '';
   return `<div class="stats">
-    <div class="stat"><span class="l">Crafting cost</span><span class="v ${c.priced ? '' : 'none'}">${cost}</span></div>
-    <div class="stat"><span class="l">Crafted value</span><span class="v ${ITEMS[id].p != null ? '' : 'none'}">${val}</span></div>${note}</div>`;
+    <div class="stat"><span class="l">Crafting cost</span><span class="v ${c.priced ? '' : 'none'} ${c.pre ? 'pre' : ''}">${cost}</span></div>
+    <div class="stat"><span class="l">Crafted value</span><span class="v ${ITEMS[id].p != null ? '' : 'none'}">${val}</span></div>${note}${c.pre || (ITEMS[id].p != null && isPre(ITEMS[id].pv)) ? `<span class="stat-note">${PRETAG}</span>` : ''}</div>`;
 }
 const money2 = n => (n < 0 ? '−' : '+') + '$' + Math.abs(n).toLocaleString('en-US');
 function fmtSecs(s) { const h = Math.floor(s / 3600), m = Math.floor(s % 3600 / 60); return h + 'h' + (m ? ' ' + m + 'm' : ''); }
@@ -506,11 +519,11 @@ function questHtml(q) {
   return `<div class="recipe quest"><div class="recipe-top">${ico(q.of)}<div class="ttl">${esc(name(q.of))} ×${q.n}<br><small class="dim">${esc(q.label)} hand-in</small></div><span class="time">${fmtSecs(secs)}${star}</span></div>
     <div class="ings">${r.ing.map(i => `<span class="ing ${byId[i] ? 'made' : ''}">${ico(i, 'sm')}${esc(name(i))} ×${q.n}${byId[i] ? ' <small>crafted</small>' : ''}</span>`).join('')}</div>
     <div class="stats">
-      <div class="stat"><span class="l">Crafting cost</span><span class="v">${money(cost)}</span></div>
-      <div class="stat"><span class="l">Quest payout</span><span class="v">${money(q.payout)}</span></div>
-      <div class="stat"><span class="l">Profit</span><span class="v">${money2(profit)}</span></div>
-      <div class="stat"><span class="l">Profit / hour</span><span class="v">≈ ${money2(perH)}/h</span></div>
-      <span class="stat-note">${q.n} crafts run one after another. Cost counts each Low-Quality base at its sell value.</span></div></div>`;
+      <div class="stat"><span class="l">Crafting cost</span><span class="v pre">${money(cost)}</span></div>
+      <div class="stat"><span class="l">Quest payout</span><span class="v pre">${money(q.payout)}</span></div>
+      <div class="stat"><span class="l">Profit</span><span class="v pre">${money2(profit)}</span></div>
+      <div class="stat"><span class="l">Profit / hour</span><span class="v pre">≈ ${money2(perH)}/h</span></div>
+      <span class="stat-note">${PRETAG} ${q.n} crafts run one after another. Cost counts each Low-Quality base at its sell value.</span></div></div>`;
 }
 function renderFull() {
   document.getElementById('full-list').innerHTML = Object.keys(STATIONS).map(st => `
@@ -593,16 +606,18 @@ const vpBy = {};
 VP.prices.forEach(p => { (vpBy[p.item] = vpBy[p.item] || {})[p.vendor] = p; });
 const vList = vs => vs.length === VENDORS.length ? 'Whoever' : vs.join(' or ');
 function bestOf(item) {
-  const rows = VP.prices.filter(p => p.item === item && p.value != null);
+  const rows = Object.values(vpBy[item] || {}).filter(p => p.value != null);
   if (!rows.length) return null;
   const v = Math.max(...rows.map(p => p.value));
-  return {value: v, vendors: rows.filter(p => p.value === v).map(p => p.vendor)};
+  const top = rows.filter(p => p.value === v);
+  return {value: v, vendors: top.map(p => p.vendor), pre: top.every(p => isPre(p.ver))};
 }
 function parseHrs(t) { const h = /(\d+)\s*h/.exec(t), m = /(\d+)\s*m/.exec(t); return (h ? +h[1] : 0) + (m ? +m[1] / 60 : 0); }
 const DIS = (VP.disassembly || []).map(e => {
   const raw = bestOf(e.item); let sum = 0, unknown = 0;
-  const comps = e.components.map(c => { const b = c.item ? bestOf(c.item) : null; if (b) sum += b.value; else unknown++; return {c, b}; });
-  return {e, raw, comps, sum, unknown, hrs: parseHrs(e.time)};
+  let sumPre = false;
+  const comps = e.components.map(c => { const b = c.item ? bestOf(c.item) : null; if (b) { sum += b.value; if (b.pre) sumPre = true; } else unknown++; return {c, b}; });
+  return {e, raw, comps, sum, unknown, sumPre, hrs: parseHrs(e.time)};
 });
 const disByItem = {}; DIS.forEach(x => { disByItem[x.e.item] = x; });
 function vsmRows() {
@@ -647,10 +662,11 @@ function vsmRec(r) {
   else if (only) sub = 'only buyer';
   else if (everyone) sub = 'same price at every vendor';
   else sub = r.bestVendors.length === 2 ? 'same price at both' : r.bestVendors.length > 2 ? 'same price at each' : 'highest price';
-  const shown = r.cells.find(c => c.state === 'price' && c.p.value === r.best).p.shown;
+  const bp = r.cells.find(c => c.state === 'price' && c.p.value === r.best).p;
+  const shown = bp.shown;
   const dc = disByItem[r.k];
-  const dis = dc ? `<small>Disassembled: ${dc.unknown ? 'at least ' : ''}${money(dc.sum)}</small>` : '';
-  return `<td class="rec">${r.unsure ? ICON_Q : ''}<b>${esc(joined)}</b> · ${esc(shown)}<small>${sub}</small>${dis}</td>`;
+  const dis = dc ? `<small class="${dc.sumPre ? 'pre' : ''}">Disassembled: ${dc.unknown ? 'at least ' : ''}${money(dc.sum)}</small>` : '';
+  return `<td class="rec">${r.unsure ? ICON_Q : ''}<b>${esc(joined)}</b> · <span class="${isPre(bp.ver) ? 'pre' : ''}">${esc(shown)}</span><small>${sub}</small>${dis}</td>`;
 }
 function renderVsm() {
   const q = document.getElementById('vsm-search').value.trim().toLowerCase();
@@ -668,10 +684,11 @@ function renderVsm() {
       if (c.state === 'no') return `<td class="vp">${ICON_X}</td>`;
       if (c.state === 'unknown') return `<td class="vp">${ICON_Q}</td>`;
       const best = c.p.value === r.best && r.cells.filter(x => x.state === 'price').length > 0;
-      return `<td class="vp ${best ? 'best' : ''}"${c.p.note ? ` title="${esc(c.p.note)}"` : ''}>${esc(c.p.shown)}${c.p.note ? '*' : ''}</td>`;
+      const tip = [isPre(c.p.ver) ? 'pre 0.5.1.0' : '', c.p.note || ''].filter(Boolean).join(' · ');
+      return `<td class="vp ${best ? 'best' : ''} ${isPre(c.p.ver) ? 'pre' : ''}"${tip ? ` title="${esc(tip)}"` : ''}>${esc(c.p.shown)}${c.p.note ? '*' : ''}</td>`;
     }).join('') + vsmRec(r) + '</tr>').join('');
   document.getElementById('vsm-table').innerHTML = `<thead><tr>${th}</tr></thead><tbody>${body || `<tr><td colspan="${VENDORS.length + 2}" class="dim">No items match.</td></tr>`}</tbody>`;
-  document.getElementById('vsm-legend').innerHTML = `<span><b>$</b> price</span><span>${ICON_X} vendor does not buy it</span><span>${ICON_Q} not checked at this vendor yet</span><span>${rows.length} of ${VSM.length} items</span>`;
+  document.getElementById('vsm-legend').innerHTML = `<span><b>$</b> price</span><span>${ICON_X} vendor does not buy it</span><span>${ICON_Q} not checked at this vendor yet</span><span><b class="pre">purple</b> ${PRETAG}</span><span>${rows.length} of ${VSM.length} items</span>`;
 }
 
 (function(){ const nav = document.querySelector('nav.tabs'); const set = () => document.documentElement.style.setProperty('--tabh', nav.offsetHeight + 'px'); set(); addEventListener('resize', set); })();
@@ -681,8 +698,8 @@ function disIco(key) {
 }
 function renderDis() {
   const rows = DIS.map(x => {
-    const raw = x.raw ? `<b>${money(x.raw.value)}</b><small class="dim" style="display:block">${esc(vList(x.raw.vendors))}</small>` : `${ICON_Q} <span class="dim">unknown</span>`;
-    const comps = x.comps.map(({c, b}) => `<div class="comp">${disIco(c.icon)}<span>${esc(c.name)}<small>${b ? esc(money(b.value) + ' · ' + vList(b.vendors)) : 'price not known yet'}</small></span></div>`).join('');
+    const raw = x.raw ? `<b class="${x.raw.pre ? 'pre' : ''}">${money(x.raw.value)}</b><small class="dim" style="display:block">${esc(vList(x.raw.vendors))}</small>` : `${ICON_Q} <span class="dim">unknown</span>`;
+    const comps = x.comps.map(({c, b}) => `<div class="comp">${disIco(c.icon)}<span>${esc(c.name)}<small class="${b && b.pre ? 'pre' : ''}">${b ? esc(money(b.value) + ' · ' + vList(b.vendors)) : 'price not known yet'}</small></span></div>`).join('');
     let verdict;
     if (!x.raw) verdict = '<span class="dim">raw price unknown</span>';
     else {
@@ -690,7 +707,7 @@ function renderDis() {
       if (diff > 0) verdict = `<span class="good">Disassemble</span><small class="dim" style="display:block">${x.unknown ? 'at least ' : ''}${money2(diff)}${per ? ' (' + money2(per) + '/h)' : ''}</small>`;
       else verdict = x.unknown ? `<span class="dim">unclear, ${x.unknown} component price${x.unknown > 1 ? 's' : ''} missing</span>` : `<b>Sell raw</b><small class="dim" style="display:block">${money2(-diff)} better</small>`;
     }
-    return `<tr><td class="item"><div class="in">${disIco(x.e.item)}<span>${esc(x.e.long)} <span class="dim mono" style="font-weight:400">${esc(x.e.item)}</span></span></div></td><td class="num">${esc(x.e.time)}</td><td class="num">${raw}</td><td>${comps}</td><td class="num">${x.sum || !x.unknown ? `<b>${x.unknown ? '≥ ' : ''}${money(x.sum)}</b>` : '<span class="dim">unknown</span>'}${x.unknown ? `<small class="dim" style="display:block">${x.unknown} unpriced</small>` : ''}</td><td>${verdict}</td></tr>`;
+    return `<tr><td class="item"><div class="in">${disIco(x.e.item)}<span>${esc(x.e.long)} <span class="dim mono" style="font-weight:400">${esc(x.e.item)}</span></span></div></td><td class="num">${esc(x.e.time)}</td><td class="num">${raw}</td><td>${comps}</td><td class="num">${x.sum || !x.unknown ? `<b class="${x.sumPre ? 'pre' : ''}">${x.unknown ? '≥ ' : ''}${money(x.sum)}</b>` : '<span class="dim">unknown</span>'}${x.unknown ? `<small class="dim" style="display:block">${x.unknown} unpriced</small>` : ''}</td><td>${verdict}</td></tr>`;
   }).join('');
   document.getElementById('dis-table').innerHTML = `<thead><tr><th>Material</th><th>Time</th><th>Raw</th><th>Components</th><th>Disassembled</th><th>Better</th></tr></thead><tbody>${rows}</tbody>`;
 }
