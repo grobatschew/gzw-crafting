@@ -222,3 +222,7 @@ Files: 20261104 130826-130832 (6), 164555-164629 (8), 192205-192236 (16), 192312
 - Tabs not re-read: Optical Seeker disassembly shows 5h 59m 50s for Missile Seeker Head (kept 9h 31m, it may be remaining time). Lab crafting screens and the quest screen were not used for data.
 - ITEMS prices re-confirmed with pv 0.5.1.0: Opium Gum, Garden Lime, Ammonium Chloride, Purified Water, Methanol, Fenethylline, HPR 3-S, Strychnine; changed: HQMB 4500, StMSL 12000, OCXO 9000 (Artisan).
 - Removed from the HVL watchlist because they now have in-game prices: C2 Military Laptop, Platinum Ring.
+
+## 2026-11-05 13:02 batch (0.5.1.0, 19 files)
+- Two locker positions at all 7 vendors. 44 more 0.5.1.0 rows. Nothing repriced except confirming earlier readings; new items: SigGen (Artisan $150 only), MParts (Artisan $60 only), Paracet 1/5 (Lab Rat $0), RT97S ($675, Vulture $720), AGRKit 400/400 ($315 at Handshake and Lab Rat only), plus PBG01 $6.4K (Vulture $6.8K), GCCard $1.6K (Artisan $2.2K, Vulture $1.8K), Moxiflox 3/4 $28.
+- Last 2 files (Lab Rat, Vulture, 13:04:58-13:05:00): LQMB $2K at both, unchanged; lq_base marked 0.5.1.0. The Character screen is not used.
