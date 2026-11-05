@@ -226,3 +226,6 @@ Files: 20261104 130826-130832 (6), 164555-164629 (8), 192205-192236 (16), 192312
 ## 2026-11-05 13:02 batch (0.5.1.0, 19 files)
 - Two locker positions at all 7 vendors. 44 more 0.5.1.0 rows. Nothing repriced except confirming earlier readings; new items: SigGen (Artisan $150 only), MParts (Artisan $60 only), Paracet 1/5 (Lab Rat $0), RT97S ($675, Vulture $720), AGRKit 400/400 ($315 at Handshake and Lab Rat only), plus PBG01 $6.4K (Vulture $6.8K), GCCard $1.6K (Artisan $2.2K, Vulture $1.8K), Moxiflox 3/4 $28.
 - Last 2 files (Lab Rat, Vulture, 13:04:58-13:05:00): LQMB $2K at both, unchanged; lq_base marked 0.5.1.0. The Character screen is not used.
+
+## 2026-11-05 14:39-14:43 batch (0.5.1.0, 17 files)
+- Backpacks opened in the locker (Patrol Backpack x4, Civilian Trekstars 70L, Rush 72 2.0). Inside are Lab Rat chemical stacks priced $15/$30/$36/$39/$45/$75/$90/$150, all matching the earlier readings. Item names are hidden in the opened-bag view, so only label-readable items were recorded: Ethanol $90, Chloroform $45, Sulfuric Acid $39, Purified Water $30 (Lab Rat, 0.5.1.0). The $75 brown bottle and the $15/$45 bottles could not be told apart by icon and were skipped. No new items, no price changes found.

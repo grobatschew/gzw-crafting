@@ -125,6 +125,9 @@
    "Steam folder 2026-11-05 13:04-13:05 (0.5.1.0)": [
     "20261105130458_1",
     "20261105130500_1"
+   ],
+   "Steam folder 2026-11-05 14:39-14:43 (0.5.1.0, opened bags)": [
+    "20261105143912_1 .. 20261105144311_1 (17 files; Patrol/Trekstars/Rush bags opened, Lab Rat chemical prices)"
    ]
   },
   "note_truncated_names": "FAST…, BCM M…, AK CR…, AK GA…, G36 12… are truncated by the game UI; full names unknown"
@@ -6497,6 +6500,38 @@
    "value": 2000,
    "ver": "0.5.1.0",
    "src": "Steam folder 2026-11-05 13:04-13:05 (0.5.1.0)"
+  },
+  {
+   "vendor": "Lab Rat",
+   "item": "Ethanol",
+   "shown": "$90",
+   "value": 90,
+   "ver": "0.5.1.0",
+   "src": "Steam folder 2026-11-05 14:39-14:43 (0.5.1.0, opened bags)"
+  },
+  {
+   "vendor": "Lab Rat",
+   "item": "Chlor",
+   "shown": "$45",
+   "value": 45,
+   "ver": "0.5.1.0",
+   "src": "Steam folder 2026-11-05 14:39-14:43 (0.5.1.0, opened bags)"
+  },
+  {
+   "vendor": "Lab Rat",
+   "item": "Acid",
+   "shown": "$39",
+   "value": 39,
+   "ver": "0.5.1.0",
+   "src": "Steam folder 2026-11-05 14:39-14:43 (0.5.1.0, opened bags)"
+  },
+  {
+   "vendor": "Lab Rat",
+   "item": "PWat",
+   "shown": "$30",
+   "value": 30,
+   "ver": "0.5.1.0",
+   "src": "Steam folder 2026-11-05 14:39-14:43 (0.5.1.0, opened bags)"
   }
  ],
  "disassembly": [
