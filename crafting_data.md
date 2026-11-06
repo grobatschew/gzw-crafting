@@ -6,11 +6,12 @@ Amounts are per 1 craft. Vendor prices are per single item (x1), regardless of s
 
 | Product | Ingredients | Time |
 |---|---|---|
-| Low-Quality Morphine Base | Opium Gum 1, Garden Lime 1, Ammonium Chloride 1, Purified Water 1 | 2h 0s |
-| 10% Morphine Solution | Low-Quality Morphine Base 1, Citric Acid 1, Purified Water 1 | 5h 30m (user-provided; in progress in screenshots) |
-| Medium-Quality Morphine Base | Opium Gum 1, Garden Lime 1, Ammonium Chloride 1, Purified Water 1 | 2h 0s |
+| Low-Quality Morphine Base | Opium Gum 1, Garden Lime 1, Ammonium Chloride 1, Purified Water 1 | 1h 0s (0.5.1.0 lab screen; was 2h) |
+| 10% Morphine Solution | Low-Quality Morphine Base 1, Citric Acid 1, Purified Water 1 | 1h 30m 0s (0.5.1.0 lab screen; was 5h 30m) |
+| Medium-Quality Morphine Base | Opium Gum 1, Garden Lime 1, Ammonium Chloride 1, Purified Water 1 | 1h 30m 0s (0.5.1.0; was 2h) |
 | High-Quality Morphine Base | Opium Gum 1, Garden Lime 1, Ammonium Chloride 1, Purified Water 1 | 2h 0s |
-| Stabilized Morphine Sulfate Liquid | Medium-Quality Morphine Base 1, Sulfuric Acid 1, Methylparaben 1, Saline 1 | 5h 30m 0s |
+| Stabilized Morphine Sulfate Liquid | Medium-Quality Morphine Base 1, Sulfuric Acid 1, Methylparaben 1, Saline 1 | 2h 0s (0.5.1.0; was 5h 30m) |
+| USP Morphine Sulfate (NEW, 5 kg) | High-Quality Morphine Base 1, Sulfuric Acid 1, Sodium Citrate 1, Edetate Disodium 1 | 2h 30m 0s (no sell price seen yet) |
 
 ## Laboratory - Crafting (all 1s)
 
@@ -135,7 +136,7 @@ Disassembly materials give two components each (the dialog shows one icon per co
 |---|---|---|
 | Radar Signal Processor (RSP) | 7h 50m | Deep-Space Observation Data Drive, High-Speed Digital Processor Board (neither found in the backpack, no price yet) |
 | Manpack Tactical Radio (TacRad) | 12h | Encryption Key Drive (= EKLog icon, $9K, Vulture $9.6K), FPGA Module ($900 at Lab Rat only) |
-| ST1122 Storage Computer (StComp) | 12h | Incriminating Data Drive (grey drive, $9K, Vulture $9.6K), Server RAM Module (no price found; the RAM item at Artisan $90 has a green board where the dialog icon is blue, so it was not assumed to be the same) |
+| ST1122 Storage Computer (StComp) | 6h (0.5.1.0; was 12h) | Incriminating Data Drive (grey drive, $9K, Vulture $9.6K), Server RAM Module (no price found; the RAM item at Artisan $90 has a green board where the dialog icon is blue, so it was not assumed to be the same) |
 
 Valuation rule (user): disassembly material is valued raw (best vendor price for the item) and disassembled (sum of the best vendor price for each component). The page shows both in a table under the matrix. Result so far: TacRad raw $3K (Artisan) vs $10.5K disassembled; StComp raw $3K vs at least $9.6K. RSP raw price unknown.
 
@@ -242,3 +243,10 @@ Files: 20261104 130826-130832 (6), 164555-164629 (8), 192205-192236 (16), 192312
 - 08:13 batch (6 Nov) mostly shows loading spinners on weapon lists, not used for prices. Character, quest and workshop screens not used (workshop 160119 shows an Electronics Workshop Unlink Field Terminal disassembly, not read).
 - Multi-Bus Converter is a Basic Hacking Tool ingredient, so that recipe now has one priced input of three (CPU Card, Spoofing ASIC Module still missing).
 - Workshop screenshot 160119: FiTer = UNLRA Field Terminal, disassembles in 3h 59m 55s (queue just started, so about 4h) into UNLRA Relief Manifest (UNLog, $8K at Artisan) and Multi-Bus Converter ($4K at Artisan). Added to the disassembly table. UNLog long name = UNLRA Relief Manifest.
+
+## 2026-11-06 22:08-23:56 batch (0.5.1.0)
+- Vendor tabs at 22:08 and 22:53 and 23:15 were mostly loading spinners or weapon lists, so only the 23:56 locker sheet (all 7 vendors) was read for prices.
+- New item: R-438 Barrier-T (Military Equipment, 16 kg): $45K at Handshake, Gunny, Lab Rat, Artisan, Turncoat, Banshee; Vulture $48K.
+- New part: Rotor 5.45x39 suppressor $285 (Gunny, Artisan, Turncoat, Banshee). Optical Seeker: Turncoat now $12K (was $10K). Re-confirmed unchanged: GCCard, MWatch, ENeckl..., RAM ($90 Artisan), MBC ($4K Artisan).
+- Lab production times changed in the 0.5.1.0 lab screen: LQMB 1h, 10% Morphine Solution 1h 30m, MQMB 1h 30m, HQMB 2h, StMSL 2h. New recipe: USP Morphine Sulfate 2h 30m (HQMB, Sulfuric Acid, Sodium Citrate, Edetate Disodium).
+- Workshop disassembly: SATCOM about 8h (7h 59m 57s shown), StComp 6h.
