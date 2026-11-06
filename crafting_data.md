@@ -234,3 +234,11 @@ Files: 20261104 130826-130832 (6), 164555-164629 (8), 192205-192236 (16), 192312
 - One locker position at 7 vendors, 60 more 0.5.1.0 rows; names read from the Character screens (153010, 144312).
 - Electrical Parts ($60, Artisan only) now has a price, so the missing-price gap is closed for the tracking tags. Other new items: Copper $30 (Artisan), Fan $15 (Artisan), Water Purification Tablets $27 ($29 Vulture), Prism (3) $150 (Artisan), FN GOfc $90 (Artisan), 1911 C... $484 at Gunny/Artisan/Turncoat/Banshee. PFRKit 1,972/2,000 $1.1K (Gunny, Lab Rat), PGRKit 2,798/3,000 $1.2K (Handshake, Lab Rat).
 - Reconfirmed unchanged: EPhone $262 (Lab Rat $350, Vulture $280), NPI2 $1.1K, MWatch, DCRing, ORI-12 $255, HpR 3-S $285, Strych $180, B12 $30, HGH $30, Anil $30, SodCit $45, Methol $30, PSU $75, PCB $45.
+
+## 2026-11-05 19:57 to 2026-11-06 20:05 batches (0.5.1.0, 43 files)
+- 19:57 (full locker bottom, 7 vendors): 147 rows. Changed: 10% Morphine Solution $4,000 -> $8,000 (Lab Rat), consistent with HQMB $4,500 and StMSL $12,000. BAC now has Banshee $2K and Vulture $2.1K (were unknown). Others unchanged. New keycards (Artisan $90 each): MS Ma..., TB UNOf, FN ORI...; DNeckl... necklace $1K (Turncoat $1.4K, Vulture $1.1K).
+- 20:04: Multi-Bus Converter $4K (Artisan only), UN... Log $8K (Artisan), Ratnik Long handguard $382 (Gunny, Artisan, Turncoat, Banshee), keys RLSL G/B $60 and TB UN... $90 (Artisan), MilSoft $75 (Artisan).
+- 16:00-17:20 (Lab Rat and Artisan tabs only): blue Splint 6/6 $17 (1/6 showed $2), SHem $39, FiTer $8K (Artisan only), Pipette $150 (Artisan), OTP $2.4K, SurKit 1/5 $39.
+- 08:13 batch (6 Nov) mostly shows loading spinners on weapon lists, not used for prices. Character, quest and workshop screens not used (workshop 160119 shows an Electronics Workshop Unlink Field Terminal disassembly, not read).
+- Multi-Bus Converter is a Basic Hacking Tool ingredient, so that recipe now has one priced input of three (CPU Card, Spoofing ASIC Module still missing).
+- Workshop screenshot 160119: FiTer = UNLRA Field Terminal, disassembles in 3h 59m 55s (queue just started, so about 4h) into UNLRA Relief Manifest (UNLog, $8K at Artisan) and Multi-Bus Converter ($4K at Artisan). Added to the disassembly table. UNLog long name = UNLRA Relief Manifest.
