@@ -469,6 +469,16 @@ function expand(id, root, raw, made) {
     (raw[i] = raw[i] || new Set()).add(root);
   });
 }
+function disSrcHtml(i) {
+  const s = disSources(i);
+  return s.length ? `<div class="for dis">from disassembly: ${s.map(d => esc(d.long) + ' (' + esc(d.time) + ')').join(', ')}</div>` : '';
+}
+/* disassembly sources: component long name -> disassembly item(s) */
+const norm = x => String(x).toLowerCase().replace(/[^a-z0-9]/g, '');
+function disSources(id) {
+  const n = norm(name(id));
+  return (VP.disassembly || []).filter(d => d.components.some(c => { const cn = norm(c.name); return cn.length > 5 && (cn === n || n.startsWith(cn) || cn.startsWith(n)); }));
+}
 function renderWant() {
   const n = selected.size;
   document.getElementById('want-count').textContent = n ? n + ' selected' : 'None selected';
@@ -482,7 +492,7 @@ function renderWant() {
   const madeIds = Object.keys(made).sort((a, b) => order.indexOf(a) - order.indexOf(b));
   let html = `<h2>${rawIds.length} item${rawIds.length === 1 ? '' : 's'} to gather</h2><div class="grid">` +
     rawIds.map(i => `<div class="card">${ico(i)}<div class="body"><div class="nm">${esc(name(i))}</div>` +
-      `<div class="for">for ${[...raw[i]].map(r => esc(name(r))).join(', ')}${byId[i] ? ' · crafted' : ''}</div></div></div>`).join('') + '</div>';
+      `<div class="for">for ${[...raw[i]].map(r => esc(name(r))).join(', ')}${byId[i] ? ' · crafted' : ''}</div>${disSrcHtml(i)}</div></div>`).join('') + '</div>';
   if (madeIds.length) {
     html += '<div class="crafted"><span>Crafted along the way:</span>' +
       madeIds.map(i => `<span class="tag">${ico(i)}${esc(name(i))}</span>`).join('') + '</div>';
