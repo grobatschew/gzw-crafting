@@ -250,3 +250,10 @@ Files: 20261104 130826-130832 (6), 164555-164629 (8), 192205-192236 (16), 192312
 - New part: Rotor 5.45x39 suppressor $285 (Gunny, Artisan, Turncoat, Banshee). Optical Seeker: Turncoat now $12K (was $10K). Re-confirmed unchanged: GCCard, MWatch, ENeckl..., RAM ($90 Artisan), MBC ($4K Artisan).
 - Lab production times changed in the 0.5.1.0 lab screen: LQMB 1h, 10% Morphine Solution 1h 30m, MQMB 1h 30m, HQMB 2h, StMSL 2h. New recipe: USP Morphine Sulfate 2h 30m (HQMB, Sulfuric Acid, Sodium Citrate, Edetate Disodium).
 - Workshop disassembly: SATCOM about 8h (7h 59m 57s shown), StComp 6h.
+
+## 2026-11-07 09:59-12:15 batch (0.5.1.0)
+- USP Morphine Sulfate (USPMS) sells for $17K at Lab Rat only (no other vendor buys it). Its recipe is HQMB + Sulfuric Acid + Sodium Citrate + Edetate Disodium (2h 30m); ingredient cost is about $4.5K + $39 + $45 + $75.
+- New Artisan-only items: Dynamo (alternator) $150 and Burner Head (BHead) $15.
+- Re-confirmed at Artisan: CivSoft $75, Copper $30, EParts $60. Everything else read in the 11:15 and 12:15 full vendor sweeps matched existing rows.
+- Not bought by any vendor: SRAMM (Server RAM Module, still no price), IDLog, Newspaper - Mysterious Explosion (0.1 kg).
+- The 09:59 tabs and the 22:xx weapon tabs were mostly loading spinners and were not used for prices.
