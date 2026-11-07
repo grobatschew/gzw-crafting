@@ -506,13 +506,13 @@ function craftCost(id) {
 }
 const money = n => '$' + n.toLocaleString('en-US');
 function profitHtml(id, c) {
-  if (!hasBase(id) || ITEMS[id].p == null || !c.priced || c.missing.length) return '';
+  if (!byId[id] || byId[id].st !== 'lab_prod' || ITEMS[id].p == null || !c.priced || c.missing.length) return '';
   const r = byId[id], secs = chainSecs(id), profit = ITEMS[id].p - c.sum, perH = Math.round(profit / (secs / 3600));
   const parts = r.ing.filter(i => byId[i] && byId[i].st === 'lab_prod').map(i => name(i) + ' ' + byId[i].t.replace('*', '')).join(' + ');
   const cls = c.pre || isPre(ITEMS[id].pv) ? 'pre' : '';
   return `<div class="stat"><span class="l">Profit</span><span class="v ${cls}">${money2(profit)}</span></div>
     <div class="stat"><span class="l">Profit / hour</span><span class="v ${cls}">≈ ${money2(perH)}/h</span></div>
-    <span class="stat-note">Over ${fmtSecs(secs)} total: ${esc(parts)} + ${esc(name(id))} ${esc(r.t.replace('*', ''))}. Each craft needs one base crafted first; the base is counted at its sell value in the cost.</span>`;
+    <span class="stat-note">${parts ? `Over ${fmtSecs(secs)} total: ${esc(parts)} + ${esc(name(id))} ${esc(r.t.replace('*', ''))}. Each craft needs one base crafted first; the base is counted at its sell value in the cost.` : `Over the ${esc(r.t)} craft time, ingredients at their sell value.`}</span>`;
 }
 function statsHtml(id) {
   const c = craftCost(id);
