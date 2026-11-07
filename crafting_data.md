@@ -257,3 +257,7 @@ Files: 20261104 130826-130832 (6), 164555-164629 (8), 192205-192236 (16), 192312
 - Re-confirmed at Artisan: CivSoft $75, Copper $30, EParts $60. Everything else read in the 11:15 and 12:15 full vendor sweeps matched existing rows.
 - Not bought by any vendor: SRAMM (Server RAM Module, still no price), IDLog, Newspaper - Mysterious Explosion (0.1 kg).
 - The 09:59 tabs and the 22:xx weapon tabs were mostly loading spinners and were not used for prices.
+
+## 2026-11-07 20:29-20:30 batch (0.5.1.0)
+- New military items bought by all 7 vendors: LTSD-4-3 Laser Designator $60K (Vulture $64K) and MDCS-30 UAV Control Station $2K (Vulture $2.1K). They are not craft or disassembly items.
+- The rest of the 7-vendor locker sweep matched existing rows. The 19:07 shot and the weapon tabs were loading spinners.
