@@ -465,12 +465,8 @@ function buildPicker() {
 }
 function expand(id, root, raw, made) {
   byId[id].ing.forEach(i => {
-    if (byId[i]) {
-      (made[i] = made[i] || new Set()).add(root);
-      expand(i, root, raw, made);
-    } else {
-      (raw[i] = raw[i] || new Set()).add(root);
-    }
+    /* a precursor stays an ingredient; select it too to see what it needs */
+    (raw[i] = raw[i] || new Set()).add(root);
   });
 }
 function renderWant() {
@@ -486,7 +482,7 @@ function renderWant() {
   const madeIds = Object.keys(made).sort((a, b) => order.indexOf(a) - order.indexOf(b));
   let html = `<h2>${rawIds.length} item${rawIds.length === 1 ? '' : 's'} to gather</h2><div class="grid">` +
     rawIds.map(i => `<div class="card">${ico(i)}<div class="body"><div class="nm">${esc(name(i))}</div>` +
-      `<div class="for">for ${[...raw[i]].map(r => esc(name(r))).join(', ')}</div></div></div>`).join('') + '</div>';
+      `<div class="for">for ${[...raw[i]].map(r => esc(name(r))).join(', ')}${byId[i] ? ' · crafted' : ''}</div></div></div>`).join('') + '</div>';
   if (madeIds.length) {
     html += '<div class="crafted"><span>Crafted along the way:</span>' +
       madeIds.map(i => `<span class="tag">${ico(i)}${esc(name(i))}</span>`).join('') + '</div>';
