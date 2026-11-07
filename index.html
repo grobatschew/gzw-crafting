@@ -382,10 +382,10 @@ const RECIPES = [
   {id:'strychnine', st:'lab_craft', t:'1s', secs:1, ing:['empty_autoinjector','aniline','methanol']},
   {id:'basic_tracking_tag', st:'elec', t:'1s', secs:1, ing:['electrical_parts','civilian_software']},
   {id:'tracking_tag', st:'elec', t:'1s', secs:1, ing:['electrical_parts','civilian_software','circuit_board']},
+  {id:'advanced_tracking_tag', st:'elec', t:'1s', secs:1, ing:['electrical_parts','military_software','cpu']},
   {id:'basic_hacking_tool', st:'elec', t:'1s', secs:1, ing:['multi_bus_converter','cpu_card','spoofing_asic_module']},
   {id:'advanced_hacking_tool', st:'elec', t:'1s', secs:1, ing:['fpga_module','avionics_processor_board','server_ram_module']},
-  {id:'advanced_tracking_tag', st:'elec', t:'1s', secs:1, ing:['electrical_parts','military_software','cpu']},
-  {id:'superior_hacking_tool', st:'elec', t:'1s', secs:1, ing:['oven_controlled_crystal_oscillator','high_speed_digital_processor_board','digital_synthesis_engine']}
+  {id:'superior_hacking_tool', st:'elec', t:'1s', secs:1, ing:['oven_controlled_crystal_oscillator','high_speed_digital_processor_board','digital_synthesis_engine']},
 ];
 
 const UNMATCHED = 'LHem ($63), SurKit ($195), Splint ($17), Ibalin ($7), Moxiflox ($37), KI ($18), Gauze ($2), Bandage ($9), SBand ($16), LBlood ($294), MBlood ($225), SBlood ($84), Ether ($90), Ethanol ($90), Chlor ($45), SodCar ($36), HAcid ($150), AcAnh ($75), SSteel ($45), PSU ($75), RAM ($90), EKLog ($9K), EWLog ($12K), MilSoft ($75), Pipette ($150), FPGA, DSE. Chlor = Chloroform, SodCar = Sodium Carbonate, SodCit = Sodium Citrate, EDTA = Edetate Disodium, HAcid = Hydrochloric Acid, AcAnh = Acetic Anhydride, Ethanol = Ethyl Alcohol. None of these is used in a recipe seen so far.';
@@ -504,6 +504,15 @@ function craftCost(id) {
   return {sum, priced, missing, pre};
 }
 const money = n => '$' + n.toLocaleString('en-US');
+function profitHtml(id, c) {
+  if (!hasBase(id) || ITEMS[id].p == null || !c.priced || c.missing.length) return '';
+  const r = byId[id], secs = chainSecs(id), profit = ITEMS[id].p - c.sum, perH = Math.round(profit / (secs / 3600));
+  const parts = r.ing.filter(i => byId[i] && byId[i].st === 'lab_prod').map(i => name(i) + ' ' + byId[i].t.replace('*', '')).join(' + ');
+  const cls = c.pre || isPre(ITEMS[id].pv) ? 'pre' : '';
+  return `<div class="stat"><span class="l">Profit</span><span class="v ${cls}">${money2(profit)}</span></div>
+    <div class="stat"><span class="l">Profit / hour</span><span class="v ${cls}">≈ ${money2(perH)}/h</span></div>
+    <span class="stat-note">Over ${fmtSecs(secs)} total: ${esc(parts)} + ${esc(name(id))} ${esc(r.t.replace('*', ''))}. Each craft needs one base crafted first; the base is counted at its sell value in the cost.</span>`;
+}
 function statsHtml(id) {
   const c = craftCost(id);
   const cost = c.priced ? money(c.sum) + (c.missing.length ? ' +' : '') : '–';
@@ -511,23 +520,30 @@ function statsHtml(id) {
   const note = c.missing.length ? `<span class="stat-note">${c.priced ? 'Plus' : 'No price yet for'} ${c.missing.map(esc).join(', ')}</span>` : '';
   return `<div class="stats">
     <div class="stat"><span class="l">Crafting cost</span><span class="v ${c.priced ? '' : 'none'} ${c.pre ? 'pre' : ''}">${cost}</span></div>
-    <div class="stat"><span class="l">Crafted value</span><span class="v ${ITEMS[id].p != null ? '' : 'none'}">${val}</span></div>${note}${c.pre || (ITEMS[id].p != null && isPre(ITEMS[id].pv)) ? `<span class="stat-note">${PRETAG}</span>` : ''}</div>`;
+    <div class="stat"><span class="l">Crafted value</span><span class="v ${ITEMS[id].p != null ? '' : 'none'}">${val}</span></div>${note}${profitHtml(id, c)}${c.pre || (ITEMS[id].p != null && isPre(ITEMS[id].pv)) ? `<span class="stat-note">${PRETAG}</span>` : ''}</div>`;
 }
+const chainSecs = id => { const r = byId[id]; return r.secs + r.ing.reduce((a, i) => a + (byId[i] && byId[i].st === 'lab_prod' ? byId[i].secs : 0), 0); };
+const hasBase = id => byId[id] && byId[id].st === 'lab_prod' && byId[id].ing.some(i => byId[i] && byId[i].st === 'lab_prod');
 const money2 = n => (n < 0 ? '−' : '+') + '$' + Math.abs(n).toLocaleString('en-US');
 function fmtSecs(s) { const h = Math.floor(s / 3600), m = Math.floor(s % 3600 / 60); return h + 'h' + (m ? ' ' + m + 'm' : ''); }
 function questHtml(q) {
   const r = byId[q.of], c = craftCost(q.of);
-  const cost = c.sum * q.n, secs = r.secs * q.n, profit = q.payout - cost;
+  const cost = c.sum * q.n, unit = chainSecs(q.of), secs = unit * q.n, profit = q.payout - cost;
   const perH = Math.round(profit / (secs / 3600));
+  const bases = r.ing.filter(i => byId[i] && byId[i].st === 'lab_prod');
+  const baseSecs = bases.reduce((a, i) => a + byId[i].secs, 0) * q.n, prodSecs = r.secs * q.n;
   const star = r.t.includes('*') ? '*' : '';
   return `<div class="recipe quest"><div class="recipe-top">${ico(q.of)}<div class="ttl">${esc(name(q.of))} ×${q.n}<br><small class="dim">${esc(q.label)} hand-in</small></div><span class="time">${fmtSecs(secs)}${star}</span></div>
     <div class="ings">${r.ing.map(i => `<span class="ing ${byId[i] ? 'made' : ''}">${ico(i, 'sm')}${esc(name(i))} ×${q.n}${byId[i] ? ' <small>crafted</small>' : ''}</span>`).join('')}</div>
     <div class="stats">
+      <div class="stat"><span class="l">Craft time: ${esc(bases.map(name).join(' + '))} ×${q.n}</span><span class="v">${fmtSecs(baseSecs)}</span></div>
+      <div class="stat"><span class="l">Craft time: ${esc(name(q.of))} ×${q.n}</span><span class="v">${fmtSecs(prodSecs)}</span></div>
+      <div class="stat"><span class="l">Total craft time</span><span class="v">${fmtSecs(secs)}</span></div>
       <div class="stat"><span class="l">Crafting cost</span><span class="v pre">${money(cost)}</span></div>
       <div class="stat"><span class="l">Quest payout</span><span class="v pre">${money(q.payout)}</span></div>
       <div class="stat"><span class="l">Profit</span><span class="v pre">${money2(profit)}</span></div>
       <div class="stat"><span class="l">Profit / hour</span><span class="v pre">≈ ${money2(perH)}/h</span></div>
-      <span class="stat-note">${PRETAG} ${q.n} crafts run one after another. Cost counts each Low-Quality base at its sell value.</span></div></div>`;
+      <span class="stat-note">${PRETAG} ${q.n} × (base ${fmtSecs(baseSecs / q.n)} + ${esc(name(q.of))} ${fmtSecs(prodSecs / q.n)}) = ${fmtSecs(secs)}, crafts run one after another. Cost counts each base at its sell value.</span></div></div>`;
 }
 function renderFull() {
   document.getElementById('full-list').innerHTML = Object.keys(STATIONS).map(st => `
