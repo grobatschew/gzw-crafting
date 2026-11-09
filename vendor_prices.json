@@ -156,6 +156,10 @@
    "Steam folder 2026-11-09 16:35 (0.5.1.0)": [
     "20261109163538_1 (Lab production: Gray Heroin recipe 2h; MQMB + AcAnh + SodCar + Chlor, 1 each)",
     "20261109163551_1 (map: Vulture Drug Run, 5 Gray Heroin, rewards USD 50,000+50,000+20,000, 150 XP); no vendor prices"
+   ],
+   "Steam folder 2026-11-09 20:02-20:03 (0.5.1.0)": [
+    "20261109200252 (character), 200253-200259 (7-vendor locker sweep), 200309/200315 (Vulture trade carts: GHer $14,000; HQMB x2 $9,000; MQMB x5 $16,000; Goodlad $360, SWine $319, CCCard $480, SWatch $1,360)",
+    "only PFRKit ($985 at Gunny/Lab Rat) changed vs the last sweep; SWine got post-patch rows at all 7 vendors; unreadable/ambiguous drink stack prices and an unnamed $60 key at Artisan skipped"
    ]
   },
   "note_truncated_names": "FAST\u2026, BCM M\u2026, AK CR\u2026, AK GA\u2026, G36 12\u2026 are truncated by the game UI; full names unknown"
@@ -9265,6 +9269,80 @@
    "value": 14000,
    "ver": "0.5.1.0",
    "src": "Steam folder 2026-11-09 16:32 (0.5.1.0)"
+  },
+  {
+   "vendor": "Gunny",
+   "item": "PFRKit",
+   "shown": "$985",
+   "value": 985,
+   "ver": "0.5.1.0",
+   "src": "Steam folder 2026-11-09 20:02-20:03 (0.5.1.0)",
+   "note": "was $1.1K earlier on 0.5.1.0"
+  },
+  {
+   "vendor": "Lab Rat",
+   "item": "PFRKit",
+   "shown": "$985",
+   "value": 985,
+   "ver": "0.5.1.0",
+   "src": "Steam folder 2026-11-09 20:02-20:03 (0.5.1.0)",
+   "note": "was $1.1K earlier on 0.5.1.0"
+  },
+  {
+   "vendor": "Handshake",
+   "item": "SWine",
+   "shown": "$299",
+   "value": 299,
+   "ver": "0.5.1.0",
+   "src": "Steam folder 2026-11-09 20:02-20:03 (0.5.1.0)"
+  },
+  {
+   "vendor": "Gunny",
+   "item": "SWine",
+   "shown": "$399",
+   "value": 399,
+   "ver": "0.5.1.0",
+   "src": "Steam folder 2026-11-09 20:02-20:03 (0.5.1.0)"
+  },
+  {
+   "vendor": "Lab Rat",
+   "item": "SWine",
+   "shown": "$299",
+   "value": 299,
+   "ver": "0.5.1.0",
+   "src": "Steam folder 2026-11-09 20:02-20:03 (0.5.1.0)"
+  },
+  {
+   "vendor": "Artisan",
+   "item": "SWine",
+   "shown": "$299",
+   "value": 299,
+   "ver": "0.5.1.0",
+   "src": "Steam folder 2026-11-09 20:02-20:03 (0.5.1.0)"
+  },
+  {
+   "vendor": "Turncoat",
+   "item": "SWine",
+   "shown": "$299",
+   "value": 299,
+   "ver": "0.5.1.0",
+   "src": "Steam folder 2026-11-09 20:02-20:03 (0.5.1.0)"
+  },
+  {
+   "vendor": "Banshee",
+   "item": "SWine",
+   "shown": "$299",
+   "value": 299,
+   "ver": "0.5.1.0",
+   "src": "Steam folder 2026-11-09 20:02-20:03 (0.5.1.0)"
+  },
+  {
+   "vendor": "Vulture",
+   "item": "SWine",
+   "shown": "$319",
+   "value": 319,
+   "ver": "0.5.1.0",
+   "src": "Steam folder 2026-11-09 20:02-20:03 (0.5.1.0)"
   }
  ],
  "disassembly": [

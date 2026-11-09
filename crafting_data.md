@@ -271,3 +271,6 @@ Files: 20261104 130826-130832 (6), 164555-164629 (8), 192205-192236 (16), 192312
 - Lab production recipe: Gray Heroin, 2h 0s. Ingredients (1 each): Medium-Quality Morphine Base, Acetic Anhydride, Sodium Carbonate, Chloroform. Gray Heroin 1 kg, sells $14K at Vulture (0.5.1.0).
 - Vulture quest "Drug Run" (smuggling task, easy): provide 5 Gray Heroin, carry in the shipment backpack to a marked location, 1h limit. Rewards USD 50,000 + 50,000 + 20,000 = $120,000, 150 XP, rep.
 - No vendor prices in this batch.
+
+## Batch 2026-11-09 20:02 (0.5.1.0)
+- Full 7-vendor locker sweep (200253-200259) plus Vulture trade carts. Only change: PFRKit now $985 at Gunny and Lab Rat (was $1.1K). SWine now has post-patch rows at all vendors (Handshake/Lab Rat/Artisan/Turncoat/Banshee $299, Gunny $399, Vulture $319). Vulture cart confirms GHer $14,000, HQMB $4.5K, MQMB $3.2K. No crafting data in this batch.
