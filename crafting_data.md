@@ -261,3 +261,8 @@ Files: 20261104 130826-130832 (6), 164555-164629 (8), 192205-192236 (16), 192312
 ## 2026-11-07 20:29-20:30 batch (0.5.1.0)
 - New military items bought by all 7 vendors: LTSD-4-3 Laser Designator $60K (Vulture $64K) and MDCS-30 UAV Control Station $2K (Vulture $2.1K). They are not craft or disassembly items.
 - The rest of the 7-vendor locker sweep matched existing rows. The 19:07 shot and the weapon tabs were loading spinners.
+
+## 2026-11-09 16:32 batch (0.5.1.0)
+- New Lab Rat quest "Supply and Demand III": hand in 5x USP Morphine Sulfate for USD 50,000 + 50,000 + 40,000 = $140,000, plus 300 XP and 255 rep (Medium difficulty, Hideout). Added to the Full list.
+- Medium-Quality Morphine Base now sells for $3.2K at Lab Rat and Vulture (was $2.5K). Vulture now pays $14K for Gray Heroin (was $7K); Lab Rat does not buy it.
+- Everything else in the 7-vendor locker sweep matched existing rows. The weapon tabs were loading spinners.
