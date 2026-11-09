@@ -266,3 +266,8 @@ Files: 20261104 130826-130832 (6), 164555-164629 (8), 192205-192236 (16), 192312
 - New Lab Rat quest "Supply and Demand III": hand in 5x USP Morphine Sulfate for USD 50,000 + 50,000 + 40,000 = $140,000, plus 300 XP and 255 rep (Medium difficulty, Hideout). Added to the Full list.
 - Medium-Quality Morphine Base now sells for $3.2K at Lab Rat and Vulture (was $2.5K). Vulture now pays $14K for Gray Heroin (was $7K); Lab Rat does not buy it.
 - Everything else in the 7-vendor locker sweep matched existing rows. The weapon tabs were loading spinners.
+
+## Batch 2026-11-09 16:35 (0.5.1.0)
+- Lab production recipe: Gray Heroin, 2h 0s. Ingredients (1 each): Medium-Quality Morphine Base, Acetic Anhydride, Sodium Carbonate, Chloroform. Gray Heroin 1 kg, sells $14K at Vulture (0.5.1.0).
+- Vulture quest "Drug Run" (smuggling task, easy): provide 5 Gray Heroin, carry in the shipment backpack to a marked location, 1h limit. Rewards USD 50,000 + 50,000 + 20,000 = $120,000, 150 XP, rep.
+- No vendor prices in this batch.
