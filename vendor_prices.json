@@ -160,6 +160,10 @@
    "Steam folder 2026-11-09 20:02-20:03 (0.5.1.0)": [
     "20261109200252 (character), 200253-200259 (7-vendor locker sweep), 200309/200315 (Vulture trade carts: GHer $14,000; HQMB x2 $9,000; MQMB x5 $16,000; Goodlad $360, SWine $319, CCCard $480, SWatch $1,360)",
     "only PFRKit ($985 at Gunny/Lab Rat) changed vs the last sweep; SWine got post-patch rows at all 7 vendors; unreadable/ambiguous drink stack prices and an unnamed $60 key at Artisan skipped"
+   ],
+   "Steam folder 2026-11-10 14:00 (game build 0.5.1.1)": [
+    "20261110085652, 085715 (in-raid scenery, no data)",
+    "20261110140006 (character view with locker labels), 140008-140014 (7-vendor locker sweep). Build string now 0.5.1.1-326877; rows tagged ver 0.5.1.0 (current prices). IcedTea $7 at Lab Rat skipped (55/90 partial)."
    ]
   },
   "note_truncated_names": "FAST\u2026, BCM M\u2026, AK CR\u2026, AK GA\u2026, G36 12\u2026 are truncated by the game UI; full names unknown"
@@ -272,7 +276,13 @@
   "Dynamo": "Dynamo (alternator)",
   "BHead": "Burner Head",
   "LTSD": "LTSD-4-3 Laser Designator (Military Equipment)",
-  "MDCS": "MDCS-30 UAV Control Station (Military Equipment)"
+  "MDCS": "MDCS-30 UAV Control Station (Military Equipment)",
+  "Nectar": "Nectar (drink can, full name not seen)",
+  "FN Motel": "FN Motel (key, full name not seen)",
+  "PCh Sh\u2026": "PCh Sh\u2026 (key, name truncated)",
+  "MBoard": "MBoard (motherboard, full name not seen)",
+  "Plastics": "Plastics",
+  "Steel": "Steel"
  },
  "checked_items": [
   "B12",
@@ -9343,6 +9353,134 @@
    "value": 319,
    "ver": "0.5.1.0",
    "src": "Steam folder 2026-11-09 20:02-20:03 (0.5.1.0)"
+  },
+  {
+   "vendor": "Handshake",
+   "item": "DriverLic",
+   "shown": "$350",
+   "value": 350,
+   "ver": "0.5.1.0",
+   "src": "Steam folder 2026-11-10 14:00 (game build 0.5.1.1)"
+  },
+  {
+   "vendor": "Gunny",
+   "item": "DriverLic",
+   "shown": "$262",
+   "value": 262,
+   "ver": "0.5.1.0",
+   "src": "Steam folder 2026-11-10 14:00 (game build 0.5.1.1)"
+  },
+  {
+   "vendor": "Lab Rat",
+   "item": "Coffee",
+   "shown": "$6",
+   "value": 6,
+   "ver": "0.5.1.0",
+   "src": "Steam folder 2026-11-10 14:00 (game build 0.5.1.1)"
+  },
+  {
+   "vendor": "Lab Rat",
+   "item": "Nectar",
+   "shown": "$3",
+   "value": 3,
+   "ver": "0.5.1.0",
+   "src": "Steam folder 2026-11-10 14:00 (game build 0.5.1.1)"
+  },
+  {
+   "vendor": "Lab Rat",
+   "item": "BoneDS",
+   "shown": "$30",
+   "value": 30,
+   "ver": "0.5.1.0",
+   "src": "Steam folder 2026-11-10 14:00 (game build 0.5.1.1)"
+  },
+  {
+   "vendor": "Lab Rat",
+   "item": "Theoph",
+   "shown": "$30",
+   "value": 30,
+   "ver": "0.5.1.0",
+   "src": "Steam folder 2026-11-10 14:00 (game build 0.5.1.1)"
+  },
+  {
+   "vendor": "Lab Rat",
+   "item": "AcAnh",
+   "shown": "$75",
+   "value": 75,
+   "ver": "0.5.1.0",
+   "src": "Steam folder 2026-11-10 14:00 (game build 0.5.1.1)"
+  },
+  {
+   "vendor": "Lab Rat",
+   "item": "CAcid",
+   "shown": "$15",
+   "value": 15,
+   "ver": "0.5.1.0",
+   "src": "Steam folder 2026-11-10 14:00 (game build 0.5.1.1)"
+  },
+  {
+   "vendor": "Artisan",
+   "item": "FN Motel",
+   "shown": "$60",
+   "value": 60,
+   "ver": "0.5.1.0",
+   "src": "Steam folder 2026-11-10 14:00 (game build 0.5.1.1)"
+  },
+  {
+   "vendor": "Artisan",
+   "item": "PCh Sh\u2026",
+   "shown": "$60",
+   "value": 60,
+   "ver": "0.5.1.0",
+   "src": "Steam folder 2026-11-10 14:00 (game build 0.5.1.1)"
+  },
+  {
+   "vendor": "Artisan",
+   "item": "MBoard",
+   "shown": "$90",
+   "value": 90,
+   "ver": "0.5.1.0",
+   "src": "Steam folder 2026-11-10 14:00 (game build 0.5.1.1)"
+  },
+  {
+   "vendor": "Artisan",
+   "item": "Plastics",
+   "shown": "$15",
+   "value": 15,
+   "ver": "0.5.1.0",
+   "src": "Steam folder 2026-11-10 14:00 (game build 0.5.1.1)"
+  },
+  {
+   "vendor": "Artisan",
+   "item": "Steel",
+   "shown": "$30",
+   "value": 30,
+   "ver": "0.5.1.0",
+   "src": "Steam folder 2026-11-10 14:00 (game build 0.5.1.1)"
+  },
+  {
+   "vendor": "Turncoat",
+   "item": "DriverLic",
+   "shown": "$262",
+   "value": 262,
+   "ver": "0.5.1.0",
+   "src": "Steam folder 2026-11-10 14:00 (game build 0.5.1.1)"
+  },
+  {
+   "vendor": "Banshee",
+   "item": "DriverLic",
+   "shown": "$350",
+   "value": 350,
+   "ver": "0.5.1.0",
+   "src": "Steam folder 2026-11-10 14:00 (game build 0.5.1.1)"
+  },
+  {
+   "vendor": "Vulture",
+   "item": "DriverLic",
+   "shown": "$280",
+   "value": 280,
+   "ver": "0.5.1.0",
+   "src": "Steam folder 2026-11-10 14:00 (game build 0.5.1.1)"
   }
  ],
  "disassembly": [

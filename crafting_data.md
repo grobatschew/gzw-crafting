@@ -274,3 +274,9 @@ Files: 20261104 130826-130832 (6), 164555-164629 (8), 192205-192236 (16), 192312
 
 ## Batch 2026-11-09 20:02 (0.5.1.0)
 - Full 7-vendor locker sweep (200253-200259) plus Vulture trade carts. Only change: PFRKit now $985 at Gunny and Lab Rat (was $1.1K). SWine now has post-patch rows at all vendors (Handshake/Lab Rat/Artisan/Turncoat/Banshee $299, Gunny $399, Vulture $319). Vulture cart confirms GHer $14,000, HQMB $4.5K, MQMB $3.2K. No crafting data in this batch.
+
+## Batch 2026-11-10 14:00 (game build 0.5.1.1)
+- Build string in the screenshots is now 0.5.1.1-326877. Prices are kept under the 0.5.1.0 "current" tag.
+- 7-vendor locker sweep. No price changed. New post-patch confirmations: Acetic Anhydride $75 (Lab Rat), DriverLic at 5 more vendors, Coffee/BoneDS/Theoph/CAcid at Lab Rat.
+- New matrix items: Nectar $3 (Lab Rat); FN Motel key $60, PCh Sh… key $60, MBoard $90, Plastics $15, Steel $30 (all Artisan only).
+- No crafting data in this batch.
