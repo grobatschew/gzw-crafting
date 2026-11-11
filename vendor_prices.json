@@ -164,6 +164,18 @@
    "Steam folder 2026-11-10 14:00 (game build 0.5.1.1)": [
     "20261110085652, 085715 (in-raid scenery, no data)",
     "20261110140006 (character view with locker labels), 140008-140014 (7-vendor locker sweep). Build string now 0.5.1.1-326877; rows tagged ver 0.5.1.0 (current prices). IcedTea $7 at Lab Rat skipped (55/90 partial)."
+   ],
+   "Steam folder 2026-11-10 21:33 (build 0.5.1.1)": [
+    "20261110213342 (character), 213344-213355 (7-vendor sweep)"
+   ],
+   "Steam folder 2026-11-11 12:37 (build 0.5.1.1)": [
+    "20261111123752 (ST1122 Storage Computer detail: 4 kg, disassembles to Incriminating Data Drive + Server RAM Module), 123755 (character), 123756-123802 (7-vendor sweep; StComp $12K Artisan)"
+   ],
+   "Steam folder 2026-11-11 13:33 (build 0.5.1.1)": [
+    "20261111133326 (Pure White Heroin detail: Laboratory Supplies, 1 kg), 133402-133411 (7-vendor sweep; PWHer only Vulture $19.5K; unnamed keys skipped)"
+   ],
+   "Steam folder 2026-11-11 23:26 (build 0.5.1.1)": [
+    "20261111232604 (character), 232646-232654 (7-vendor sweep; SRAMM $6K Artisan). Kit prices scale with durability: PFRKit $938 at 1,691/2,000 (not recorded), PGRKit $1.3K full. ChBar $2 at Lab Rat skipped (two different bars share the label)."
    ]
   },
   "note_truncated_names": "FAST\u2026, BCM M\u2026, AK CR\u2026, AK GA\u2026, G36 12\u2026 are truncated by the game UI; full names unknown"
@@ -282,7 +294,11 @@
   "PCh Sh\u2026": "PCh Sh\u2026 (key, name truncated)",
   "MBoard": "MBoard (motherboard, full name not seen)",
   "Plastics": "Plastics",
-  "Steel": "Steel"
+  "Steel": "Steel",
+  "PWHer": "Pure White Heroin",
+  "SRAMM": "Server RAM Module",
+  "Noirs": "Noir Mist cigarettes (full name not seen)",
+  "GPU": "GPU (graphics card, full name not seen)"
  },
  "checked_items": [
   "B12",
@@ -9481,6 +9497,872 @@
    "value": 280,
    "ver": "0.5.1.0",
    "src": "Steam folder 2026-11-10 14:00 (game build 0.5.1.1)"
+  },
+  {
+   "vendor": "Handshake",
+   "item": "Noirs",
+   "shown": "$104",
+   "value": 104,
+   "ver": "0.5.1.0",
+   "src": "Steam folder 2026-11-10 21:33 (build 0.5.1.1)"
+  },
+  {
+   "vendor": "Handshake",
+   "item": "MTWat\u2026",
+   "shown": "$6K",
+   "value": 6000,
+   "ver": "0.5.1.0",
+   "src": "Steam folder 2026-11-10 21:33 (build 0.5.1.1)"
+  },
+  {
+   "vendor": "Handshake",
+   "item": "PPEarr\u2026",
+   "shown": "$3.8K",
+   "value": 3800,
+   "ver": "0.5.1.0",
+   "src": "Steam folder 2026-11-10 21:33 (build 0.5.1.1)"
+  },
+  {
+   "vendor": "Handshake",
+   "item": "SPend\u2026",
+   "shown": "$2.7K",
+   "value": 2700,
+   "ver": "0.5.1.0",
+   "src": "Steam folder 2026-11-10 21:33 (build 0.5.1.1)"
+  },
+  {
+   "vendor": "Handshake",
+   "item": "IDTouri\u2026",
+   "shown": "$150",
+   "value": 150,
+   "ver": "0.5.1.0",
+   "src": "Steam folder 2026-11-10 21:33 (build 0.5.1.1)"
+  },
+  {
+   "vendor": "Gunny",
+   "item": "Noirs",
+   "shown": "$139",
+   "value": 139,
+   "ver": "0.5.1.0",
+   "src": "Steam folder 2026-11-10 21:33 (build 0.5.1.1)"
+  },
+  {
+   "vendor": "Gunny",
+   "item": "MTWat\u2026",
+   "shown": "$6K",
+   "value": 6000,
+   "ver": "0.5.1.0",
+   "src": "Steam folder 2026-11-10 21:33 (build 0.5.1.1)"
+  },
+  {
+   "vendor": "Gunny",
+   "item": "PPEarr\u2026",
+   "shown": "$3.8K",
+   "value": 3800,
+   "ver": "0.5.1.0",
+   "src": "Steam folder 2026-11-10 21:33 (build 0.5.1.1)"
+  },
+  {
+   "vendor": "Gunny",
+   "item": "SPend\u2026",
+   "shown": "$2.7K",
+   "value": 2700,
+   "ver": "0.5.1.0",
+   "src": "Steam folder 2026-11-10 21:33 (build 0.5.1.1)"
+  },
+  {
+   "vendor": "Gunny",
+   "item": "IDTouri\u2026",
+   "shown": "$112",
+   "value": 112,
+   "ver": "0.5.1.0",
+   "src": "Steam folder 2026-11-10 21:33 (build 0.5.1.1)"
+  },
+  {
+   "vendor": "Lab Rat",
+   "item": "CDrink",
+   "shown": "$2",
+   "value": 2,
+   "ver": "0.5.1.0",
+   "src": "Steam folder 2026-11-10 21:33 (build 0.5.1.1)"
+  },
+  {
+   "vendor": "Lab Rat",
+   "item": "Noirs",
+   "shown": "$104",
+   "value": 104,
+   "ver": "0.5.1.0",
+   "src": "Steam folder 2026-11-10 21:33 (build 0.5.1.1)"
+  },
+  {
+   "vendor": "Lab Rat",
+   "item": "MTWat\u2026",
+   "shown": "$6K",
+   "value": 6000,
+   "ver": "0.5.1.0",
+   "src": "Steam folder 2026-11-10 21:33 (build 0.5.1.1)"
+  },
+  {
+   "vendor": "Lab Rat",
+   "item": "PPEarr\u2026",
+   "shown": "$3.8K",
+   "value": 3800,
+   "ver": "0.5.1.0",
+   "src": "Steam folder 2026-11-10 21:33 (build 0.5.1.1)"
+  },
+  {
+   "vendor": "Lab Rat",
+   "item": "IDTouri\u2026",
+   "shown": "$112",
+   "value": 112,
+   "ver": "0.5.1.0",
+   "src": "Steam folder 2026-11-10 21:33 (build 0.5.1.1)"
+  },
+  {
+   "vendor": "Artisan",
+   "item": "KRD Ro\u2026",
+   "shown": "$60",
+   "value": 60,
+   "ver": "0.5.1.0",
+   "src": "Steam folder 2026-11-10 21:33 (build 0.5.1.1)"
+  },
+  {
+   "vendor": "Artisan",
+   "item": "Noirs",
+   "shown": "$104",
+   "value": 104,
+   "ver": "0.5.1.0",
+   "src": "Steam folder 2026-11-10 21:33 (build 0.5.1.1)"
+  },
+  {
+   "vendor": "Artisan",
+   "item": "MTWat\u2026",
+   "shown": "$6K",
+   "value": 6000,
+   "ver": "0.5.1.0",
+   "src": "Steam folder 2026-11-10 21:33 (build 0.5.1.1)"
+  },
+  {
+   "vendor": "Artisan",
+   "item": "PPEarr\u2026",
+   "shown": "$3.8K",
+   "value": 3800,
+   "ver": "0.5.1.0",
+   "src": "Steam folder 2026-11-10 21:33 (build 0.5.1.1)"
+  },
+  {
+   "vendor": "Artisan",
+   "item": "IDTouri\u2026",
+   "shown": "$112",
+   "value": 112,
+   "ver": "0.5.1.0",
+   "src": "Steam folder 2026-11-10 21:33 (build 0.5.1.1)"
+  },
+  {
+   "vendor": "Turncoat",
+   "item": "Noirs",
+   "shown": "$104",
+   "value": 104,
+   "ver": "0.5.1.0",
+   "src": "Steam folder 2026-11-10 21:33 (build 0.5.1.1)"
+  },
+  {
+   "vendor": "Turncoat",
+   "item": "MTWat\u2026",
+   "shown": "$8K",
+   "value": 8000,
+   "ver": "0.5.1.0",
+   "src": "Steam folder 2026-11-10 21:33 (build 0.5.1.1)"
+  },
+  {
+   "vendor": "Turncoat",
+   "item": "PPEarr\u2026",
+   "shown": "$5K",
+   "value": 5000,
+   "ver": "0.5.1.0",
+   "src": "Steam folder 2026-11-10 21:33 (build 0.5.1.1)"
+  },
+  {
+   "vendor": "Turncoat",
+   "item": "SPend\u2026",
+   "shown": "$3.6K",
+   "value": 3600,
+   "ver": "0.5.1.0",
+   "src": "Steam folder 2026-11-10 21:33 (build 0.5.1.1)"
+  },
+  {
+   "vendor": "Turncoat",
+   "item": "IDTouri\u2026",
+   "shown": "$112",
+   "value": 112,
+   "ver": "0.5.1.0",
+   "src": "Steam folder 2026-11-10 21:33 (build 0.5.1.1)"
+  },
+  {
+   "vendor": "Banshee",
+   "item": "Noirs",
+   "shown": "$104",
+   "value": 104,
+   "ver": "0.5.1.0",
+   "src": "Steam folder 2026-11-10 21:33 (build 0.5.1.1)"
+  },
+  {
+   "vendor": "Banshee",
+   "item": "MTWat\u2026",
+   "shown": "$6K",
+   "value": 6000,
+   "ver": "0.5.1.0",
+   "src": "Steam folder 2026-11-10 21:33 (build 0.5.1.1)"
+  },
+  {
+   "vendor": "Banshee",
+   "item": "PPEarr\u2026",
+   "shown": "$3.8K",
+   "value": 3800,
+   "ver": "0.5.1.0",
+   "src": "Steam folder 2026-11-10 21:33 (build 0.5.1.1)"
+  },
+  {
+   "vendor": "Banshee",
+   "item": "SPend\u2026",
+   "shown": "$2.7K",
+   "value": 2700,
+   "ver": "0.5.1.0",
+   "src": "Steam folder 2026-11-10 21:33 (build 0.5.1.1)"
+  },
+  {
+   "vendor": "Banshee",
+   "item": "IDTouri\u2026",
+   "shown": "$150",
+   "value": 150,
+   "ver": "0.5.1.0",
+   "src": "Steam folder 2026-11-10 21:33 (build 0.5.1.1)"
+  },
+  {
+   "vendor": "Vulture",
+   "item": "Noirs",
+   "shown": "$111",
+   "value": 111,
+   "ver": "0.5.1.0",
+   "src": "Steam folder 2026-11-10 21:33 (build 0.5.1.1)"
+  },
+  {
+   "vendor": "Vulture",
+   "item": "MTWat\u2026",
+   "shown": "$6.4K",
+   "value": 6400,
+   "ver": "0.5.1.0",
+   "src": "Steam folder 2026-11-10 21:33 (build 0.5.1.1)"
+  },
+  {
+   "vendor": "Vulture",
+   "item": "PPEarr\u2026",
+   "shown": "$4K",
+   "value": 4000,
+   "ver": "0.5.1.0",
+   "src": "Steam folder 2026-11-10 21:33 (build 0.5.1.1)"
+  },
+  {
+   "vendor": "Vulture",
+   "item": "SPend\u2026",
+   "shown": "$2.9K",
+   "value": 2900,
+   "ver": "0.5.1.0",
+   "src": "Steam folder 2026-11-10 21:33 (build 0.5.1.1)"
+  },
+  {
+   "vendor": "Vulture",
+   "item": "IDTouri\u2026",
+   "shown": "$120",
+   "value": 120,
+   "ver": "0.5.1.0",
+   "src": "Steam folder 2026-11-10 21:33 (build 0.5.1.1)"
+  },
+  {
+   "vendor": "Handshake",
+   "item": "GunOil",
+   "shown": "$9",
+   "value": 9,
+   "ver": "0.5.1.0",
+   "src": "Steam folder 2026-11-11 12:37 (build 0.5.1.1)"
+  },
+  {
+   "vendor": "Handshake",
+   "item": "B Beret",
+   "shown": "$3",
+   "value": 3,
+   "ver": "0.5.1.0",
+   "src": "Steam folder 2026-11-11 12:37 (build 0.5.1.1)"
+  },
+  {
+   "vendor": "Handshake",
+   "item": "Dog Tag",
+   "shown": "$4",
+   "value": 4,
+   "ver": "0.5.1.0",
+   "src": "Steam folder 2026-11-11 12:37 (build 0.5.1.1)"
+  },
+  {
+   "vendor": "Handshake",
+   "item": "OTP",
+   "shown": "$2.4K",
+   "value": 2400,
+   "ver": "0.5.1.0",
+   "src": "Steam folder 2026-11-11 12:37 (build 0.5.1.1)"
+  },
+  {
+   "vendor": "Handshake",
+   "item": "PCCard",
+   "shown": "$4.5K",
+   "value": 4500,
+   "ver": "0.5.1.0",
+   "src": "Steam folder 2026-11-11 12:37 (build 0.5.1.1)"
+  },
+  {
+   "vendor": "Gunny",
+   "item": "GunOil",
+   "shown": "$9",
+   "value": 9,
+   "ver": "0.5.1.0",
+   "src": "Steam folder 2026-11-11 12:37 (build 0.5.1.1)"
+  },
+  {
+   "vendor": "Gunny",
+   "item": "Dog Tag",
+   "shown": "$4",
+   "value": 4,
+   "ver": "0.5.1.0",
+   "src": "Steam folder 2026-11-11 12:37 (build 0.5.1.1)"
+  },
+  {
+   "vendor": "Gunny",
+   "item": "OTP",
+   "shown": "$2.4K",
+   "value": 2400,
+   "ver": "0.5.1.0",
+   "src": "Steam folder 2026-11-11 12:37 (build 0.5.1.1)"
+  },
+  {
+   "vendor": "Gunny",
+   "item": "PCCard",
+   "shown": "$4.5K",
+   "value": 4500,
+   "ver": "0.5.1.0",
+   "src": "Steam folder 2026-11-11 12:37 (build 0.5.1.1)"
+  },
+  {
+   "vendor": "Lab Rat",
+   "item": "GunOil",
+   "shown": "$9",
+   "value": 9,
+   "ver": "0.5.1.0",
+   "src": "Steam folder 2026-11-11 12:37 (build 0.5.1.1)"
+  },
+  {
+   "vendor": "Lab Rat",
+   "item": "Ether",
+   "shown": "$90",
+   "value": 90,
+   "ver": "0.5.1.0",
+   "src": "Steam folder 2026-11-11 12:37 (build 0.5.1.1)"
+  },
+  {
+   "vendor": "Lab Rat",
+   "item": "Dog Tag",
+   "shown": "$4",
+   "value": 4,
+   "ver": "0.5.1.0",
+   "src": "Steam folder 2026-11-11 12:37 (build 0.5.1.1)"
+  },
+  {
+   "vendor": "Lab Rat",
+   "item": "PCCard",
+   "shown": "$4.5K",
+   "value": 4500,
+   "ver": "0.5.1.0",
+   "src": "Steam folder 2026-11-11 12:37 (build 0.5.1.1)"
+  },
+  {
+   "vendor": "Artisan",
+   "item": "GunOil",
+   "shown": "$9",
+   "value": 9,
+   "ver": "0.5.1.0",
+   "src": "Steam folder 2026-11-11 12:37 (build 0.5.1.1)"
+  },
+  {
+   "vendor": "Artisan",
+   "item": "Dog Tag",
+   "shown": "$4",
+   "value": 4,
+   "ver": "0.5.1.0",
+   "src": "Steam folder 2026-11-11 12:37 (build 0.5.1.1)"
+  },
+  {
+   "vendor": "Artisan",
+   "item": "GPU",
+   "shown": "$150",
+   "value": 150,
+   "ver": "0.5.1.0",
+   "src": "Steam folder 2026-11-11 12:37 (build 0.5.1.1)"
+  },
+  {
+   "vendor": "Artisan",
+   "item": "PCCard",
+   "shown": "$6K",
+   "value": 6000,
+   "ver": "0.5.1.0",
+   "src": "Steam folder 2026-11-11 12:37 (build 0.5.1.1)"
+  },
+  {
+   "vendor": "Artisan",
+   "item": "StComp",
+   "shown": "$12K",
+   "value": 12000,
+   "ver": "0.5.1.0",
+   "src": "Steam folder 2026-11-11 12:37 (build 0.5.1.1)"
+  },
+  {
+   "vendor": "Turncoat",
+   "item": "GunOil",
+   "shown": "$9",
+   "value": 9,
+   "ver": "0.5.1.0",
+   "src": "Steam folder 2026-11-11 12:37 (build 0.5.1.1)"
+  },
+  {
+   "vendor": "Turncoat",
+   "item": "B Beret",
+   "shown": "$3",
+   "value": 3,
+   "ver": "0.5.1.0",
+   "src": "Steam folder 2026-11-11 12:37 (build 0.5.1.1)"
+  },
+  {
+   "vendor": "Turncoat",
+   "item": "Dog Tag",
+   "shown": "$4",
+   "value": 4,
+   "ver": "0.5.1.0",
+   "src": "Steam folder 2026-11-11 12:37 (build 0.5.1.1)"
+  },
+  {
+   "vendor": "Turncoat",
+   "item": "OTP",
+   "shown": "$2.4K",
+   "value": 2400,
+   "ver": "0.5.1.0",
+   "src": "Steam folder 2026-11-11 12:37 (build 0.5.1.1)"
+  },
+  {
+   "vendor": "Turncoat",
+   "item": "PCCard",
+   "shown": "$4.5K",
+   "value": 4500,
+   "ver": "0.5.1.0",
+   "src": "Steam folder 2026-11-11 12:37 (build 0.5.1.1)"
+  },
+  {
+   "vendor": "Banshee",
+   "item": "GunOil",
+   "shown": "$9",
+   "value": 9,
+   "ver": "0.5.1.0",
+   "src": "Steam folder 2026-11-11 12:37 (build 0.5.1.1)"
+  },
+  {
+   "vendor": "Banshee",
+   "item": "Dog Tag",
+   "shown": "$4",
+   "value": 4,
+   "ver": "0.5.1.0",
+   "src": "Steam folder 2026-11-11 12:37 (build 0.5.1.1)"
+  },
+  {
+   "vendor": "Banshee",
+   "item": "OTP",
+   "shown": "$2.4K",
+   "value": 2400,
+   "ver": "0.5.1.0",
+   "src": "Steam folder 2026-11-11 12:37 (build 0.5.1.1)"
+  },
+  {
+   "vendor": "Banshee",
+   "item": "PCCard",
+   "shown": "$4.5K",
+   "value": 4500,
+   "ver": "0.5.1.0",
+   "src": "Steam folder 2026-11-11 12:37 (build 0.5.1.1)"
+  },
+  {
+   "vendor": "Vulture",
+   "item": "GunOil",
+   "shown": "$9",
+   "value": 9,
+   "ver": "0.5.1.0",
+   "src": "Steam folder 2026-11-11 12:37 (build 0.5.1.1)"
+  },
+  {
+   "vendor": "Vulture",
+   "item": "Dog Tag",
+   "shown": "$4",
+   "value": 4,
+   "ver": "0.5.1.0",
+   "src": "Steam folder 2026-11-11 12:37 (build 0.5.1.1)"
+  },
+  {
+   "vendor": "Vulture",
+   "item": "OTP",
+   "shown": "$2.6K",
+   "value": 2600,
+   "ver": "0.5.1.0",
+   "src": "Steam folder 2026-11-11 12:37 (build 0.5.1.1)"
+  },
+  {
+   "vendor": "Vulture",
+   "item": "PCCard",
+   "shown": "$4.8K",
+   "value": 4800,
+   "ver": "0.5.1.0",
+   "src": "Steam folder 2026-11-11 12:37 (build 0.5.1.1)"
+  },
+  {
+   "vendor": "Handshake",
+   "item": "Jammer",
+   "shown": "$712",
+   "value": 712,
+   "ver": "0.5.1.0",
+   "src": "Steam folder 2026-11-11 13:33 (build 0.5.1.1)"
+  },
+  {
+   "vendor": "Gunny",
+   "item": "Jammer",
+   "shown": "$712",
+   "value": 712,
+   "ver": "0.5.1.0",
+   "src": "Steam folder 2026-11-11 13:33 (build 0.5.1.1)"
+  },
+  {
+   "vendor": "Gunny",
+   "item": "RK-9 G\u2026",
+   "shown": "$112",
+   "value": 112,
+   "ver": "0.5.1.0",
+   "src": "Steam folder 2026-11-11 13:33 (build 0.5.1.1)"
+  },
+  {
+   "vendor": "Lab Rat",
+   "item": "Jammer",
+   "shown": "$712",
+   "value": 712,
+   "ver": "0.5.1.0",
+   "src": "Steam folder 2026-11-11 13:33 (build 0.5.1.1)"
+  },
+  {
+   "vendor": "Artisan",
+   "item": "RK-9 G\u2026",
+   "shown": "$112",
+   "value": 112,
+   "ver": "0.5.1.0",
+   "src": "Steam folder 2026-11-11 13:33 (build 0.5.1.1)"
+  },
+  {
+   "vendor": "Artisan",
+   "item": "Jammer",
+   "shown": "$712",
+   "value": 712,
+   "ver": "0.5.1.0",
+   "src": "Steam folder 2026-11-11 13:33 (build 0.5.1.1)"
+  },
+  {
+   "vendor": "Turncoat",
+   "item": "RK-9 G\u2026",
+   "shown": "$112",
+   "value": 112,
+   "ver": "0.5.1.0",
+   "src": "Steam folder 2026-11-11 13:33 (build 0.5.1.1)"
+  },
+  {
+   "vendor": "Turncoat",
+   "item": "Jammer",
+   "shown": "$712",
+   "value": 712,
+   "ver": "0.5.1.0",
+   "src": "Steam folder 2026-11-11 13:33 (build 0.5.1.1)"
+  },
+  {
+   "vendor": "Banshee",
+   "item": "RK-9 G\u2026",
+   "shown": "$112",
+   "value": 112,
+   "ver": "0.5.1.0",
+   "src": "Steam folder 2026-11-11 13:33 (build 0.5.1.1)"
+  },
+  {
+   "vendor": "Banshee",
+   "item": "Jammer",
+   "shown": "$712",
+   "value": 712,
+   "ver": "0.5.1.0",
+   "src": "Steam folder 2026-11-11 13:33 (build 0.5.1.1)"
+  },
+  {
+   "vendor": "Vulture",
+   "item": "Jammer",
+   "shown": "$760",
+   "value": 760,
+   "ver": "0.5.1.0",
+   "src": "Steam folder 2026-11-11 13:33 (build 0.5.1.1)"
+  },
+  {
+   "vendor": "Vulture",
+   "item": "PWHer",
+   "shown": "$19.5K",
+   "value": 19500,
+   "ver": "0.5.1.0",
+   "src": "Steam folder 2026-11-11 13:33 (build 0.5.1.1)"
+  },
+  {
+   "vendor": "Handshake",
+   "item": "PGRKit",
+   "shown": "$1.3K",
+   "value": 1300,
+   "ver": "0.5.1.0",
+   "src": "Steam folder 2026-11-11 23:26 (build 0.5.1.1)",
+   "note": "full durability 3,000/3,000; $1.2K at 2,716/3,000"
+  },
+  {
+   "vendor": "Handshake",
+   "item": "Perfume",
+   "shown": "$112",
+   "value": 112,
+   "ver": "0.5.1.0",
+   "src": "Steam folder 2026-11-11 23:26 (build 0.5.1.1)"
+  },
+  {
+   "vendor": "Handshake",
+   "item": "GRing",
+   "shown": "$615",
+   "value": 615,
+   "ver": "0.5.1.0",
+   "src": "Steam folder 2026-11-11 23:26 (build 0.5.1.1)"
+  },
+  {
+   "vendor": "Handshake",
+   "item": "Passport",
+   "shown": "$3.5K",
+   "value": 3500,
+   "ver": "0.5.1.0",
+   "src": "Steam folder 2026-11-11 23:26 (build 0.5.1.1)"
+  },
+  {
+   "vendor": "Gunny",
+   "item": "Perfume",
+   "shown": "$150",
+   "value": 150,
+   "ver": "0.5.1.0",
+   "src": "Steam folder 2026-11-11 23:26 (build 0.5.1.1)"
+  },
+  {
+   "vendor": "Gunny",
+   "item": "GRing",
+   "shown": "$615",
+   "value": 615,
+   "ver": "0.5.1.0",
+   "src": "Steam folder 2026-11-11 23:26 (build 0.5.1.1)"
+  },
+  {
+   "vendor": "Gunny",
+   "item": "Passport",
+   "shown": "$2.6K",
+   "value": 2600,
+   "ver": "0.5.1.0",
+   "src": "Steam folder 2026-11-11 23:26 (build 0.5.1.1)"
+  },
+  {
+   "vendor": "Lab Rat",
+   "item": "PGRKit",
+   "shown": "$1.3K",
+   "value": 1300,
+   "ver": "0.5.1.0",
+   "src": "Steam folder 2026-11-11 23:26 (build 0.5.1.1)",
+   "note": "full durability 3,000/3,000; $1.2K at 2,716/3,000"
+  },
+  {
+   "vendor": "Lab Rat",
+   "item": "Perfume",
+   "shown": "$112",
+   "value": 112,
+   "ver": "0.5.1.0",
+   "src": "Steam folder 2026-11-11 23:26 (build 0.5.1.1)"
+  },
+  {
+   "vendor": "Lab Rat",
+   "item": "GRing",
+   "shown": "$615",
+   "value": 615,
+   "ver": "0.5.1.0",
+   "src": "Steam folder 2026-11-11 23:26 (build 0.5.1.1)"
+  },
+  {
+   "vendor": "Lab Rat",
+   "item": "Passport",
+   "shown": "$2.6K",
+   "value": 2600,
+   "ver": "0.5.1.0",
+   "src": "Steam folder 2026-11-11 23:26 (build 0.5.1.1)"
+  },
+  {
+   "vendor": "Artisan",
+   "item": "BL Shack",
+   "shown": "$60",
+   "value": 60,
+   "ver": "0.5.1.0",
+   "src": "Steam folder 2026-11-11 23:26 (build 0.5.1.1)"
+  },
+  {
+   "vendor": "Artisan",
+   "item": "HF2 Hut",
+   "shown": "$60",
+   "value": 60,
+   "ver": "0.5.1.0",
+   "src": "Steam folder 2026-11-11 23:26 (build 0.5.1.1)"
+  },
+  {
+   "vendor": "Artisan",
+   "item": "MS Kate",
+   "shown": "$90",
+   "value": 90,
+   "ver": "0.5.1.0",
+   "src": "Steam folder 2026-11-11 23:26 (build 0.5.1.1)"
+  },
+  {
+   "vendor": "Artisan",
+   "item": "MS Ele\u2026",
+   "shown": "$90",
+   "value": 90,
+   "ver": "0.5.1.0",
+   "src": "Steam folder 2026-11-11 23:26 (build 0.5.1.1)"
+  },
+  {
+   "vendor": "Artisan",
+   "item": "Perfume",
+   "shown": "$112",
+   "value": 112,
+   "ver": "0.5.1.0",
+   "src": "Steam folder 2026-11-11 23:26 (build 0.5.1.1)"
+  },
+  {
+   "vendor": "Artisan",
+   "item": "IDLog",
+   "shown": "$12K",
+   "value": 12000,
+   "ver": "0.5.1.0",
+   "src": "Steam folder 2026-11-11 23:26 (build 0.5.1.1)"
+  },
+  {
+   "vendor": "Artisan",
+   "item": "GRing",
+   "shown": "$615",
+   "value": 615,
+   "ver": "0.5.1.0",
+   "src": "Steam folder 2026-11-11 23:26 (build 0.5.1.1)"
+  },
+  {
+   "vendor": "Artisan",
+   "item": "Passport",
+   "shown": "$2.6K",
+   "value": 2600,
+   "ver": "0.5.1.0",
+   "src": "Steam folder 2026-11-11 23:26 (build 0.5.1.1)"
+  },
+  {
+   "vendor": "Artisan",
+   "item": "SRAMM",
+   "shown": "$6K",
+   "value": 6000,
+   "ver": "0.5.1.0",
+   "src": "Steam folder 2026-11-11 23:26 (build 0.5.1.1)"
+  },
+  {
+   "vendor": "Artisan",
+   "item": "PParts",
+   "shown": "$60",
+   "value": 60,
+   "ver": "0.5.1.0",
+   "src": "Steam folder 2026-11-11 23:26 (build 0.5.1.1)"
+  },
+  {
+   "vendor": "Turncoat",
+   "item": "Perfume",
+   "shown": "$112",
+   "value": 112,
+   "ver": "0.5.1.0",
+   "src": "Steam folder 2026-11-11 23:26 (build 0.5.1.1)"
+  },
+  {
+   "vendor": "Turncoat",
+   "item": "GRing",
+   "shown": "$820",
+   "value": 820,
+   "ver": "0.5.1.0",
+   "src": "Steam folder 2026-11-11 23:26 (build 0.5.1.1)"
+  },
+  {
+   "vendor": "Turncoat",
+   "item": "Passport",
+   "shown": "$2.6K",
+   "value": 2600,
+   "ver": "0.5.1.0",
+   "src": "Steam folder 2026-11-11 23:26 (build 0.5.1.1)"
+  },
+  {
+   "vendor": "Banshee",
+   "item": "Perfume",
+   "shown": "$112",
+   "value": 112,
+   "ver": "0.5.1.0",
+   "src": "Steam folder 2026-11-11 23:26 (build 0.5.1.1)"
+  },
+  {
+   "vendor": "Banshee",
+   "item": "GRing",
+   "shown": "$615",
+   "value": 615,
+   "ver": "0.5.1.0",
+   "src": "Steam folder 2026-11-11 23:26 (build 0.5.1.1)"
+  },
+  {
+   "vendor": "Banshee",
+   "item": "Passport",
+   "shown": "$3.5K",
+   "value": 3500,
+   "ver": "0.5.1.0",
+   "src": "Steam folder 2026-11-11 23:26 (build 0.5.1.1)"
+  },
+  {
+   "vendor": "Vulture",
+   "item": "Perfume",
+   "shown": "$120",
+   "value": 120,
+   "ver": "0.5.1.0",
+   "src": "Steam folder 2026-11-11 23:26 (build 0.5.1.1)"
+  },
+  {
+   "vendor": "Vulture",
+   "item": "GRing",
+   "shown": "$656",
+   "value": 656,
+   "ver": "0.5.1.0",
+   "src": "Steam folder 2026-11-11 23:26 (build 0.5.1.1)"
+  },
+  {
+   "vendor": "Vulture",
+   "item": "Passport",
+   "shown": "$2.8K",
+   "value": 2800,
+   "ver": "0.5.1.0",
+   "src": "Steam folder 2026-11-11 23:26 (build 0.5.1.1)"
   }
  ],
  "disassembly": [
@@ -9531,7 +10413,7 @@
     {
      "name": "Server RAM Module",
      "icon": "SrvRAM",
-     "item": null
+     "item": "SRAMM"
     }
    ]
   },

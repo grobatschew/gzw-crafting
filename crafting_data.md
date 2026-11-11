@@ -286,3 +286,11 @@ Files: 20261104 130826-130832 (6), 164555-164629 (8), 192205-192236 (16), 192312
 - 1x2: Ammonium Chloride, Citric Acid, Saline, Sodium Citrate, Acetic Anhydride, Sodium Carbonate, Chloroform, Glucose, Methanol (also Plastics, SSteel). Steel is 2x1.
 - 1x1: Methylparaben, EDTA, Theophylline, Empty Autoinjector, Vitamin B12, Iron Sucrose, Bone Density Stimulant, Methylene Blue, HGH, Aniline, Electrical Parts, Civilian Software, Circuit Board, Military Software, Multi-Bus Converter, OCXO.
 - Not seen yet: Bromopyridine, CPU, CPU Card, Spoofing ASIC Module, FPGA Module, Server RAM Module, High-Speed Digital Processor Board, Digital Synthesis Engine.
+
+## Batches 2026-11-10 21:33 to 2026-11-11 23:26 (build 0.5.1.1)
+- Four 7-vendor locker sweeps. No crafting recipes.
+- Server RAM Module (SRAMM): 1x2 slots, sells $6K at Artisan only. Source: disassembling ST1122 Storage Computer (StComp, 4 kg, 6h; also gives Incriminating Data Drive). StComp itself sells $12K at Artisan.
+- Pure White Heroin (PWHer): Laboratory Supplies, 1 kg, 2x2 slots, sells $19.5K at Vulture only. No recipe seen yet.
+- Kit prices scale with durability: PGRKit $1.3K full (3,000/3,000), $1.2K at 2,716; PFRKit $985 at 1,775/2,000, $938 at 1,691.
+- New matrix items: Noirs, MTWat…, CDrink, KRD Ro…, GunOil, B Beret, Dog Tag, GPU, Jammer, RK-9 G…, PWHer, Passport, BL Shack, MS Kate, MS Ele…, IDLog, SRAMM, PParts.
+- Slot size added: Server RAM Module 1x2.
