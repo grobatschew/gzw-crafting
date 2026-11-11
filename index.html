@@ -124,6 +124,13 @@ h2 { font-family: var(--font-display); font-weight: 600; font-size: 1.35rem; let
 .ico img { max-width: 100%; max-height: 100%; object-fit: contain; display: block; }
 .ico:has(.sn) img { max-height: calc(100% - 12px); margin-bottom: 12px; }
 .ico.sm { width: 54px; height: 44px; }
+.ico.inv { width: calc(var(--w) * 56px); height: calc(var(--h) * 56px); }
+.ico.inv.unk { border-style: dashed; }
+.ico.inv img, .ico.inv:has(.sn) img { width: 100%; height: calc(100% - 13px); max-height: none; object-fit: cover; margin-bottom: 13px; }
+.ico.inv.unk img, .ico.inv.unk:has(.sn) img { object-fit: contain; }
+.grid.inv { align-items: stretch; }
+.size-note { color: var(--muted); font-size: 0.82rem; margin: -4px 0 10px; }
+
 .ico.md { width: 76px; height: 60px; }
 .card .body { min-width: 0; }
 .card .nm { font-weight: 600; }
@@ -486,6 +493,14 @@ function disSources(id) {
   const n = norm(name(id));
   return (VP.disassembly || []).filter(d => d.components.some(c => { const cn = norm(c.name); return cn.length > 5 && (cn === n || n.startsWith(cn) || cn.startsWith(n)); }));
 }
+const SIZES = {opium_gum:[2,2], garden_lime:[2,2], ammonium_chloride:[1,2], purified_water:[2,2], lq_base:[2,2], mq_base:[2,2], hq_base:[2,2],
+  citric_acid:[1,2], sulfuric_acid:[2,2], methylparaben:[1,1], saline:[1,2], sodium_citrate:[1,2], edetate_disodium:[1,1], acetic_anhydride:[1,2],
+  sodium_carbonate:[1,2], chloroform:[1,2], glucose:[1,2], theophylline:[1,1], empty_autoinjector:[1,1], vitamin_b12:[1,1], iron_sucrose:[1,1],
+  bone_density_stimulant:[1,1], methylene_blue:[1,1], human_growth_hormone:[1,1], aniline:[1,1], methanol:[1,2], electrical_parts:[1,1],
+  civilian_software:[1,1], circuit_board:[1,1], military_software:[1,1], multi_bus_converter:[1,1], oven_controlled_crystal_oscillator:[1,1],
+  avionics_processor_board:[2,2]};
+/* inventory-sized icon for the want list: 1 slot = 56px; items whose slot size was never seen in a screenshot get a dashed 1x1 tile */
+const invIco = id => { const z = SIZES[id]; return ico(id, 'inv' + (z ? '' : ' unk')).replace('<span class="ico ', `<span title="${z ? z[0] + '×' + z[1] + ' slots' : 'slot size not seen yet'}" style="--w:${z ? z[0] : 1};--h:${z ? z[1] : 1}" class="ico `); };
 function renderWant() {
   const n = selected.size;
   document.getElementById('want-count').textContent = n ? n + ' selected' : 'None selected';
@@ -497,8 +512,8 @@ function renderWant() {
   const order = Object.keys(ITEMS);
   const rawIds = Object.keys(raw).sort((a, b) => order.indexOf(a) - order.indexOf(b));
   const madeIds = Object.keys(made).sort((a, b) => order.indexOf(a) - order.indexOf(b));
-  let html = `<h2>${rawIds.length} item${rawIds.length === 1 ? '' : 's'} to gather</h2><div class="grid">` +
-    rawIds.map(i => `<div class="card">${ico(i)}<div class="body"><div class="nm">${esc(name(i))}</div>` +
+  let html = `<h2>${rawIds.length} item${rawIds.length === 1 ? '' : 's'} to gather</h2><div class="size-note">Icons are sized by inventory slots (width × height)${rawIds.some(i => !SIZES[i]) ? '; a dashed tile means the slot size has not been seen yet' : ''}.</div><div class="grid inv">` +
+    rawIds.map(i => `<div class="card">${invIco(i)}<div class="body"><div class="nm">${esc(name(i))}</div>` +
       `<div class="for">for ${[...raw[i]].map(r => esc(name(r))).join(', ')}${byId[i] ? ' · crafted' : ''}</div>${disSrcHtml(i)}</div></div>`).join('') + '</div>';
   if (madeIds.length) {
     html += '<div class="crafted"><span>Crafted along the way:</span>' +

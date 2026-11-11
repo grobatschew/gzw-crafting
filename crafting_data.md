@@ -280,3 +280,9 @@ Files: 20261104 130826-130832 (6), 164555-164629 (8), 192205-192236 (16), 192312
 - 7-vendor locker sweep. No price changed. New post-patch confirmations: Acetic Anhydride $75 (Lab Rat), DriverLic at 5 more vendors, Coffee/BoneDS/Theoph/CAcid at Lab Rat.
 - New matrix items: Nectar $3 (Lab Rat); FN Motel key $60, PCh Sh… key $60, MBoard $90, Plastics $15, Steel $30 (all Artisan only).
 - No crafting data in this batch.
+
+## Inventory slot sizes (width x height), read from locker screenshots (added 2026-11-11)
+- 2x2: Opium Gum, Garden Lime, Purified Water, Sulfuric Acid, LQMB, MQMB, HQMB, Avionics Processor Board (also 10MS, StMSL, USPMS, Gray Heroin, MBoard).
+- 1x2: Ammonium Chloride, Citric Acid, Saline, Sodium Citrate, Acetic Anhydride, Sodium Carbonate, Chloroform, Glucose, Methanol (also Plastics, SSteel). Steel is 2x1.
+- 1x1: Methylparaben, EDTA, Theophylline, Empty Autoinjector, Vitamin B12, Iron Sucrose, Bone Density Stimulant, Methylene Blue, HGH, Aniline, Electrical Parts, Civilian Software, Circuit Board, Military Software, Multi-Bus Converter, OCXO.
+- Not seen yet: Bromopyridine, CPU, CPU Card, Spoofing ASIC Module, FPGA Module, Server RAM Module, High-Speed Digital Processor Board, Digital Synthesis Engine.
