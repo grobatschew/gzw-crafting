@@ -294,3 +294,6 @@ Files: 20261104 130826-130832 (6), 164555-164629 (8), 192205-192236 (16), 192312
 - Kit prices scale with durability: PGRKit $1.3K full (3,000/3,000), $1.2K at 2,716; PFRKit $985 at 1,775/2,000, $938 at 1,691.
 - New matrix items: Noirs, MTWat…, CDrink, KRD Ro…, GunOil, B Beret, Dog Tag, GPU, Jammer, RK-9 G…, PWHer, Passport, BL Shack, MS Kate, MS Ele…, IDLog, SRAMM, PParts.
 - Slot size added: Server RAM Module 1x2.
+
+## Batch 2026-11-12 09:02 (build 0.5.1.1)
+- Task screen: Supply and Demand III (Lab Rat, export task, medium, hideout). Provide 5 USP Morphine Sulfate. Rewards USD 50,000 + 50,000 + 40,000 = $140,000, 200 XP, rep. Matches the payout already recorded; now confirmed on the current build.

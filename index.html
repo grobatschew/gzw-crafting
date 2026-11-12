@@ -410,7 +410,7 @@ RECIPES.forEach(r => byId[r.id] = r);
 const QUESTS = [
   {of:'morphine_10', n:5, st:'lab_prod', label:'Lab Rat quest', payout:30000},
   {of:'stabilized_msl', n:5, st:'lab_prod', label:'Lab Rat quest', payout:90000},
-  {of:'usp_morphine_sulfate', n:5, st:'lab_prod', label:'Lab Rat quest (Supply and Demand III)', payout:140000},
+  {of:'usp_morphine_sulfate', n:5, st:'lab_prod', label:'Lab Rat quest (Supply and Demand III)', payout:140000, pv:'0.5.1.0'},
   {of:'gray_heroin', n:5, st:'lab_prod', label:'Vulture quest (Drug Run)', payout:120000, pv:'0.5.1.0'}
 ];
 const esc = s => String(s).replace(/[&<>"]/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));
