@@ -409,7 +409,7 @@ RECIPES.forEach(r => byId[r.id] = r);
 /* one-off hand-ins: n crafts of a recipe for a fixed payout */
 const QUESTS = [
   {of:'morphine_10', n:5, st:'lab_prod', label:'Lab Rat quest', payout:30000},
-  {of:'stabilized_msl', n:5, st:'lab_prod', label:'Lab Rat quest', payout:90000},
+  {of:'stabilized_msl', n:5, st:'lab_prod', label:'Lab Rat quest', payout:90000, pv:'0.5.1.0'},
   {of:'usp_morphine_sulfate', n:5, st:'lab_prod', label:'Lab Rat quest (Supply and Demand III)', payout:140000, pv:'0.5.1.0'},
   {of:'gray_heroin', n:5, st:'lab_prod', label:'Vulture quest (Drug Run)', payout:120000, pv:'0.5.1.0'}
 ];
@@ -572,11 +572,11 @@ function questHtml(q) {
       <div class="stat"><span class="l">Craft time: ${esc(bases.map(name).join(' + '))} ×${q.n}</span><span class="v">${fmtSecs(baseSecs)}</span></div>
       <div class="stat"><span class="l">Craft time: ${esc(name(q.of))} ×${q.n}</span><span class="v">${fmtSecs(prodSecs)}</span></div>
       <div class="stat"><span class="l">Total craft time</span><span class="v">${fmtSecs(secs)}</span></div>
-      <div class="stat"><span class="l">Crafting cost</span><span class="v pre">${money(cost)}</span></div>
+      <div class="stat"><span class="l">Crafting cost</span><span class="v ${c.pre ? 'pre' : ''}">${money(cost)}</span></div>
       <div class="stat"><span class="l">Quest payout</span><span class="v ${q.pv ? '' : 'pre'}">${money(q.payout)}</span></div>
-      <div class="stat"><span class="l">Profit</span><span class="v pre">${money2(profit)}</span></div>
-      <div class="stat"><span class="l">Profit / hour</span><span class="v pre">≈ ${money2(perH)}/h</span></div>
-      <span class="stat-note">${PRETAG} ${q.n} × (base ${fmtSecs(baseSecs / q.n)} + ${esc(name(q.of))} ${fmtSecs(prodSecs / q.n)}) = ${fmtSecs(secs)}, crafts run one after another. Cost counts each base at its sell value.</span></div></div>`;
+      <div class="stat"><span class="l">Profit</span><span class="v ${c.pre || !q.pv ? 'pre' : ''}">${money2(profit)}</span></div>
+      <div class="stat"><span class="l">Profit / hour</span><span class="v ${c.pre || !q.pv ? 'pre' : ''}">≈ ${money2(perH)}/h</span></div>
+      <span class="stat-note">${c.pre || !q.pv ? PRETAG + ' ' : ''}${q.n} × (base ${fmtSecs(baseSecs / q.n)} + ${esc(name(q.of))} ${fmtSecs(prodSecs / q.n)}) = ${fmtSecs(secs)}, crafts run one after another. Cost counts each base at its sell value.</span></div></div>`;
 }
 function renderFull() {
   document.getElementById('full-list').innerHTML = Object.keys(STATIONS).map(st => `
