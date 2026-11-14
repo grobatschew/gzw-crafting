@@ -297,3 +297,7 @@ Files: 20261104 130826-130832 (6), 164555-164629 (8), 192205-192236 (16), 192312
 
 ## Batch 2026-11-12 09:02 (build 0.5.1.1)
 - Task screen: Supply and Demand III (Lab Rat, export task, medium, hideout). Provide 5 USP Morphine Sulfate. Rewards USD 50,000 + 50,000 + 40,000 = $140,000, 200 XP, rep. Matches the payout already recorded; now confirmed on the current build.
+
+## Batches 2026-11-13 09:51 and 2026-11-14 11:58 (build 0.5.1.1)
+- 7-vendor locker sweep (Nov 13): every readable price matches the recorded current price; nothing changed. PFRKit $845 at 1,523/2,000 (durability-scaled, not recorded).
+- Laboratory production list (Nov 14), all 7 recipes re-read with times and required resources (1 each): LQMB 1h, 10MS 1h 30m, MQMB 1h 30m, HQMB 2h, StMSL 2h, USPMS 2h 30m, Gray Heroin 2h. All match the recorded recipes.

@@ -176,6 +176,12 @@
    ],
    "Steam folder 2026-11-11 23:26 (build 0.5.1.1)": [
     "20261111232604 (character), 232646-232654 (7-vendor sweep; SRAMM $6K Artisan). Kit prices scale with durability: PFRKit $938 at 1,691/2,000 (not recorded), PGRKit $1.3K full. ChBar $2 at Lab Rat skipped (two different bars share the label)."
+   ],
+   "Steam folder 2026-11-13 09:51 (build 0.5.1.1)": [
+    "20261113095137 (character), 095139-095145 (7-vendor sweep; PFRKit $845 at 1,523/2,000 not recorded)"
+   ],
+   "Steam folder 2026-11-14 11:58 (build 0.5.1.1)": [
+    "20261114115811-115821: Laboratory production list, all 7 recipes with times and required resources; all match recorded data"
    ]
   },
   "note_truncated_names": "FAST\u2026, BCM M\u2026, AK CR\u2026, AK GA\u2026, G36 12\u2026 are truncated by the game UI; full names unknown"
